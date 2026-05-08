@@ -1,0 +1,12 @@
+[
+  {
+    "role": "Software Developer Intern",
+    "company": "Tekarsh Bangladesh Limited",
+    "period": "Oct 2025 - Mar 2026",
+    "highlights": [
+      "Contributed to a scholarship management system with role-based dashboards, bug fixes, and analytics features.",
+      "Performed large-scale load testing for a restaurant management system to evaluate API performance.",
+      "Built automated smoke tests using Appium and WebdriverIO for critical user flows and backend APIs."
+    ]
+  }
+]

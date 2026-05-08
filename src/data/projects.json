@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Study Sync",
+    "description": "MERN-based group study application with real-time chat, file sharing, and notifications.",
+    "impact": "Integrated AWS S3 for file storage and Socket.io for live messaging.",
+    "summary": "Built a collaborative study hub with real-time collaboration and scalable file delivery.",
+    "features": [
+      "Live chat + presence updates",
+      "S3-backed file sharing",
+      "Notification workflows"
+    ],
+    "highlights": [
+      "Socket.io events for instant sync",
+      "Clean REST API structure"
+    ],
+    "metrics": [
+      { "label": "Stack", "value": "MERN" },
+      { "label": "Focus", "value": "Realtime" }
+    ],
+    "stack": ["MongoDB", "Express.js", "React", "Node.js", "AWS S3", "Socket.io"],
+    "repoUrl": "https://github.com/jarifulovi/Study-Sync",
+    "liveUrl": "",
+    "status": "Academic",
+    "year": "2025",
+    "period": "Jan 2025 - Mar 2025"
+  },
+  {
+    "title": "MiniChess",
+    "description": "A 5x6 MiniChess engine featuring alpha-beta pruning, move ordering, and quiescence search.",
+    "impact": "Implemented transposition tables for faster decision-making and efficient evaluation.",
+    "summary": "Designed an AI engine optimized for tactical depth and fast evaluation.",
+    "features": [
+      "Alpha-beta pruning core",
+      "Move ordering heuristics",
+      "Quiescence search"
+    ],
+    "highlights": [
+      "Transposition tables for speed",
+      "Compact board evaluation"
+    ],
+    "metrics": [
+      { "label": "Engine", "value": "Minimax" },
+      { "label": "Focus", "value": "AI" }
+    ],
+    "stack": ["Python"],
+    "repoUrl": "https://github.com/Jihad011/Mini_Chess_AI_Lab",
+    "liveUrl": "",
+    "status": "Academic",
+    "year": "2025",
+    "period": "May 2025 - Jun 2025"
+  },
+  {
+    "title": "Garments Inventory System",
+    "description": "Backend system for inventory, orders, product management, and role-based access.",
+    "impact": "Session-based auth with Redis, raw SQL optimization, Dockerized, and Jest-tested APIs.",
+    "summary": "Operational backend for inventory and order workflows with secure access control.",
+    "features": [
+      "Role-based access control",
+      "Redis-backed sessions",
+      "Raw SQL performance tuning"
+    ],
+    "highlights": [
+      "Dockerized for repeatable deploys",
+      "Jest tests for core APIs"
+    ],
+    "metrics": [
+      { "label": "Auth", "value": "Session" },
+      { "label": "DB", "value": "SQL" }
+    ],
+    "stack": ["Express.js", "PostgreSQL", "Redis", "Docker", "Jest"],
+    "repoUrl": "https://github.com/jarifulovi/FabricFlow",
+    "liveUrl": "",
+    "status": "Personal",
+    "year": "2026",
+    "period": "Apr 2026"
+  },
+  {
+    "title": "CodeBlog API",
+    "description": "RESTful blogging API with authentication, posts, and comments management.",
+    "impact": "Package-by-feature structure with layered services and secure controllers.",
+    "summary": "Modular API with clean separation of auth, posts, and comments.",
+    "features": [
+      "JWT-based authentication",
+      "Posts + comments workflows",
+      "Layered service design"
+    ],
+    "highlights": [
+      "Package-by-feature structure",
+      "Consistent API contracts"
+    ],
+    "metrics": [
+      { "label": "Auth", "value": "JWT" },
+      { "label": "Focus", "value": "API" }
+    ],
+    "stack": ["Java", "Spring Boot", "PostgreSQL"],
+    "repoUrl": "https://github.com/jarifulovi/codeblog-api",
+    "liveUrl": "",
+    "status": "Personal",
+    "year": "2026",
+    "period": "Jan 2026"
+  }
+]

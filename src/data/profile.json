@@ -1,0 +1,33 @@
+{
+  "name": "MD Jariful Rahman",
+  "role": "Software Developer (Backend Focus)",
+  "headline": "Backend-focused developer building scalable APIs, real-time systems, and reliable data services.",
+  "location": "Dhaka, Bangladesh",
+  "email": "bsse1419@iit.du.ac.bd",
+  "phone": "+8801518613562",
+  "summary": "Backend-focused software engineer with hands-on experience in Node.js, Express, and PostgreSQL. I build reliable APIs, real-time features, and data-driven systems with a strong focus on performance, testing, and clean architecture.",
+  "availability": "Open to backend roles and internships",
+  "resumeUrl": "files/resume.pdf",
+  "heroStats": [
+    {
+      "label": "CGPA",
+      "value": "3.23 / 4.00"
+    },
+    {
+      "label": "Graduation",
+      "value": "Sep 2026"
+    },
+    {
+      "label": "Projects",
+      "value": "4"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Dhaka - Institute of Information Technology",
+      "degree": "Bachelor of Science in Software Engineering",
+      "cgpa": "3.23 / 4.00",
+      "graduation": "Expected Sep 2026"
+    }
+  ]
+}
