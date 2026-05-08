@@ -51,7 +51,8 @@ export default function Home() {
                 role={item.role}
                 company={item.company}
                 period={item.period}
-                highlights={item.highlights}
+                summary={item.summary}
+                tasks={item.tasks}
               />
             ))}
           </div>

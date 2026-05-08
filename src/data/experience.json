@@ -3,10 +3,23 @@
     "role": "Software Developer Intern",
     "company": "Tekarsh Bangladesh Limited",
     "period": "Oct 2025 - Mar 2026",
-    "highlights": [
-      "Contributed to a scholarship management system with role-based dashboards, bug fixes, and analytics features.",
-      "Performed large-scale load testing for a restaurant management system to evaluate API performance.",
-      "Built automated smoke tests using Appium and WebdriverIO for critical user flows and backend APIs."
+    "summary": "Contributed across automation testing, performance evaluation, and backend feature delivery.",
+    "tasks": [
+      {
+        "title": "Automation Testing",
+        "description": "Built automated smoke tests using Appium and WebdriverIO for critical user flows and backend APIs.",
+        "icon": "/icons/automation_purple.png"
+      },
+      {
+        "title": "Load Testing",
+        "description": "Performed large-scale load testing for a restaurant management system to evaluate API performance.",
+        "icon": "/icons/performance_purple.png"
+      },
+      {
+        "title": "Web Development",
+        "description": "Contributed to a scholarship management system with role-based dashboards, bug fixes, and analytics features.",
+        "icon": "/icons/backend_dev_purple.png"
+      }
     ]
   }
 ]
