@@ -1,17 +1,94 @@
+"use client";
+import { ProfileCard } from "../components/sections/ProfileCard";
+import { Navbar } from "../components/layout/Navbar";
+import { Footer } from "../components/layout/Footer";
+import { Section } from "../components/sections/Section";
+import ProjectsSection from "../components/sections/ProjectsSection";
+import { SnapshotCard } from "../components/sections/SnapshotCard";
+import { ExperienceItem } from "../components/sections/ExperienceItem";
+import { SkillGroup } from "../components/sections/SkillGroup";
+import profile from "../data/profile.json";
+import projects from "../data/projects.json";
+import links from "../data/links.json";
+import skills from "../data/skills.json";
+import experience from "../data/experience.json";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <section className="mx-auto max-w-5xl px-6 py-24">
-        <h1 className="text-5xl font-bold">
-          Your Name
-        </h1>
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#1f2937,_#09090b_70%)] text-zinc-100">
+      <Navbar
+        brand={profile.name}
+        links={[
+          { label: "Projects", href: "#projects" },
+          { label: "Skills", href: "#skills" },
+          { label: "Experience", href: "#experience" },
+          { label: "Education", href: "#education" }
+        ]}
+      />
 
-        <p className="mt-6 max-w-2xl text-lg text-zinc-400">
-          Backend-focused developer building modern web applications
-          with Next.js, Node.js, PostgreSQL, and TypeScript.
-        </p>
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <ProfileCard profile={profile} links={links} />
+          <SnapshotCard profile={profile} />
+        </div>
       </section>
+
+      <ProjectsSection projects={projects} />
+
+      <div className="mx-auto max-w-6xl px-6">
+        <Section
+          id="skills"
+          eyebrow="Skills"
+          title="Core stack and tooling"
+          description="Languages, frameworks, and tooling I use for backend development and delivery."
+        >
+          <div className="grid gap-4 md:grid-cols-2">
+            {skills.skillGroups.map((group) => (
+              <SkillGroup key={group.title} title={group.title} skills={group.skills} />
+            ))}
+          </div>
+        </Section>
+
+        <Section
+          id="experience"
+          eyebrow="Experience"
+          title="Internship experience"
+          description="Hands-on roles focused on backend contributions, testing, and performance validation."
+        >
+          <div className="grid gap-6">
+            {experience.map((item) => (
+              <ExperienceItem
+                key={`${item.role}-${item.company}`}
+                role={item.role}
+                company={item.company}
+                period={item.period}
+                highlights={item.highlights}
+              />
+            ))}
+          </div>
+        </Section>
+
+        <Section
+          id="education"
+          eyebrow="Education"
+          title="Academic background"
+          description="Foundation in software engineering and systems thinking."
+        >
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-zinc-200">
+            {profile.education.map((item) => (
+              <div key={item.institution}>
+                <h3 className="text-lg font-semibold text-white">{item.institution}</h3>
+                <p className="mt-2 text-sm text-zinc-300">{item.degree}</p>
+                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-zinc-400">
+                  CGPA {item.cgpa} · {item.graduation}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Section>
+      </div>
+
+      <Footer />
     </main>
   );
 }
