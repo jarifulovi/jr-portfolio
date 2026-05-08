@@ -1,0 +1,32 @@
+{
+  "skillGroups": [
+    {
+      "title": "Languages",
+      "skills": ["C", "Java", "JavaScript", "Python"]
+    },
+    {
+      "title": "Databases",
+      "skills": ["MongoDB", "PostgreSQL"]
+    },
+    {
+      "title": "Web Technologies",
+      "skills": [
+        "Next.js",
+        "React",
+        "Node.js",
+        "Express.js",
+        "Tailwind CSS",
+        "HTML"
+      ]
+    },
+    {
+      "title": "Tools",
+      "skills": ["Git", "GitHub", "Docker", "Nginx", "Postman", "Linux", "VS Code", "IntelliJ"]
+    },
+    {
+      "title": "Concepts",
+      "skills": ["RESTful APIs", "WebSockets", "Object-Oriented Programming"]
+    }
+  ],
+  "tools": []
+}
