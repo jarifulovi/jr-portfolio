@@ -6,7 +6,7 @@ import { Section } from "../components/sections/Section";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import { SnapshotCard } from "../components/sections/SnapshotCard";
 import { ExperienceItem } from "../components/sections/ExperienceItem";
-import { SkillGroup } from "../components/sections/SkillGroup";
+import SkillsSection from "../components/sections/SkillsSection";
 import profile from "../data/profile.json";
 import projects from "../data/projects.json";
 import links from "../data/links.json";
@@ -36,18 +36,7 @@ export default function Home() {
       <ProjectsSection projects={projects} />
 
       <div className="mx-auto max-w-6xl px-6">
-        <Section
-          id="skills"
-          eyebrow="Skills"
-          title="Core stack and tooling"
-          description="Languages, frameworks, and tooling I use for backend development and delivery."
-        >
-          <div className="grid gap-4 md:grid-cols-2">
-            {skills.skillGroups.map((group) => (
-              <SkillGroup key={group.title} title={group.title} skills={group.skills} />
-            ))}
-          </div>
-        </Section>
+        <SkillsSection skillGroups={skills.skillGroups} tools={skills.tools} />
 
         <Section
           id="experience"

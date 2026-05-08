@@ -20,13 +20,18 @@
       ]
     },
     {
-      "title": "Tools",
-      "skills": ["Git", "GitHub", "Docker", "Nginx", "Postman", "Linux", "VS Code", "IntelliJ"]
-    },
-    {
       "title": "Concepts",
       "skills": ["RESTful APIs", "WebSockets", "Object-Oriented Programming"]
     }
   ],
-  "tools": []
+  "tools": [
+    { "name": "Git", "icon": "/icons/git_blue.png" },
+    { "name": "GitHub", "icon": "/icons/github_blue.png" },
+    { "name": "Docker", "icon": "/icons/docker_blue.png" },
+    { "name": "Nginx", "icon": "/icons/nginx_green.png" },
+    { "name": "Postman", "icon": "/icons/postman.png" },
+    { "name": "Linux", "icon": "/icons/linux.png" },
+    { "name": "VS Code", "icon": "/icons/code.png" },
+    { "name": "IntelliJ", "icon": "/icons/intellij.png" }
+  ]
 }
