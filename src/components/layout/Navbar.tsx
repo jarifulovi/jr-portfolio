@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`sticky top-0 z-50 w-full border-b border-white/10 bg-zinc-950/80 backdrop-blur-md ${className}`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
         {/* Brand */}
         <Link
           href="/"

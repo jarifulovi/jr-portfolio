@@ -31,7 +31,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="mx-auto max-w-6xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+      <section className="mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
           <ProfileCard profile={profile} links={links} />
           <SnapshotCard profile={profile} />
@@ -39,7 +39,7 @@ export default function Home() {
       </section>
 
       {/* About Me Section (Replacing redundant education section) */}
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <AboutSection about={profile.about} />
       </div>
 
@@ -49,7 +49,7 @@ export default function Home() {
       {/* Featured Projects with Top 2 Spotlight (ApexFlow & InboxOrchestrator AI) */}
       <ProjectsSection projects={projects} />
 
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         {/* Core Stack & Tooling */}
         <SkillsSection skillGroups={skills.skillGroups} tools={skills.tools} />
 

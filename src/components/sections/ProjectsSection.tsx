@@ -41,7 +41,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
-    <div className="mx-auto max-w-6xl px-6">
+    <div className="mx-auto max-w-7xl px-6">
       <Section
         id="projects"
         eyebrow="Featured Engineering Work"

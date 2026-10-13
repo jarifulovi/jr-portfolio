@@ -103,7 +103,7 @@ function getServiceIcon(id: string) {
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
   return (
-    <div className="mx-auto max-w-6xl px-6">
+    <div className="mx-auto max-w-7xl px-6">
       <Section
         id="services"
         eyebrow="Services & Capabilities"
