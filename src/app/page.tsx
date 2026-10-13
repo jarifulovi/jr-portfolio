@@ -1,12 +1,10 @@
-"use client";
-import { ProfileCard } from "../components/sections/ProfileCard";
+import { HeroSection } from "../components/sections/HeroSection";
 import { Navbar } from "../components/layout/Navbar";
 import { Footer } from "../components/layout/Footer";
 import { Section } from "../components/sections/Section";
 import { AboutSection } from "../components/sections/AboutSection";
 import { ServicesSection } from "../components/sections/ServicesSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
-import { SnapshotCard } from "../components/sections/SnapshotCard";
 import { ExperienceItem } from "../components/sections/ExperienceItem";
 import SkillsSection from "../components/sections/SkillsSection";
 import profile from "../data/profile.json";
@@ -31,13 +29,8 @@ export default function Home() {
         ]}
       />
 
-      {/* Hero Section */}
-      <section id="home" className="scroll-mt-20 mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
-          <ProfileCard profile={profile} links={links} />
-          <SnapshotCard profile={profile} />
-        </div>
-      </section>
+      {/* Hero Section with Dynamic Mouse Spotlight & Grid Matrix */}
+      <HeroSection profile={profile} links={links} />
 
       {/* About Me Section (Replacing redundant education section) */}
       <div className="mx-auto max-w-7xl px-6">
