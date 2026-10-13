@@ -25,39 +25,31 @@
   "about": {
     "sectionEyebrow": "About Me",
     "sectionTitle": "Engineering with Discipline, Building End-to-End",
-    "sectionDescription": "A deeper look at my academic background, technical philosophy, core strengths, and future trajectory.",
-    "blocks": [
+    "sectionDescription": "My journey, engineering principles, practical craft, and future technical trajectory.",
+    "steps": [
       {
-        "id": "who-i-am",
-        "category": "Background",
-        "title": "Who I Am",
-        "subtitle": "CS Foundations & Practical Builder",
-        "description": "Software Engineering undergraduate at the University of Dhaka (IIT) with hands-on industry internship experience at Tekarsh Bangladesh Ltd. While my passion lies in backend systems, I actively build end-to-end projects—translating complex requirements into fully deployed, functional applications.",
-        "pills": ["University of Dhaka (IIT)", "BSSE Student", "Tekarsh Intern Alum", "Solo Product Builder"]
+        "id": "background",
+        "label": "Foundations & Experience",
+        "title": "Software Engineering at DU (IIT) & Industry Internship",
+        "description": "I am an undergraduate software engineering student at the University of Dhaka (Institute of Information Technology). My focus has always been hands-on: understanding systems from first principles and building complete projects from database schemas to responsive interfaces. During my 6-month internship at Tekarsh Bangladesh Ltd, I worked directly on automated testing (Appium, WebdriverIO), API performance load testing, and production web application delivery."
       },
       {
-        "id": "how-i-approach",
-        "category": "Philosophy",
-        "title": "How I Approach Engineering",
-        "subtitle": "Disciplined Craft Over Quick Hacks",
-        "description": "Code is read far more often than it is written. I design with clean architecture and SOLID principles, plan normalized schemas and purposeful indexes before writing code, write test suites, and architect for fault recovery rather than patching symptoms.",
-        "pills": ["Clean Architecture", "SOLID Principles", "Schema Indexing", "Test-Driven Reliability"]
+        "id": "approach",
+        "label": "Engineering Mindset",
+        "title": "Modular Architecture, Proper Data Modeling & Reliability",
+        "description": "I believe that code is read and maintained far more often than it is written. My approach emphasizes clean separation of concerns, thoughtful database normalization and indexing before writing queries, and designing for failure recovery from the start. Rather than applying quick patches that accumulate technical debt, I strive to write predictable, well-structured software with automated test coverage."
       },
       {
-        "id": "what-i-excel-at",
-        "category": "Core Strengths",
-        "title": "What I Excel At",
-        "subtitle": "Backend Systems & Resilient Workflows",
-        "description": "Designing high-performance, type-safe REST APIs with FastAPI and Node.js; engineering asynchronous worker daemons and durable multi-step workflows; managing relational data with PostgreSQL; and packaging services with Docker.",
-        "pills": ["FastAPI & REST APIs", "PostgreSQL & pgvector", "Durable Workflows", "Docker & Linux"]
+        "id": "craft",
+        "label": "Core Craft",
+        "title": "Type-Safe APIs, Asynchronous Workflows & Full-Stack Execution",
+        "description": "My core sweet spot is backend engineering with Python (FastAPI) and Node.js (Express), paired with relational data stores like PostgreSQL. I enjoy building asynchronous worker daemons and resilient multi-step workflow systems that handle long-running operations outside the request-response cycle. In addition, I containerize multi-service applications using Docker and bridge backend services with clean frontends using Next.js and React."
       },
       {
-        "id": "where-im-headed",
-        "category": "Future Vision",
-        "title": "Where I'm Headed",
-        "subtitle": "Distributed Systems & Scalable Products",
-        "description": "Continuously exploring distributed workflow runtimes, event-driven architectures, and scalable micro-SaaS systems. Looking to join engineering teams or collaborate on impactful backend challenges where disciplined craft and coachability matter.",
-        "pills": ["Distributed Systems", "Event-Driven Queues", "Junior Backend Roles", "Micro-SaaS Engineering"]
+        "id": "future",
+        "label": "Future Trajectory",
+        "title": "Distributed Systems, Event-Driven Queues & Modern DevOps",
+        "description": "Looking ahead, I am actively expanding into distributed systems architectures, event-driven streaming, and deeper DevOps practices—including automated CI/CD pipelines, container orchestration, and resilient cloud deployments. I am eager to bring this disciplined, end-to-end mindset to ambitious engineering teams and impactful software products."
       }
     ]
   },
