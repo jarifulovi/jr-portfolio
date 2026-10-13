@@ -5,6 +5,7 @@ import { Badge } from "../ui/Badge";
 
 interface ProjectCardProps {
   title: string;
+  tagline?: string;
   description: string;
   summary?: string;
   features?: string[];
@@ -17,10 +18,12 @@ interface ProjectCardProps {
   status?: string;
   period?: string;
   featured?: boolean;
+  image?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
+  tagline,
   description,
   summary,
   features = [],
@@ -33,6 +36,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   status,
   period,
   featured = false,
+  image,
 }) => {
   if (featured) {
     return (
@@ -63,11 +67,27 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
           </div>
 
-          {/* Title & Description */}
+          {/* Optional Project Screenshot / Showcase Slot */}
+          {image && (
+            <div className="relative mt-5 aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+              <img
+                src={image}
+                alt={title}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          )}
+
+          {/* Title & Tagline */}
           <div className="mt-5">
             <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-cyan-200 transition-colors">
               {title}
             </h3>
+            {tagline && (
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-cyan-400/90">
+                {tagline}
+              </p>
+            )}
             <p className="mt-2 text-sm leading-relaxed text-zinc-300">
               {description}
             </p>

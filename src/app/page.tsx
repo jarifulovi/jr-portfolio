@@ -3,6 +3,7 @@ import { ProfileCard } from "../components/sections/ProfileCard";
 import { Navbar } from "../components/layout/Navbar";
 import { Footer } from "../components/layout/Footer";
 import { Section } from "../components/sections/Section";
+import { AboutSection } from "../components/sections/AboutSection";
 import { ServicesSection } from "../components/sections/ServicesSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import { SnapshotCard } from "../components/sections/SnapshotCard";
@@ -21,11 +22,11 @@ export default function Home() {
       <Navbar
         brand={profile.name}
         links={[
+          { label: "About", href: "#about" },
           { label: "Services", href: "#services" },
           { label: "Projects", href: "#projects" },
           { label: "Skills", href: "#skills" },
           { label: "Experience", href: "#experience" },
-          { label: "Education", href: "#education" },
         ]}
       />
 
@@ -37,10 +38,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services / What I Do */}
+      {/* About Me Section (Replacing redundant education section) */}
+      <div className="mx-auto max-w-6xl px-6">
+        <AboutSection about={profile.about} />
+      </div>
+
+      {/* Services / Capabilities Section */}
       <ServicesSection services={services} />
 
-      {/* Projects Section with Top 2 Featured Spotlight */}
+      {/* Featured Projects with Top 2 Spotlight (ApexFlow & InboxOrchestrator AI) */}
       <ProjectsSection projects={projects} />
 
       <div className="mx-auto max-w-6xl px-6">
@@ -51,8 +57,8 @@ export default function Home() {
         <Section
           id="experience"
           eyebrow="Work Experience"
-          title="Internship & Industry Experience"
-          description="Hands-on roles focused on backend contributions, automated testing, and performance validation."
+          title="Industry Experience & Internships"
+          description="Hands-on contributions focused on automated testing, load testing, and web application feature delivery."
         >
           <div className="grid gap-6">
             {experience.map((item) => (
@@ -64,33 +70,6 @@ export default function Home() {
                 summary={item.summary}
                 tasks={item.tasks}
               />
-            ))}
-          </div>
-        </Section>
-
-        {/* Education Section */}
-        <Section
-          id="education"
-          eyebrow="Academic Background"
-          title="Education & Formal Training"
-          description="Strong foundation in software engineering, system design, and algorithms at University of Dhaka."
-        >
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-black/30 p-8 text-zinc-200">
-            {profile.education.map((item) => (
-              <div key={item.institution} className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h3 className="text-xl font-bold text-white">{item.institution}</h3>
-                  <p className="mt-1 text-sm font-medium text-cyan-300">{item.degree}</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300">
-                    CGPA {item.cgpa}
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-400">
-                    {item.graduation}
-                  </span>
-                </div>
-              </div>
             ))}
           </div>
         </Section>

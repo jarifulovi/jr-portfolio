@@ -20,6 +20,7 @@ const itemVariants: Variants = {
 
 interface Project {
   title: string;
+  tagline?: string;
   description: string;
   summary?: string;
   features?: string[];
@@ -32,6 +33,7 @@ interface Project {
   status?: string;
   period?: string;
   featured?: boolean;
+  image?: string;
 }
 
 export default function ProjectsSection({ projects }: { projects: Project[] }) {
@@ -42,9 +44,9 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
     <div className="mx-auto max-w-6xl px-6">
       <Section
         id="projects"
-        eyebrow="Portfolio & Case Studies"
-        title="Featured Systems & Projects"
-        description="A curated look into my best backend architectures, real-time engines, and modular APIs."
+        eyebrow="Featured Engineering Work"
+        title="Durable Systems & Workflow Engines"
+        description="A selection of my best projects showcasing distributed workflow orchestration, background worker daemons, and full-stack delivery."
       >
         {/* Top 2 Featured Projects Spotlight */}
         {featuredProjects.length > 0 && (
@@ -59,6 +61,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
               <motion.div key={project.title} variants={itemVariants} className="h-full">
                 <ProjectCard
                   title={project.title}
+                  tagline={project.tagline}
                   description={project.description}
                   summary={project.summary}
                   features={project.features}
@@ -71,6 +74,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
                   status={project.status}
                   period={project.period}
                   featured={true}
+                  image={project.image || undefined}
                 />
               </motion.div>
             ))}
@@ -84,7 +88,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
               <div>
                 <h3 className="text-lg font-bold text-white">Other Notable Work</h3>
                 <p className="text-xs text-zinc-400">
-                  Explorations in algorithms, game engines, and microservices.
+                  Operational backend systems, clean Spring Boot APIs, and algorithmic engines.
                 </p>
               </div>
             </div>
@@ -94,12 +98,13 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.15 }}
-              className="grid gap-6 md:grid-cols-2"
+              className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
             >
               {otherProjects.map((project) => (
                 <motion.div key={project.title} variants={itemVariants} className="h-full">
                   <ProjectCard
                     title={project.title}
+                    tagline={project.tagline}
                     description={project.description}
                     summary={project.summary}
                     features={project.features}
@@ -112,6 +117,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
                     status={project.status}
                     period={project.period}
                     featured={false}
+                    image={project.image || undefined}
                   />
                 </motion.div>
               ))}

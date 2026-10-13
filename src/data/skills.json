@@ -2,35 +2,35 @@
   "skillGroups": [
     {
       "title": "Languages",
-      "skills": ["C", "Java", "JavaScript", "Python"]
+      "skills": ["Python", "JavaScript", "Java", "C", "TypeScript"]
     },
     {
-      "title": "Databases",
-      "skills": ["MongoDB", "PostgreSQL"]
+      "title": "Backend & Frameworks",
+      "skills": ["FastAPI", "Node.js", "Express.js", "Spring Boot", "Next.js", "React"]
     },
     {
-      "title": "Web Technologies",
+      "title": "Databases & Storage",
+      "skills": ["PostgreSQL", "Supabase (pgvector)", "MongoDB", "Cloudflare R2", "Raw SQL"]
+    },
+    {
+      "title": "Concepts & Architecture",
       "skills": [
-        "Next.js",
-        "React",
-        "Node.js",
-        "Express.js",
-        "Tailwind CSS",
-        "HTML"
+        "Clean Architecture",
+        "Background Workers",
+        "Durable Workflows",
+        "Schema Normalization & Indexing",
+        "RESTful API Design",
+        "OOP Principles"
       ]
-    },
-    {
-      "title": "Concepts",
-      "skills": ["RESTful APIs", "WebSockets", "Object-Oriented Programming"]
     }
   ],
   "tools": [
+    { "name": "Docker", "icon": "/icons/docker_blue.png" },
     { "name": "Git", "icon": "/icons/git_blue.png" },
     { "name": "GitHub", "icon": "/icons/github_blue.png" },
-    { "name": "Docker", "icon": "/icons/docker_blue.png" },
-    { "name": "Nginx", "icon": "/icons/nginx_green.png" },
-    { "name": "Postman", "icon": "/icons/postman.png" },
     { "name": "Linux", "icon": "/icons/linux.png" },
+    { "name": "Postman", "icon": "/icons/postman.png" },
+    { "name": "Nginx", "icon": "/icons/nginx_green.png" },
     { "name": "VS Code", "icon": "/icons/code.png" },
     { "name": "IntelliJ", "icon": "/icons/intellij.png" }
   ]

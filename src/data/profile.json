@@ -1,14 +1,18 @@
 {
   "name": "MD Jariful Rahman",
   "role": "Software Developer (Backend Focus)",
-  "headline": "Backend-focused developer building scalable APIs, real-time systems, and reliable data services.",
+  "headline": "Backend-focused Software Developer with full-stack capabilities. I build clean, reliable APIs and resilient background workflows—emphasizing disciplined architecture and pragmatic, end-to-end delivery.",
   "location": "Dhaka, Bangladesh",
   "email": "bsse1419@iit.du.ac.bd",
   "phone": "+8801518613562",
-  "summary": "Backend-focused software engineer with hands-on experience in Node.js, Express, and PostgreSQL. I build reliable APIs, real-time features, and data-driven systems with a strong focus on performance, testing, and clean architecture.",
-  "availability": "Open to backend roles and internships",
+  "summary": "Early-career software engineer studying at University of Dhaka (IIT) with hands-on internship experience at Tekarsh Bangladesh Ltd. I specialize in building type-safe APIs, PostgreSQL data layers, and asynchronous worker systems, pairing disciplined engineering with end-to-end delivery.",
+  "availability": "Open to Backend Roles, Internships & Freelance",
   "resumeUrl": "files/resume.pdf",
   "heroStats": [
+    {
+      "label": "Education",
+      "value": "DU (IIT)"
+    },
     {
       "label": "CGPA",
       "value": "3.23 / 4.00"
@@ -16,12 +20,30 @@
     {
       "label": "Graduation",
       "value": "Sep 2026"
-    },
-    {
-      "label": "Projects",
-      "value": "4"
     }
   ],
+  "about": {
+    "title": "Engineering with discipline, building end-to-end.",
+    "paragraphs": [
+      "I am an undergraduate software engineering student at the University of Dhaka (Institute of Information Technology) with a strong foundation in computer science and systems design. My focus lies primarily in the backend—architecting modular APIs, designing normalized database schemas, and building resilient background workflow systems.",
+      "Beyond pure backend logic, I enjoy operating as an end-to-end builder. I regularly build complete full-stack applications from scratch—handling everything from database design and containerization with Docker to crafting responsive frontends in Next.js. My recent projects, ApexFlow and InboxOrchestrator AI, reflect this approach: solving real architectural challenges like durable multi-step execution and high-efficiency background email processing.",
+      "During my internship at Tekarsh Bangladesh Ltd, I worked on automation testing, API performance validation, and web feature delivery. I believe in writing readable, maintainable code guided by SOLID principles rather than hasty patches that create technical debt."
+    ],
+    "highlights": [
+      {
+        "label": "CS Fundamentals",
+        "description": "Rigorous software engineering curriculum at University of Dhaka (IIT), maintaining a 3.23 CGPA."
+      },
+      {
+        "label": "End-to-End Execution",
+        "description": "Comfortable building from PostgreSQL schemas to Next.js interfaces and Dockerized deployments."
+      },
+      {
+        "label": "Clean Architecture",
+        "description": "Committed to modular structure, strict error handling, and maintainable software patterns."
+      }
+    ]
+  },
   "education": [
     {
       "institution": "University of Dhaka - Institute of Information Technology",

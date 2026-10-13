@@ -1,5 +1,73 @@
 [
   {
+    "title": "ApexFlow",
+    "tagline": "Code-First Durable Workflow Orchestration Engine",
+    "description": "A code-first durable workflow orchestration engine with zero infrastructure to manage. Replaces heavyweight orchestrators and fragile task queues with native Python ergonomics and a turnkey cloud control plane.",
+    "summary": "Engineered a distributed workflow runtime featuring step-level memoization, a zero-ops PostgreSQL queue, client-side zero-knowledge encryption, and a Next.js 14 observability dashboard.",
+    "impact": "Eliminates infrastructure overhead by replacing complex clusters (Temporal/Celery) with raw PostgreSQL concurrency (FOR UPDATE SKIP LOCKED) and worker-side authenticated AES-256-GCM encryption.",
+    "features": [
+      "Durable Step Checkpointing: Memoizes steps (await ctx.step) to resume instantly from failed steps without restarting",
+      "Zero-Knowledge Encryption: Client-side AES-256-GCM payload encryption with browser Web Crypto decryption",
+      "PostgreSQL-Powered Queue Engine: High-throughput distributed dequeuing using FOR UPDATE SKIP LOCKED without Redis/Kafka",
+      "Transparent Payload Offload: Payloads >250KB offloaded to Cloudflare R2 / S3 via lightweight pointer references",
+      "Loop-Safe Execution: Scoped to (step_name, step_order) guaranteeing safe step memoization inside loops",
+      "Next.js Observability Dashboard: Full execution timelines, error tracebacks, and live worker status"
+    ],
+    "highlights": [
+      "Zero-ops control plane connecting workers via a single API key",
+      "Built-in time-travel debugging and step-level checkpoint forking",
+      "Worker heartbeat telemetry with automatic lease recovery (locked_until)"
+    ],
+    "metrics": [
+      { "label": "Queue Engine", "value": "FOR UPDATE SKIP LOCKED" },
+      { "label": "Security", "value": "AES-256-GCM E2EE" },
+      { "label": "Architecture", "value": "FastAPI + Python SDK" },
+      { "label": "Observability", "value": "Next.js 14 Dashboard" }
+    ],
+    "stack": ["Python", "FastAPI", "PostgreSQL", "Cloudflare R2", "Next.js 14", "Web Crypto API", "Docker", "Pydantic"],
+    "repoUrl": "https://github.com/jarifulovi/apex-flow",
+    "liveUrl": "",
+    "status": "Deployed Engine",
+    "year": "2026",
+    "period": "2026",
+    "featured": true,
+    "image": ""
+  },
+  {
+    "title": "InboxOrchestrator AI",
+    "tagline": "Autonomous Email Workflow & Semantic Intelligence Platform",
+    "description": "An autonomous email workflow and semantic intelligence platform that ingests real-time email communication, extracts deterministic tasks, and maintains SLA-aware thread lifecycles.",
+    "summary": "Architected an asynchronous email ingestion engine with self-healing ML recovery, a cost-optimized hybrid AI pipeline, and vector search on Supabase.",
+    "impact": "Reduced LLM token consumption by ~70–80% using local NLP triage and delta summarization, while guaranteeing idempotent task extraction via MD5 action fingerprinting.",
+    "features": [
+      "Autonomous Background Daemons: Gmail REST ingestion + self-healing MLRecoveryOrchestrator daemon",
+      "Cost-Optimized Hybrid AI: Local PyTorch classification + spaCy entity extraction + Gemini delta summaries",
+      "Deterministic Task Deduplication: MD5 action fingerprinting with PostgreSQL ON CONFLICT DO NOTHING",
+      "SLA-Aware State Machine: 5-stage lifecycle (needs_action, awaiting_reply, follow_up, etc.) with automated escalation",
+      "Dynamic Semantic Search: 3-tier similarity threshold schedule using local embeddings in Supabase pgvector",
+      "Feature-Sliced Next.js UI: Modular web client built with Next.js 16, React 19, and Radix UI"
+    ],
+    "highlights": [
+      "Delta Prompt Strategy: Passes only summary delta + new message, avoiding full transcripts",
+      "Google Calendar Sync: One-click export of structured tasks to Google Calendar via OAuth scopes",
+      "Local 384-d vector embeddings generated via all-MiniLM-L6-v2 in Supabase"
+    ],
+    "metrics": [
+      { "label": "LLM Savings", "value": "~70–80% Token Reduction" },
+      { "label": "Vector Store", "value": "Supabase pgvector" },
+      { "label": "Backend", "value": "FastAPI + Workers" },
+      { "label": "Frontend", "value": "Next.js 16 (React 19)" }
+    ],
+    "stack": ["Python", "FastAPI", "Supabase", "pgvector", "PyTorch", "spaCy", "Gemini API", "Next.js 16", "Tailwind CSS"],
+    "repoUrl": "https://github.com/jarifulovi/inbox-orchestrator-ai",
+    "liveUrl": "",
+    "status": "Deployed Platform",
+    "year": "2026",
+    "period": "2026",
+    "featured": true,
+    "image": ""
+  },
+  {
     "title": "Garments Inventory System (FabricFlow)",
     "description": "Production-grade backend system for enterprise garments inventory, order management, and granular role-based access control.",
     "impact": "Engineered session-based authentication with Redis, raw SQL query optimizations, full Dockerization, and comprehensive Jest test coverage.",
@@ -22,38 +90,11 @@
     "stack": ["Express.js", "PostgreSQL", "Redis", "Docker", "Jest", "Node.js"],
     "repoUrl": "https://github.com/jarifulovi/FabricFlow",
     "liveUrl": "",
-    "status": "Featured Backend",
+    "status": "Backend System",
     "year": "2026",
     "period": "Apr 2026",
-    "featured": true
-  },
-  {
-    "title": "Study Sync",
-    "description": "Real-time collaborative study platform featuring low-latency group messaging, multi-user presence, and scalable cloud file delivery.",
-    "impact": "Architected low-latency event pipelines using Socket.io and integrated AWS S3 for secure, scalable academic material distribution.",
-    "summary": "Collaborative hub designed to synchronize multiple study groups simultaneously with real-time events and distributed media storage.",
-    "features": [
-      "Bidirectional Socket.io messaging with live typing and presence",
-      "Direct S3-backed file uploading and asset delivery",
-      "Automated event notification workflows across active rooms",
-      "Structured REST API endpoints for user profiles and course materials"
-    ],
-    "highlights": [
-      "Event-driven architecture maintaining active WebSocket connections",
-      "Decoupled media storage offloading server bandwidth to AWS S3",
-      "Responsive React client integrated with resilient Express backend"
-    ],
-    "metrics": [
-      { "label": "Latency", "value": "Real-Time Events" },
-      { "label": "Cloud Asset", "value": "AWS S3" }
-    ],
-    "stack": ["Node.js", "Express.js", "Socket.io", "AWS S3", "MongoDB", "React"],
-    "repoUrl": "https://github.com/jarifulovi/Study-Sync",
-    "liveUrl": "",
-    "status": "Featured Full-Stack",
-    "year": "2025",
-    "period": "Jan 2025 - Mar 2025",
-    "featured": true
+    "featured": false,
+    "image": ""
   },
   {
     "title": "CodeBlog API",
@@ -79,7 +120,8 @@
     "status": "API Engine",
     "year": "2026",
     "period": "Jan 2026",
-    "featured": false
+    "featured": false,
+    "image": ""
   },
   {
     "title": "MiniChess Engine",
@@ -105,6 +147,7 @@
     "status": "AI / Algorithms",
     "year": "2025",
     "period": "May 2025 - Jun 2025",
-    "featured": false
+    "featured": false,
+    "image": ""
   }
 ]

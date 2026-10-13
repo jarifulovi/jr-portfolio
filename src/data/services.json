@@ -1,58 +1,58 @@
 [
   {
     "id": "backend-api",
-    "title": "Backend API & System Architecture",
-    "tagline": "High-throughput RESTful services & robust server architecture",
-    "description": "Architecting clean, modular, and maintainable server applications with strict data validation, predictable contracts, and secure access control.",
+    "title": "Backend APIs & Application Architecture",
+    "tagline": "Modular RESTful services & type-safe server architectures",
+    "description": "Designing clean, maintainable server applications with structured data validation, predictable contracts, and secure access control.",
     "deliverables": [
-      "RESTful API design and specification with clean contract boundaries",
-      "Authentication & authorization (JWT, session-based auth, RBAC)",
-      "Layered & package-by-feature architectural design (Express, Spring Boot)",
-      "Centralized error handling, input sanitization, and structured logging"
+      "Type-safe RESTful API design using FastAPI and Express.js",
+      "Layered and package-by-feature organization adhering to clean code standards",
+      "Authentication and authorization with JWT tokens and session mechanisms",
+      "Centralized error handling, input sanitization, and structured responses"
     ],
-    "technologies": ["Node.js", "Express.js", "Java", "Spring Boot", "REST APIs"],
-    "badge": "Core Strength"
+    "technologies": ["Python", "FastAPI", "Node.js", "Express.js", "Java", "Spring Boot"],
+    "badge": "Core Focus"
+  },
+  {
+    "id": "workflow-workers",
+    "title": "Background Workers & Resilient Workflows",
+    "tagline": "Asynchronous task execution, state persistence, and queues",
+    "description": "Orchestrating long-running jobs and multi-step workflows outside the HTTP request cycle with fault tolerance and recovery.",
+    "deliverables": [
+      "Decoupling heavy tasks into asynchronous worker daemons",
+      "Step-level checkpointing and memoization for crash resilience",
+      "Database-backed task queues using PostgreSQL concurrency patterns",
+      "Automated retries, exponential backoff, and state machine transitions"
+    ],
+    "technologies": ["FastAPI", "Worker Daemons", "PostgreSQL Queues", "State Machines"],
+    "badge": "Workflows"
   },
   {
     "id": "database-performance",
-    "title": "Database Engineering & Optimization",
-    "tagline": "Efficient schema modeling, raw SQL tuning, and caching",
-    "description": "Engineering relational and document databases with strong consistency, indexing strategies, and caching layers for fast queries.",
+    "title": "Database Modeling, Normalization & Query Tuning",
+    "tagline": "Normalized relational schemas, thoughtful indexing, and raw SQL",
+    "description": "Architecting relational schemas with strong integrity, reducing redundancy through normalization, and optimizing query performance.",
     "deliverables": [
-      "Relational schema design and data modeling in PostgreSQL",
-      "Query optimization, raw SQL execution, and indexing strategies",
-      "Sub-millisecond caching layers using Redis for heavy reads",
-      "Database transactions with ACID guarantees and connection pooling"
+      "Normalized schema design in PostgreSQL minimizing data anomalies",
+      "Purposeful B-Tree indexing on foreign keys and high-frequency query paths",
+      "Writing and optimizing raw SQL queries to eliminate full table scans",
+      "Integration of pgvector for similarity searches and vector embeddings"
     ],
-    "technologies": ["PostgreSQL", "Redis", "MongoDB", "SQL Tuning"],
+    "technologies": ["PostgreSQL", "Supabase", "pgvector", "Raw SQL", "Indexing"],
     "badge": "Data & Performance"
   },
   {
-    "id": "realtime-integrations",
-    "title": "Real-Time Systems & Cloud Storage",
-    "tagline": "Low-latency live sync, event streams, and cloud asset pipelines",
-    "description": "Developing responsive real-time features using WebSockets and integrating cloud services for reliable file handling and notifications.",
+    "id": "fullstack-deployment",
+    "title": "Full-Stack Implementation & Practical Deployment",
+    "tagline": "Connecting APIs to modern frontends with Dockerized deploys",
+    "description": "Bridging backend logic with responsive user interfaces and setting up predictable, reproducible container environments.",
     "deliverables": [
-      "Bidirectional WebSocket & Socket.io event-driven communication",
-      "Live chat, presence indicators, and instant notification pipelines",
-      "Cloud asset uploads and scalable file handling with AWS S3",
-      "Background worker processing and resilient webhook handlers"
+      "Building responsive, component-driven user interfaces in Next.js and React",
+      "Dockerizing multi-service setups for reproducible development and testing",
+      "Managing Linux environments, Git workflows, and cloud deployments",
+      "Feature-sliced modular structuring for clean frontend maintainability"
     ],
-    "technologies": ["Socket.io", "WebSockets", "AWS S3", "Event Streams"],
-    "badge": "Real-Time"
-  },
-  {
-    "id": "testing-devops",
-    "title": "Automated Testing & Containerization",
-    "tagline": "Resilient test suites, performance stress testing, and Docker",
-    "description": "Ensuring backend stability, preventing regressions, and streamlining local and production environments through automation.",
-    "deliverables": [
-      "Automated unit and integration test suites with Jest",
-      "API stress and load testing to pinpoint system bottlenecks",
-      "Docker containerization for reproducible multi-service setups",
-      "Automated mobile and API smoke testing with Appium / WebdriverIO"
-    ],
-    "technologies": ["Docker", "Jest", "Load Testing", "Appium", "Linux"],
-    "badge": "Reliability"
+    "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Docker", "Linux"],
+    "badge": "End-to-End"
   }
 ]

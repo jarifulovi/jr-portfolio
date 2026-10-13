@@ -24,7 +24,13 @@ export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
     : "Sep 2026";
 
   const cgpaValue = profile?.education?.[0]?.cgpa ?? "3.23 / 4.00";
-  const focusAreas = ["Backend Architecture", "REST APIs", "PostgreSQL", "Redis", "Real-Time"];
+  const focusAreas = [
+    "Backend Systems",
+    "FastAPI & APIs",
+    "PostgreSQL",
+    "Durable Workflows",
+    "Full-Stack Delivery"
+  ];
 
   const snapshotItems = [
     {
