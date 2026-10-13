@@ -1,58 +1,122 @@
 [
   {
     "id": "backend-api",
-    "title": "Backend APIs & Application Architecture",
-    "tagline": "Modular RESTful services & type-safe server architectures",
-    "description": "Designing clean, maintainable server applications with structured data validation, predictable contracts, and secure access control.",
-    "deliverables": [
-      "Type-safe RESTful API design using FastAPI and Express.js",
-      "Layered and package-by-feature organization adhering to clean code standards",
-      "Authentication and authorization with JWT tokens and session mechanisms",
-      "Centralized error handling, input sanitization, and structured responses"
+    "index": "01",
+    "accent": "cyan",
+    "title": "Backend APIs & System Architecture",
+    "pitch": "Type-safe, maintainable server applications with structured data validation, strict contracts, and secure access boundaries.",
+    "stack": ["Python", "FastAPI", "Node.js (Express)", "Java (Spring Boot)", "REST APIs"],
+    "useCases": [
+      "High-throughput server-side REST APIs",
+      "Secure multi-role authentication & authorization",
+      "Modular microservices with strict contract boundaries"
     ],
-    "technologies": ["Python", "FastAPI", "Node.js", "Express.js", "Java", "Spring Boot"],
-    "badge": "Core Focus"
+    "relatedWork": [
+      {
+        "name": "ApexFlow Control Plane",
+        "detail": "FastAPI REST Engine & API Key Auth",
+        "url": "https://github.com/jarifulovi/apex-flow"
+      },
+      {
+        "name": "CodeBlog API",
+        "detail": "Spring Boot Layered Architecture & JWT",
+        "url": "https://github.com/jarifulovi/codeblog-api"
+      }
+    ],
+    "whatYouGet": [
+      "Clean modular architecture & separation of concerns",
+      "Type-safe Pydantic request validation & deterministic error handling",
+      "Stateless JWT tokens, session auth, and granular RBAC"
+    ]
   },
   {
     "id": "workflow-workers",
+    "index": "02",
+    "accent": "amber",
     "title": "Background Workers & Resilient Workflows",
-    "tagline": "Asynchronous task execution, state persistence, and queues",
-    "description": "Orchestrating long-running jobs and multi-step workflows outside the HTTP request cycle with fault tolerance and recovery.",
-    "deliverables": [
-      "Decoupling heavy tasks into asynchronous worker daemons",
-      "Step-level checkpointing and memoization for crash resilience",
-      "Database-backed task queues using PostgreSQL concurrency patterns",
-      "Automated retries, exponential backoff, and state machine transitions"
+    "pitch": "Asynchronous job orchestration, distributed worker pipelines, and multi-step state persistence decoupled from HTTP request cycles.",
+    "stack": ["Python Daemons", "PostgreSQL Queues", "State Machines", "Worker Daemons", "Async Queues"],
+    "useCases": [
+      "Long-running asynchronous background processing",
+      "Multi-step workflows requiring crash resilience",
+      "Continuous email ingestion & automated sync daemons"
     ],
-    "technologies": ["FastAPI", "Worker Daemons", "PostgreSQL Queues", "State Machines"],
-    "badge": "Workflows"
+    "relatedWork": [
+      {
+        "name": "ApexFlow Runtime",
+        "detail": "Durable Step Memoization & Queue Engine",
+        "url": "https://github.com/jarifulovi/apex-flow"
+      },
+      {
+        "name": "InboxOrchestrator AI",
+        "detail": "Autonomous Background Ingestion Daemons",
+        "url": "https://github.com/jarifulovi/inbox-orchestrator-ai"
+      }
+    ],
+    "whatYouGet": [
+      "Step-level checkpointing for automatic failure recovery",
+      "High-throughput dequeuing via raw FOR UPDATE SKIP LOCKED",
+      "Automated retry policies, exponential backoff, and state machines"
+    ]
   },
   {
     "id": "database-performance",
-    "title": "Database Modeling, Normalization & Query Tuning",
-    "tagline": "Normalized relational schemas, thoughtful indexing, and raw SQL",
-    "description": "Architecting relational schemas with strong integrity, reducing redundancy through normalization, and optimizing query performance.",
-    "deliverables": [
-      "Normalized schema design in PostgreSQL minimizing data anomalies",
-      "Purposeful B-Tree indexing on foreign keys and high-frequency query paths",
-      "Writing and optimizing raw SQL queries to eliminate full table scans",
-      "Integration of pgvector for similarity searches and vector embeddings"
+    "index": "03",
+    "accent": "emerald",
+    "title": "Database Modeling & Performance Tuning",
+    "pitch": "Thoughtful relational schema architecture with strict normalization, purposeful indexing strategies, and query performance tuning.",
+    "stack": ["PostgreSQL", "Supabase", "pgvector", "Raw SQL", "Schema Indexing"],
+    "useCases": [
+      "Normalized relational schemas with strict data integrity",
+      "Vector embedding similarity search for AI workflows",
+      "High-load query optimization eliminating full-table scans"
     ],
-    "technologies": ["PostgreSQL", "Supabase", "pgvector", "Raw SQL", "Indexing"],
-    "badge": "Data & Performance"
+    "relatedWork": [
+      {
+        "name": "FabricFlow",
+        "detail": "Raw SQL Performance & Redis Session Cache",
+        "url": "https://github.com/jarifulovi/FabricFlow"
+      },
+      {
+        "name": "InboxOrchestrator AI",
+        "detail": "Supabase pgvector Embeddings & Deduplication",
+        "url": "https://github.com/jarifulovi/inbox-orchestrator-ai"
+      }
+    ],
+    "whatYouGet": [
+      "Normalized schema design (1NF/2NF/3NF) preventing redundancy",
+      "Purposeful B-Tree indexes on foreign keys & filter columns",
+      "ACID compliance, transaction safety, and sub-millisecond lookups"
+    ]
   },
   {
     "id": "fullstack-deployment",
+    "index": "04",
+    "accent": "sky",
     "title": "Full-Stack Implementation & Practical Deployment",
-    "tagline": "Connecting APIs to modern frontends with Dockerized deploys",
-    "description": "Bridging backend logic with responsive user interfaces and setting up predictable, reproducible container environments.",
-    "deliverables": [
-      "Building responsive, component-driven user interfaces in Next.js and React",
-      "Dockerizing multi-service setups for reproducible development and testing",
-      "Managing Linux environments, Git workflows, and cloud deployments",
-      "Feature-sliced modular structuring for clean frontend maintainability"
+    "pitch": "Bridging backend logic with responsive frontends, reproducible container environments, and practical Linux deployments.",
+    "stack": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Docker", "Linux"],
+    "useCases": [
+      "Complete end-to-end web applications & developer portals",
+      "Real-time dashboards for workflow observability",
+      "Multi-container local development & deployment workflows"
     ],
-    "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Docker", "Linux"],
-    "badge": "End-to-End"
+    "relatedWork": [
+      {
+        "name": "ApexFlow Dashboard",
+        "detail": "Next.js 14 Observability & Web Crypto E2EE",
+        "url": "https://github.com/jarifulovi/apex-flow"
+      },
+      {
+        "name": "InboxOrchestrator Frontend",
+        "detail": "Next.js 16 (React 19) Feature-Sliced Web Client",
+        "url": "https://github.com/jarifulovi/inbox-orchestrator-ai"
+      }
+    ],
+    "whatYouGet": [
+      "Feature-sliced modular components with clean domain boundaries",
+      "Repeatable Docker multi-service environments",
+      "Responsive, mobile-optimized UI with modern styling"
+    ]
   }
 ]
