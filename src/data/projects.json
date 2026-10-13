@@ -1,102 +1,110 @@
 [
   {
-    "title": "Study Sync",
-    "description": "MERN-based group study application with real-time chat, file sharing, and notifications.",
-    "impact": "Integrated AWS S3 for file storage and Socket.io for live messaging.",
-    "summary": "Built a collaborative study hub with real-time collaboration and scalable file delivery.",
+    "title": "Garments Inventory System (FabricFlow)",
+    "description": "Production-grade backend system for enterprise garments inventory, order management, and granular role-based access control.",
+    "impact": "Engineered session-based authentication with Redis, raw SQL query optimizations, full Dockerization, and comprehensive Jest test coverage.",
+    "summary": "Operational backend engineered for reliable inventory tracking, bulk order pipelines, and multi-tier user permissions.",
     "features": [
-      "Live chat + presence updates",
-      "S3-backed file sharing",
-      "Notification workflows"
+      "Granular role-based access control (RBAC)",
+      "High-throughput Redis-backed session management",
+      "Raw SQL performance tuning for complex inventory aggregates",
+      "Comprehensive Jest test suites covering critical API endpoints"
     ],
     "highlights": [
-      "Socket.io events for instant sync",
-      "Clean REST API structure"
+      "Dockerized container setup for reproducible environments",
+      "Sub-millisecond session validation via Redis cache",
+      "Strict relational integrity across order and garment entities"
     ],
     "metrics": [
-      { "label": "Stack", "value": "MERN" },
-      { "label": "Focus", "value": "Realtime" }
+      { "label": "Architecture", "value": "Layered REST" },
+      { "label": "Storage", "value": "PostgreSQL + Redis" }
     ],
-    "stack": ["MongoDB", "Express.js", "React", "Node.js", "AWS S3", "Socket.io"],
-    "repoUrl": "https://github.com/jarifulovi/Study-Sync",
-    "liveUrl": "",
-    "status": "Academic",
-    "year": "2025",
-    "period": "Jan 2025 - Mar 2025"
-  },
-  {
-    "title": "MiniChess",
-    "description": "A 5x6 MiniChess engine featuring alpha-beta pruning, move ordering, and quiescence search.",
-    "impact": "Implemented transposition tables for faster decision-making and efficient evaluation.",
-    "summary": "Designed an AI engine optimized for tactical depth and fast evaluation.",
-    "features": [
-      "Alpha-beta pruning core",
-      "Move ordering heuristics",
-      "Quiescence search"
-    ],
-    "highlights": [
-      "Transposition tables for speed",
-      "Compact board evaluation"
-    ],
-    "metrics": [
-      { "label": "Engine", "value": "Minimax" },
-      { "label": "Focus", "value": "AI" }
-    ],
-    "stack": ["Python"],
-    "repoUrl": "https://github.com/Jihad011/Mini_Chess_AI_Lab",
-    "liveUrl": "",
-    "status": "Academic",
-    "year": "2025",
-    "period": "May 2025 - Jun 2025"
-  },
-  {
-    "title": "Garments Inventory System",
-    "description": "Backend system for inventory, orders, product management, and role-based access.",
-    "impact": "Session-based auth with Redis, raw SQL optimization, Dockerized, and Jest-tested APIs.",
-    "summary": "Operational backend for inventory and order workflows with secure access control.",
-    "features": [
-      "Role-based access control",
-      "Redis-backed sessions",
-      "Raw SQL performance tuning"
-    ],
-    "highlights": [
-      "Dockerized for repeatable deploys",
-      "Jest tests for core APIs"
-    ],
-    "metrics": [
-      { "label": "Auth", "value": "Session" },
-      { "label": "DB", "value": "SQL" }
-    ],
-    "stack": ["Express.js", "PostgreSQL", "Redis", "Docker", "Jest"],
+    "stack": ["Express.js", "PostgreSQL", "Redis", "Docker", "Jest", "Node.js"],
     "repoUrl": "https://github.com/jarifulovi/FabricFlow",
     "liveUrl": "",
-    "status": "Personal",
+    "status": "Featured Backend",
     "year": "2026",
-    "period": "Apr 2026"
+    "period": "Apr 2026",
+    "featured": true
+  },
+  {
+    "title": "Study Sync",
+    "description": "Real-time collaborative study platform featuring low-latency group messaging, multi-user presence, and scalable cloud file delivery.",
+    "impact": "Architected low-latency event pipelines using Socket.io and integrated AWS S3 for secure, scalable academic material distribution.",
+    "summary": "Collaborative hub designed to synchronize multiple study groups simultaneously with real-time events and distributed media storage.",
+    "features": [
+      "Bidirectional Socket.io messaging with live typing and presence",
+      "Direct S3-backed file uploading and asset delivery",
+      "Automated event notification workflows across active rooms",
+      "Structured REST API endpoints for user profiles and course materials"
+    ],
+    "highlights": [
+      "Event-driven architecture maintaining active WebSocket connections",
+      "Decoupled media storage offloading server bandwidth to AWS S3",
+      "Responsive React client integrated with resilient Express backend"
+    ],
+    "metrics": [
+      { "label": "Latency", "value": "Real-Time Events" },
+      { "label": "Cloud Asset", "value": "AWS S3" }
+    ],
+    "stack": ["Node.js", "Express.js", "Socket.io", "AWS S3", "MongoDB", "React"],
+    "repoUrl": "https://github.com/jarifulovi/Study-Sync",
+    "liveUrl": "",
+    "status": "Featured Full-Stack",
+    "year": "2025",
+    "period": "Jan 2025 - Mar 2025",
+    "featured": true
   },
   {
     "title": "CodeBlog API",
-    "description": "RESTful blogging API with authentication, posts, and comments management.",
-    "impact": "Package-by-feature structure with layered services and secure controllers.",
-    "summary": "Modular API with clean separation of auth, posts, and comments.",
+    "description": "Modular RESTful blogging engine built with Spring Boot, featuring layered architecture, JWT authentication, and relational data persistence.",
+    "impact": "Implemented clean package-by-feature structure with decoupled services, secure controllers, and transactional database integrity.",
+    "summary": "Modular API with strict separation of authentication, publication workflows, and community comments.",
     "features": [
-      "JWT-based authentication",
-      "Posts + comments workflows",
-      "Layered service design"
+      "Stateless JWT-based authentication and route authorization",
+      "Comprehensive CRUD workflows for articles and threaded comments",
+      "Layered domain service design adhering to SOLID principles"
     ],
     "highlights": [
-      "Package-by-feature structure",
-      "Consistent API contracts"
+      "Package-by-feature organization for modular scalability",
+      "Structured error response contracts and input validation"
     ],
     "metrics": [
-      { "label": "Auth", "value": "JWT" },
-      { "label": "Focus", "value": "API" }
+      { "label": "Auth", "value": "JWT Tokens" },
+      { "label": "Framework", "value": "Spring Boot" }
     ],
-    "stack": ["Java", "Spring Boot", "PostgreSQL"],
+    "stack": ["Java", "Spring Boot", "PostgreSQL", "JWT"],
     "repoUrl": "https://github.com/jarifulovi/codeblog-api",
     "liveUrl": "",
-    "status": "Personal",
+    "status": "API Engine",
     "year": "2026",
-    "period": "Jan 2026"
+    "period": "Jan 2026",
+    "featured": false
+  },
+  {
+    "title": "MiniChess Engine",
+    "description": "Optimized 5x6 MiniChess AI engine featuring alpha-beta pruning, dynamic move ordering heuristics, and quiescence tactical search.",
+    "impact": "Implemented transposition table caching for rapid state evaluation and pruning suboptimal game tree branches.",
+    "summary": "Tactical chess engine engineered with minimax optimizations and compact board state evaluations.",
+    "features": [
+      "Alpha-beta pruning core algorithm",
+      "Heuristic move ordering to maximize cutoff efficiency",
+      "Quiescence search preventing the horizon effect"
+    ],
+    "highlights": [
+      "Transposition tables with Zobrist hashing concepts",
+      "Optimized evaluation function weighing mobility and piece values"
+    ],
+    "metrics": [
+      { "label": "Algorithm", "value": "Alpha-Beta" },
+      { "label": "Domain", "value": "Game AI" }
+    ],
+    "stack": ["Python", "Algorithms", "AI"],
+    "repoUrl": "https://github.com/Jihad011/Mini_Chess_AI_Lab",
+    "liveUrl": "",
+    "status": "AI / Algorithms",
+    "year": "2025",
+    "period": "May 2025 - Jun 2025",
+    "featured": false
   }
 ]

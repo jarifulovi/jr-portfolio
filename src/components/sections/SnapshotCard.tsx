@@ -1,54 +1,31 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 import { Badge } from "../ui/Badge";
 
 interface SnapshotCardProps {
-  profile: any;
+  profile: {
+    location?: string;
+    email?: string;
+    education?: {
+      graduation?: string;
+      institution?: string;
+      degree?: string;
+      cgpa?: string;
+    }[];
+    heroStats?: { label: string; value: string }[];
+  };
 }
 
 export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
-  const [borderClass, setBorderClass] = useState("border-white/10");
-  const [shadowClass, setShadowClass] = useState("");
-  const [scaleClass, setScaleClass] = useState("");
-
-
-  function handleMouseEnter() {
-    setBorderClass("border-white/40");
-    setShadowClass("shadow-2xl");
-    setScaleClass("scale-105");
-  }
-
-  function handleMouseLeave() {
-    setBorderClass("border-white/10");
-    setShadowClass("");
-    setScaleClass("");
-  }
-
   const graduationValueRaw = profile?.education?.[0]?.graduation ?? "Sep 2026";
-  let graduationValue = typeof graduationValueRaw === "string"
+  const graduationValue = typeof graduationValueRaw === "string"
     ? graduationValueRaw.replace("Expected ", "")
     : "Sep 2026";
 
-  // Add (expected) if graduation is in the future
-  const gradYearMatch = graduationValue.match(/(\d{4})/);
-  const gradYear = gradYearMatch ? parseInt(gradYearMatch[1], 10) : null;
-  const gradMonthMatch = graduationValue.match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/i);
-  const gradMonth = gradMonthMatch ? gradMonthMatch[1] : null;
-  const now = new Date();
-  let isFuture = false;
-  if (gradYear) {
-    const monthIndex = gradMonth ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].findIndex(m => m.toLowerCase() === gradMonth.toLowerCase()) : 0;
-    const gradDate = new Date(gradYear, monthIndex, 1);
-    isFuture = gradDate > now;
-  }
-  if (isFuture) graduationValue += " (expected)";
+  const cgpaValue = profile?.education?.[0]?.cgpa ?? "3.23 / 4.00";
+  const focusAreas = ["Backend Architecture", "REST APIs", "PostgreSQL", "Redis", "Real-Time"];
 
-  const projectsValue = profile?.heroStats?.find(
-    (stat: { label: string }) => stat.label === "Projects"
-  )?.value ?? "4+";
-
-  const focusAreas = ["Backend", "APIs", "Databases"];
   const snapshotItems = [
     {
       label: "Location",
@@ -56,144 +33,123 @@ export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
       icon: <LocationIcon />,
     },
     {
-      label: "Email",
-      value: profile?.email ?? "bsse1419@iit.du.ac.bd",
-      icon: <EmailIcon />,
+      label: "Specialization",
+      value: "Software Engineering (Backend)",
+      icon: <FocusIcon />,
     },
     {
-      label: "Graduation",
-      value: graduationValue,
+      label: "Education",
+      value: "University of Dhaka (IIT)",
+      subValue: `BSSE · CGPA ${cgpaValue}`,
       icon: <GraduationIcon />,
     },
     {
-      label: "Projects",
-      value: projectsValue,
-      icon: <ProjectsIcon />,
+      label: "Graduation",
+      value: `${graduationValue} (Expected)`,
+      icon: <CalendarIcon />,
     },
     {
-      label: "Focus",
-      value: null, // will render badges inline below
-      icon: <FocusIcon />,
+      label: "Direct Email",
+      value: profile?.email ?? "bsse1419@iit.du.ac.bd",
+      isEmail: true,
+      icon: <EmailIcon />,
     },
   ];
 
-
   return (
     <motion.div
-      className={`rounded-3xl border ${borderClass} bg-white/5 p-8 shadow-[0_30px_70px_-50px_rgba(0,0,0,0.6)] backdrop-blur will-change-transform transition-all duration-300 ${shadowClass} ${scaleClass}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+      className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-7 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-300 hover:border-cyan-500/30 hover:shadow-cyan-500/10 hover:shadow-2xl"
     >
-      <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-zinc-200">
-        Snapshot
-      </h2>
-      <div className="mt-6 grid gap-4 text-sm text-zinc-200">
-        {snapshotItems.map((item) => (
-          <div key={item.label} className="flex items-start gap-3">
-            <span className="mt-0.5 text-zinc-400">{item.icon}</span>
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
-                {item.label}
-              </p>
-              {item.label === "Focus" ? (
-                <div className="flex flex-wrap gap-2 py-2">
-                  {focusAreas.map((area) => (
-                    <Badge key={area} label={area} />
-                  ))}
-                </div>
-              ) : (
-                <p className="text-base font-semibold text-white">
-                  {item.value}
+      <div>
+        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-zinc-300">
+            Quick Snapshot
+          </h2>
+          <span className="h-2 w-2 rounded-full bg-cyan-400" />
+        </div>
+
+        <div className="mt-5 space-y-4">
+          {snapshotItems.map((item) => (
+            <div key={item.label} className="flex items-start gap-3.5">
+              <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-300 group-hover:border-white/20 group-hover:text-cyan-300 transition-colors">
+                {item.icon}
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+                  {item.label}
                 </p>
-              )}
+                {item.isEmail ? (
+                  <a
+                    href={`mailto:${item.value}`}
+                    className="truncate block text-sm font-semibold text-white transition-colors hover:text-cyan-300"
+                  >
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="text-sm font-semibold text-white truncate">
+                    {item.value}
+                  </p>
+                )}
+                {item.subValue && (
+                  <p className="text-xs text-zinc-400 mt-0.5">{item.subValue}</p>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      {/* Focus Areas Badges */}
+      <div className="mt-6 border-t border-white/10 pt-4">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400 mb-2">
+          Core Domains
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+          {focusAreas.map((area) => (
+            <Badge key={area} label={area} variant="default" className="text-[11px]" />
+          ))}
+        </div>
       </div>
     </motion.div>
   );
-}
-
-const iconClassName = "h-4 w-4";
+};
 
 const LocationIcon = () => (
-  <svg
-    className={iconClassName}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.6"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
+  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
     <path d="M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z" />
     <circle cx="12" cy="10" r="2.6" />
   </svg>
 );
 
 const EmailIcon = () => (
-  <svg
-    className={iconClassName}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.6"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
+  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
     <rect x="3" y="6" width="18" height="12" rx="2" />
     <path d="m3 7 9 6 9-6" />
   </svg>
 );
 
 const GraduationIcon = () => (
-  <svg
-    className={iconClassName}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.6"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
+  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
     <path d="m4 10 8-4 8 4-8 4-8-4z" />
     <path d="m8 12 4 2 4-2" />
     <path d="M6 12v4" />
   </svg>
 );
 
-const ProjectsIcon = () => (
-  <svg
-    className={iconClassName}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.6"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <rect x="4" y="5" width="16" height="14" rx="2" />
-    <path d="M4 9h16" />
-    <path d="M8 3v4" />
-    <path d="M16 3v4" />
+const CalendarIcon = () => (
+  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+    <line x1="16" y1="2" x2="16" y2="6" />
+    <line x1="8" y1="2" x2="8" y2="6" />
+    <line x1="3" y1="10" x2="21" y2="10" />
   </svg>
 );
 
 const FocusIcon = () => (
-  <svg
-    className={iconClassName}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.6"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
+  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
     <circle cx="12" cy="12" r="8" />
     <path d="M12 8v4l3 3" />
   </svg>

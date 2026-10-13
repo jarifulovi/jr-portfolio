@@ -1,0 +1,58 @@
+[
+  {
+    "id": "backend-api",
+    "title": "Backend API & System Architecture",
+    "tagline": "High-throughput RESTful services & robust server architecture",
+    "description": "Architecting clean, modular, and maintainable server applications with strict data validation, predictable contracts, and secure access control.",
+    "deliverables": [
+      "RESTful API design and specification with clean contract boundaries",
+      "Authentication & authorization (JWT, session-based auth, RBAC)",
+      "Layered & package-by-feature architectural design (Express, Spring Boot)",
+      "Centralized error handling, input sanitization, and structured logging"
+    ],
+    "technologies": ["Node.js", "Express.js", "Java", "Spring Boot", "REST APIs"],
+    "badge": "Core Strength"
+  },
+  {
+    "id": "database-performance",
+    "title": "Database Engineering & Optimization",
+    "tagline": "Efficient schema modeling, raw SQL tuning, and caching",
+    "description": "Engineering relational and document databases with strong consistency, indexing strategies, and caching layers for fast queries.",
+    "deliverables": [
+      "Relational schema design and data modeling in PostgreSQL",
+      "Query optimization, raw SQL execution, and indexing strategies",
+      "Sub-millisecond caching layers using Redis for heavy reads",
+      "Database transactions with ACID guarantees and connection pooling"
+    ],
+    "technologies": ["PostgreSQL", "Redis", "MongoDB", "SQL Tuning"],
+    "badge": "Data & Performance"
+  },
+  {
+    "id": "realtime-integrations",
+    "title": "Real-Time Systems & Cloud Storage",
+    "tagline": "Low-latency live sync, event streams, and cloud asset pipelines",
+    "description": "Developing responsive real-time features using WebSockets and integrating cloud services for reliable file handling and notifications.",
+    "deliverables": [
+      "Bidirectional WebSocket & Socket.io event-driven communication",
+      "Live chat, presence indicators, and instant notification pipelines",
+      "Cloud asset uploads and scalable file handling with AWS S3",
+      "Background worker processing and resilient webhook handlers"
+    ],
+    "technologies": ["Socket.io", "WebSockets", "AWS S3", "Event Streams"],
+    "badge": "Real-Time"
+  },
+  {
+    "id": "testing-devops",
+    "title": "Automated Testing & Containerization",
+    "tagline": "Resilient test suites, performance stress testing, and Docker",
+    "description": "Ensuring backend stability, preventing regressions, and streamlining local and production environments through automation.",
+    "deliverables": [
+      "Automated unit and integration test suites with Jest",
+      "API stress and load testing to pinpoint system bottlenecks",
+      "Docker containerization for reproducible multi-service setups",
+      "Automated mobile and API smoke testing with Appium / WebdriverIO"
+    ],
+    "technologies": ["Docker", "Jest", "Load Testing", "Appium", "Linux"],
+    "badge": "Reliability"
+  }
+]
