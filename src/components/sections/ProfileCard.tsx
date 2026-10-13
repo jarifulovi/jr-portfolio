@@ -73,12 +73,13 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, links }) => {
         <span>{profile.availability || "Open to Backend Roles & Internships"}</span>
       </div>
 
-      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-400">
+      {/* Main Role with Seamless Glyph-Clipped Shimmer */}
+      <p className="text-shimmer text-sm sm:text-base font-black uppercase tracking-[0.25em] drop-shadow-[0_0_12px_rgba(6,182,212,0.35)]">
         {profile.role}
       </p>
 
       {/* Dynamic Name with Gradient on Last Name */}
-      <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+      <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
         {firstName}{" "}
         <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400 bg-clip-text text-transparent">
           {lastName}
@@ -87,10 +88,6 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, links }) => {
 
       <p className="mt-4 max-w-2xl text-lg font-medium leading-relaxed text-zinc-200">
         {profile.headline}
-      </p>
-
-      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400">
-        {profile.summary}
       </p>
 
       {/* Action Buttons */}
