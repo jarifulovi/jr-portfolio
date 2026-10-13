@@ -90,7 +90,16 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, links }) => (
         </svg>
         Get in Touch
       </Button>
-      <Button as="a" href="#services" variant="ghost">
+      <Button
+        as="a"
+        href="#services"
+        variant="ghost"
+        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+          e.preventDefault();
+          document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", "#services");
+        }}
+      >
         Explore Services ↓
       </Button>
     </div>

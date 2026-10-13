@@ -22,6 +22,7 @@ export default function Home() {
       <Navbar
         brand={profile.name}
         links={[
+          { label: "Home", href: "#home" },
           { label: "About", href: "#about" },
           { label: "Services", href: "#services" },
           { label: "Projects", href: "#projects" },
@@ -31,7 +32,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+      <section id="home" className="scroll-mt-20 mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
           <ProfileCard profile={profile} links={links} />
           <SnapshotCard profile={profile} />

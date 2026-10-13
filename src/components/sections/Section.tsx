@@ -17,7 +17,7 @@ export const Section: React.FC<SectionProps> = ({
   children,
   className = "",
 }) => (
-  <section id={id} className={`py-14 ${className}`}>
+  <section id={id} className={`scroll-mt-20 py-14 ${className}`}>
     {(eyebrow || title || description) && (
       <div className="mb-8">
         {eyebrow && (
