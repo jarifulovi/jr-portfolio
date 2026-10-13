@@ -92,29 +92,29 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ about }) => {
             <motion.div
               key={step.id}
               variants={itemVariants}
-              className="group relative flex items-start gap-5 sm:gap-7"
+              className="group relative flex items-start gap-5 sm:gap-7 rounded-2xl p-2 -ml-2 transition-all duration-300 hover:bg-white/[0.02]"
             >
               {/* Luminous Connecting Node */}
-              <div className="relative z-10 flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-500/30 bg-zinc-950 shadow-[0_0_15px_rgba(6,182,212,0.25)] transition-all duration-300 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.45)]">
+              <div className="relative z-10 flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-500/30 bg-zinc-950 shadow-[0_0_15px_rgba(6,182,212,0.25)] transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-400 group-hover:shadow-[0_0_22px_rgba(6,182,212,0.5)]">
                 {getStepIcon(step.id)}
               </div>
 
               {/* Editorial Text Content */}
               <div className="min-w-0 flex-1 pt-0.5">
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">
+                  <span className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400 transition-colors duration-300 group-hover:text-cyan-300">
                     {step.label}
                   </span>
-                  <span className="text-[10px] font-mono font-semibold text-zinc-400">
+                  <span className="text-[10px] font-mono font-semibold text-zinc-500 transition-colors duration-300 group-hover:text-cyan-400/80">
                     0{index + 1}
                   </span>
                 </div>
 
-                <h3 className="mt-2 text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-cyan-100 transition-colors">
+                <h3 className="mt-2 text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors duration-300 ease-out group-hover:text-cyan-400">
                   {step.title}
                 </h3>
 
-                <p className="mt-3 text-base sm:text-lg leading-relaxed text-zinc-300 font-normal">
+                <p className="mt-3 text-base sm:text-lg leading-relaxed text-zinc-300 font-normal transition-colors duration-300 group-hover:text-zinc-200">
                   {step.description}
                 </p>
               </div>
