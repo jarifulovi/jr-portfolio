@@ -23,7 +23,6 @@ export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
     ? graduationValueRaw.replace("Expected ", "")
     : "Sep 2026";
 
-  const cgpaValue = profile?.education?.[0]?.cgpa ?? "3.23 / 4.00";
   const focusAreas = [
     "Backend Systems",
     "FastAPI & APIs",
@@ -46,7 +45,7 @@ export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
     {
       label: "Education",
       value: "University of Dhaka (IIT)",
-      subValue: `BSSE · CGPA ${cgpaValue}`,
+      subValue: "BSSE · Software Engineering",
       icon: <GraduationIcon />,
     },
     {

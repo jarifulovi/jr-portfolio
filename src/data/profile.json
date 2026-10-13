@@ -14,8 +14,8 @@
       "value": "DU (IIT)"
     },
     {
-      "label": "CGPA",
-      "value": "3.23 / 4.00"
+      "label": "Degree",
+      "value": "BSSE"
     },
     {
       "label": "Graduation",
@@ -23,24 +23,41 @@
     }
   ],
   "about": {
-    "title": "Engineering with discipline, building end-to-end.",
-    "paragraphs": [
-      "I am an undergraduate software engineering student at the University of Dhaka (Institute of Information Technology) with a strong foundation in computer science and systems design. My focus lies primarily in the backend—architecting modular APIs, designing normalized database schemas, and building resilient background workflow systems.",
-      "Beyond pure backend logic, I enjoy operating as an end-to-end builder. I regularly build complete full-stack applications from scratch—handling everything from database design and containerization with Docker to crafting responsive frontends in Next.js. My recent projects, ApexFlow and InboxOrchestrator AI, reflect this approach: solving real architectural challenges like durable multi-step execution and high-efficiency background email processing.",
-      "During my internship at Tekarsh Bangladesh Ltd, I worked on automation testing, API performance validation, and web feature delivery. I believe in writing readable, maintainable code guided by SOLID principles rather than hasty patches that create technical debt."
-    ],
-    "highlights": [
+    "sectionEyebrow": "About Me",
+    "sectionTitle": "Engineering with Discipline, Building End-to-End",
+    "sectionDescription": "A deeper look at my academic background, technical philosophy, core strengths, and future trajectory.",
+    "blocks": [
       {
-        "label": "CS Fundamentals",
-        "description": "Rigorous software engineering curriculum at University of Dhaka (IIT), maintaining a 3.23 CGPA."
+        "id": "who-i-am",
+        "category": "Background",
+        "title": "Who I Am",
+        "subtitle": "CS Foundations & Practical Builder",
+        "description": "Software Engineering undergraduate at the University of Dhaka (IIT) with hands-on industry internship experience at Tekarsh Bangladesh Ltd. While my passion lies in backend systems, I actively build end-to-end projects—translating complex requirements into fully deployed, functional applications.",
+        "pills": ["University of Dhaka (IIT)", "BSSE Student", "Tekarsh Intern Alum", "Solo Product Builder"]
       },
       {
-        "label": "End-to-End Execution",
-        "description": "Comfortable building from PostgreSQL schemas to Next.js interfaces and Dockerized deployments."
+        "id": "how-i-approach",
+        "category": "Philosophy",
+        "title": "How I Approach Engineering",
+        "subtitle": "Disciplined Craft Over Quick Hacks",
+        "description": "Code is read far more often than it is written. I design with clean architecture and SOLID principles, plan normalized schemas and purposeful indexes before writing code, write test suites, and architect for fault recovery rather than patching symptoms.",
+        "pills": ["Clean Architecture", "SOLID Principles", "Schema Indexing", "Test-Driven Reliability"]
       },
       {
-        "label": "Clean Architecture",
-        "description": "Committed to modular structure, strict error handling, and maintainable software patterns."
+        "id": "what-i-excel-at",
+        "category": "Core Strengths",
+        "title": "What I Excel At",
+        "subtitle": "Backend Systems & Resilient Workflows",
+        "description": "Designing high-performance, type-safe REST APIs with FastAPI and Node.js; engineering asynchronous worker daemons and durable multi-step workflows; managing relational data with PostgreSQL; and packaging services with Docker.",
+        "pills": ["FastAPI & REST APIs", "PostgreSQL & pgvector", "Durable Workflows", "Docker & Linux"]
+      },
+      {
+        "id": "where-im-headed",
+        "category": "Future Vision",
+        "title": "Where I'm Headed",
+        "subtitle": "Distributed Systems & Scalable Products",
+        "description": "Continuously exploring distributed workflow runtimes, event-driven architectures, and scalable micro-SaaS systems. Looking to join engineering teams or collaborate on impactful backend challenges where disciplined craft and coachability matter.",
+        "pills": ["Distributed Systems", "Event-Driven Queues", "Junior Backend Roles", "Micro-SaaS Engineering"]
       }
     ]
   },
@@ -48,7 +65,6 @@
     {
       "institution": "University of Dhaka - Institute of Information Technology",
       "degree": "Bachelor of Science in Software Engineering",
-      "cgpa": "3.23 / 4.00",
       "graduation": "Expected Sep 2026"
     }
   ]
