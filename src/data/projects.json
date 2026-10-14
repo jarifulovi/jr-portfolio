@@ -19,19 +19,40 @@
       "Worker heartbeat telemetry with automatic lease recovery (locked_until)"
     ],
     "metrics": [
-      { "label": "Queue Engine", "value": "FOR UPDATE SKIP LOCKED" },
-      { "label": "Security", "value": "AES-256-GCM E2EE" },
-      { "label": "Architecture", "value": "FastAPI + Python SDK" },
-      { "label": "Observability", "value": "Next.js 14 Dashboard" }
+      {
+        "label": "Queue Engine",
+        "value": "FOR UPDATE SKIP LOCKED"
+      },
+      {
+        "label": "Security",
+        "value": "AES-256-GCM E2EE"
+      },
+      {
+        "label": "Architecture",
+        "value": "FastAPI + Python SDK"
+      },
+      {
+        "label": "Observability",
+        "value": "Next.js 14 Dashboard"
+      }
     ],
-    "stack": ["Python", "FastAPI", "PostgreSQL", "Cloudflare R2", "Next.js 14", "Web Crypto API", "Docker", "Pydantic"],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Cloudflare R2",
+      "Next.js 14",
+      "Web Crypto API",
+      "Docker",
+      "Pydantic"
+    ],
     "repoUrl": "https://github.com/jarifulovi/apex-flow",
-    "liveUrl": "",
+    "liveUrl": "https://apex-flow-theta.vercel.app/",
     "status": "Deployed Engine",
     "year": "2026",
     "period": "2026",
     "featured": true,
-    "image": ""
+    "image": "/screenshots/apex-flow-steps-page.png"
   },
   {
     "title": "InboxOrchestrator AI",
@@ -53,19 +74,41 @@
       "Local 384-d vector embeddings generated via all-MiniLM-L6-v2 in Supabase"
     ],
     "metrics": [
-      { "label": "LLM Savings", "value": "~70–80% Token Reduction" },
-      { "label": "Vector Store", "value": "Supabase pgvector" },
-      { "label": "Backend", "value": "FastAPI + Workers" },
-      { "label": "Frontend", "value": "Next.js 16 (React 19)" }
+      {
+        "label": "LLM Savings",
+        "value": "~70–80% Token Reduction"
+      },
+      {
+        "label": "Vector Store",
+        "value": "Supabase pgvector"
+      },
+      {
+        "label": "Backend",
+        "value": "FastAPI + Workers"
+      },
+      {
+        "label": "Frontend",
+        "value": "Next.js 16 (React 19)"
+      }
     ],
-    "stack": ["Python", "FastAPI", "Supabase", "pgvector", "PyTorch", "spaCy", "Gemini API", "Next.js 16", "Tailwind CSS"],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "Supabase",
+      "pgvector",
+      "PyTorch",
+      "spaCy",
+      "Gemini API",
+      "Next.js 16",
+      "Tailwind CSS"
+    ],
     "repoUrl": "https://github.com/jarifulovi/inbox-orchestrator-ai",
-    "liveUrl": "",
+    "liveUrl": "https://inbox-orchestrator-frontend.vercel.app/",
     "status": "Deployed Platform",
     "year": "2026",
     "period": "2026",
     "featured": true,
-    "image": ""
+    "image": "/screenshots/inbox-thread-page.png"
   },
   {
     "title": "Garments Inventory System (FabricFlow)",
@@ -84,10 +127,23 @@
       "Strict relational integrity across order and garment entities"
     ],
     "metrics": [
-      { "label": "Architecture", "value": "Layered REST" },
-      { "label": "Storage", "value": "PostgreSQL + Redis" }
+      {
+        "label": "Architecture",
+        "value": "Layered REST"
+      },
+      {
+        "label": "Storage",
+        "value": "PostgreSQL + Redis"
+      }
     ],
-    "stack": ["Express.js", "PostgreSQL", "Redis", "Docker", "Jest", "Node.js"],
+    "stack": [
+      "Express.js",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Jest",
+      "Node.js"
+    ],
     "repoUrl": "https://github.com/jarifulovi/FabricFlow",
     "liveUrl": "",
     "status": "Backend System",
@@ -111,10 +167,21 @@
       "Structured error response contracts and input validation"
     ],
     "metrics": [
-      { "label": "Auth", "value": "JWT Tokens" },
-      { "label": "Framework", "value": "Spring Boot" }
+      {
+        "label": "Auth",
+        "value": "JWT Tokens"
+      },
+      {
+        "label": "Framework",
+        "value": "Spring Boot"
+      }
     ],
-    "stack": ["Java", "Spring Boot", "PostgreSQL", "JWT"],
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "JWT"
+    ],
     "repoUrl": "https://github.com/jarifulovi/codeblog-api",
     "liveUrl": "",
     "status": "API Engine",
@@ -138,10 +205,20 @@
       "Optimized evaluation function weighing mobility and piece values"
     ],
     "metrics": [
-      { "label": "Algorithm", "value": "Alpha-Beta" },
-      { "label": "Domain", "value": "Game AI" }
+      {
+        "label": "Algorithm",
+        "value": "Alpha-Beta"
+      },
+      {
+        "label": "Domain",
+        "value": "Game AI"
+      }
     ],
-    "stack": ["Python", "Algorithms", "AI"],
+    "stack": [
+      "Python",
+      "Algorithms",
+      "AI"
+    ],
     "repoUrl": "https://github.com/Jihad011/Mini_Chess_AI_Lab",
     "liveUrl": "",
     "status": "AI / Algorithms",

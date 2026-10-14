@@ -1,22 +1,9 @@
 "use client";
+
 import React from "react";
-import { motion, Variants } from "framer-motion";
-import { ProjectCard } from "./ProjectCard";
 import { Section } from "./Section";
-
-const containerVariants: Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
+import { FeaturedProjectSpotlight } from "./FeaturedProjectSpotlight";
+import { ApexFlowStepTimelineWidget, InboxThreadExtractionWidget } from "./ProjectShowcaseWidgets";
 
 interface Project {
   title: string;
@@ -36,9 +23,34 @@ interface Project {
   image?: string;
 }
 
+const APEX_FLOW_CODE = `# apexflow_worker.py — Durable Step Checkpointing
+from apex_flow_sdk import ApexFlowClient, WorkflowContext
+
+client = ApexFlowClient(project_key="af_live_production")
+
+@client.workflow(name="order_fulfillment")
+async def fulfill_order(ctx: WorkflowContext, order_id: str):
+    # Step 1: Charge customer (memoized on disk)
+    charge = await ctx.step(
+        "charge_card",
+        lambda: payment_gateway.charge(order_id)
+    )
+
+    # Step 2: Provision inventory with transactional safety
+    inventory = await ctx.step(
+        "reserve_inventory",
+        lambda: db.reserve_stock(order_id)
+    )
+
+    # Step 3: Trigger logistics dispatch
+    return await ctx.step(
+        "dispatch_order",
+        lambda: logistics.dispatch(order_id, charge.id)
+    )`;
+
 export default function ProjectsSection({ projects }: { projects: Project[] }) {
-  const featuredProjects = projects.filter((p) => p.featured);
-  const otherProjects = projects.filter((p) => !p.featured);
+  const apexFlow = projects.find((p) => p.title.toLowerCase().includes("apexflow")) || projects[0];
+  const inboxOrchestrator = projects.find((p) => p.title.toLowerCase().includes("inboxorchestrator")) || projects[1];
 
   return (
     <div className="mx-auto max-w-7xl px-6">
@@ -46,84 +58,38 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
         id="projects"
         eyebrow="Featured Engineering Work"
         title="Durable Systems & Workflow Engines"
-        description="A selection of my best projects showcasing distributed workflow orchestration, background worker daemons, and full-stack delivery."
+        description="Deep-dive architectural case studies into distributed workflow orchestration, background worker daemons, and semantic intelligence pipelines."
       >
-        {/* Top 2 Featured Projects Spotlight */}
-        {featuredProjects.length > 0 && (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.15 }}
-            className="grid gap-8 lg:grid-cols-2"
-          >
-            {featuredProjects.map((project) => (
-              <motion.div key={project.title} variants={itemVariants} className="h-full">
-                <ProjectCard
-                  title={project.title}
-                  tagline={project.tagline}
-                  description={project.description}
-                  summary={project.summary}
-                  features={project.features}
-                  highlights={project.highlights}
-                  metrics={project.metrics}
-                  impact={project.impact}
-                  stack={project.stack}
-                  href={project.repoUrl || undefined}
-                  liveUrl={project.liveUrl || undefined}
-                  status={project.status}
-                  period={project.period}
-                  featured={true}
-                  image={project.image || undefined}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
+        <div className="space-y-4">
+          {/* Project 01: ApexFlow Spotlight */}
+          {apexFlow && (
+            <FeaturedProjectSpotlight
+              index="01"
+              category="DISTRIBUTED WORKFLOW RUNTIME"
+              project={apexFlow}
+              accent="cyan"
+              urlBarText="apexflow.cloud/runs/confidential_payroll_pipeline"
+              customWidget={<ApexFlowStepTimelineWidget />}
+              codeSnippet={{
+                filename: "apexflow_workflow.py",
+                code: APEX_FLOW_CODE,
+                tabLabel: "Python SDK",
+              }}
+            />
+          )}
 
-        {/* Other Notable Projects */}
-        {otherProjects.length > 0 && (
-          <div className="mt-14">
-            <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-              <div>
-                <h3 className="text-lg font-bold text-white">Other Notable Work</h3>
-                <p className="text-xs text-zinc-400">
-                  Operational backend systems, clean Spring Boot APIs, and algorithmic engines.
-                </p>
-              </div>
-            </div>
-
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.15 }}
-              className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-            >
-              {otherProjects.map((project) => (
-                <motion.div key={project.title} variants={itemVariants} className="h-full">
-                  <ProjectCard
-                    title={project.title}
-                    tagline={project.tagline}
-                    description={project.description}
-                    summary={project.summary}
-                    features={project.features}
-                    highlights={project.highlights}
-                    metrics={project.metrics}
-                    impact={project.impact}
-                    stack={project.stack}
-                    href={project.repoUrl || undefined}
-                    liveUrl={project.liveUrl || undefined}
-                    status={project.status}
-                    period={project.period}
-                    featured={false}
-                    image={project.image || undefined}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        )}
+          {/* Project 02: InboxOrchestrator AI Spotlight (Full-Stack Platform, No SDK) */}
+          {inboxOrchestrator && (
+            <FeaturedProjectSpotlight
+              index="02"
+              category="AUTONOMOUS WORKFLOW & SEMANTIC AI"
+              project={inboxOrchestrator}
+              accent="emerald"
+              urlBarText="inboxorchestrator.ai/thread/soc2_compliance"
+              customWidget={<InboxThreadExtractionWidget />}
+            />
+          )}
+        </div>
       </Section>
     </div>
   );
