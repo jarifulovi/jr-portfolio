@@ -69,10 +69,10 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
   };
 
   return (
-    <div className="flex h-full flex-col justify-between bg-zinc-950 p-5 font-mono text-xs sm:text-sm">
+    <div className="flex h-full flex-col justify-between bg-transparent p-5 font-mono text-xs sm:text-sm">
       <div className="space-y-4">
         {/* Top Summary Header */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-cyan-500/20 pb-3">
           <div>
             <div className="flex items-center gap-2">
               <span className="font-bold text-white text-sm sm:text-base">confidential_payroll_pipeline</span>
@@ -89,7 +89,7 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
             <span
               className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all duration-300 ${
                 isReplaying
-                  ? "border-cyan-500/40 bg-cyan-500/20 text-cyan-300"
+                  ? "border-cyan-400 bg-cyan-500/25 text-cyan-200 shadow-[0_0_15px_rgba(6,182,212,0.4)]"
                   : "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
               }`}
             >
@@ -119,7 +119,7 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
             type="button"
             onClick={handleReplay}
             disabled={isReplaying}
-            className="inline-flex items-center gap-1.5 rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-1 text-xs font-semibold text-cyan-300 transition-all hover:border-cyan-400/50 hover:bg-cyan-500/20 active:scale-95 disabled:opacity-50 cursor-pointer"
+            className="inline-flex items-center gap-1.5 rounded-md border border-cyan-500/40 bg-cyan-500/15 px-2.5 py-1 text-xs font-semibold text-cyan-300 transition-all hover:border-cyan-400 hover:bg-cyan-500/25 active:scale-95 disabled:opacity-50 cursor-pointer shadow-sm"
           >
             <svg
               className={`h-3 w-3 ${isReplaying ? "animate-spin" : ""}`}
@@ -134,65 +134,90 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
           </button>
         </div>
 
-        {/* Step Items with Connected Visual Rail */}
-        <div className="relative space-y-3 pl-3 before:absolute before:bottom-4 before:left-0 before:top-4 before:w-0.5 before:bg-gradient-to-b before:from-cyan-500/40 before:via-sky-500/30 before:to-transparent">
+        {/* Step Items with Connected Visual Rail & Glowing Step Nodes */}
+        <div className="relative space-y-3.5 pl-6 before:absolute before:bottom-5 before:left-2 before:top-5 before:w-0.5 before:bg-gradient-to-b before:from-cyan-500/50 before:via-sky-500/30 before:to-cyan-500/10">
           {steps.map((step) => {
             const isSelected = activeStep === step.id;
             const isDone = completedStepIds.includes(step.id);
+            const isCurrentlyReplaying = isReplaying && activeStep === step.id;
             return (
-              <div
-                key={step.id}
-                onClick={() => setActiveStep(step.id)}
-                className={`cursor-pointer rounded-xl border p-3.5 transition-all duration-300 ${
-                  isSelected
-                    ? "border-cyan-500/50 bg-cyan-950/25 shadow-[0_0_20px_-4px_rgba(6,182,212,0.2)]"
-                    : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
-                }`}
-              >
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="flex items-center gap-2.5">
-                    <span
-                      className={`rounded px-2 py-0.5 text-xs font-semibold transition-colors duration-200 ${
-                        isDone
-                          ? "bg-cyan-500/15 border border-cyan-500/40 text-cyan-300"
-                          : "bg-white/5 border border-white/10 text-zinc-500"
-                      }`}
-                    >
-                      Step #{step.id}
-                    </span>
-                    <span className="font-semibold text-white text-xs sm:text-sm">
-                      {step.name}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-zinc-400">⏱ {step.duration}</span>
-                    <span
-                      className={`rounded border px-2 py-0.5 text-[11px] font-bold transition-all duration-200 ${
-                        isDone
-                          ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
-                          : "border-white/10 bg-white/5 text-zinc-500"
-                      }`}
-                    >
-                      {isDone ? "✓ Success" : "Pending..."}
-                    </span>
-                    {step.payloadOffloaded && (
-                      <span className="rounded border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-bold text-amber-300">
-                        📦 R2 Offload
-                      </span>
-                    )}
-                  </div>
+              <div key={step.id} className="relative">
+                {/* Glowing Step Node on the Rail */}
+                <div
+                  className={`absolute -left-6 top-4 -translate-x-1/2 flex h-4 w-4 items-center justify-center rounded-full transition-all duration-300 ${
+                    isCurrentlyReplaying
+                      ? "bg-cyan-400 ring-4 ring-cyan-500/40 animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]"
+                      : isDone
+                      ? "bg-cyan-400 ring-2 ring-cyan-500/30 shadow-[0_0_8px_rgba(6,182,212,0.6)]"
+                      : "bg-zinc-800 ring-2 ring-zinc-700/50"
+                  }`}
+                >
+                  <div
+                    className={`h-1.5 w-1.5 rounded-full ${
+                      isDone || isCurrentlyReplaying ? "bg-zinc-950" : "bg-zinc-500"
+                    }`}
+                  />
                 </div>
 
-                {isSelected && (
-                  <div className="mt-3 pt-2.5 border-t border-cyan-500/20 text-xs text-zinc-300 flex flex-wrap items-center justify-between gap-2">
-                    <p className="text-zinc-200">{step.detail}</p>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-xs text-zinc-400">Input JSON</span>
-                      <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-xs text-zinc-400">Fork</span>
+                <div
+                  onClick={() => setActiveStep(step.id)}
+                  className={`cursor-pointer rounded-xl border p-3.5 transition-all duration-300 ${
+                    isSelected
+                      ? "border-cyan-500/50 bg-cyan-950/35 shadow-[0_0_20px_-4px_rgba(6,182,212,0.25)]"
+                      : "border-white/5 bg-white/[0.015] hover:border-cyan-500/30 hover:bg-cyan-950/20"
+                  }`}
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2.5">
+                      <span
+                        className={`rounded px-2 py-0.5 text-xs font-semibold transition-colors duration-200 ${
+                          isDone
+                            ? "bg-cyan-500/20 border border-cyan-500/40 text-cyan-300"
+                            : "bg-white/5 border border-white/10 text-zinc-500"
+                        }`}
+                      >
+                        Step #{step.id}
+                      </span>
+                      <span className="font-semibold text-white text-xs sm:text-sm">
+                        {step.name}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-zinc-400">⏱ {step.duration}</span>
+                      <span
+                        className={`rounded border px-2 py-0.5 text-[11px] font-bold transition-all duration-200 ${
+                          isDone
+                            ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-400"
+                            : "border-white/10 bg-white/5 text-zinc-500"
+                        }`}
+                      >
+                        {isDone ? "✓ Success" : "Pending..."}
+                      </span>
+                      {step.payloadOffloaded && (
+                        <span className="rounded border border-amber-500/40 bg-amber-500/15 px-2 py-0.5 text-[11px] font-bold text-amber-300">
+                          📦 R2 Offload
+                        </span>
+                      )}
                     </div>
                   </div>
-                )}
+
+                  {isSelected && (
+                    <div className="mt-3 pt-2.5 border-t border-cyan-500/20 flex flex-wrap items-center justify-between gap-2">
+                      <p className="font-sans text-xs text-zinc-300 leading-relaxed max-w-sm">
+                        {step.detail}
+                      </p>
+                      <div className="flex items-center gap-2 shrink-0 font-mono text-[11px]">
+                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-zinc-400">
+                          Input JSON
+                        </span>
+                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-zinc-400">
+                          Fork
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}
@@ -200,7 +225,7 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
       </div>
 
       {/* Bottom Status Ribbon */}
-      <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-3 text-xs text-zinc-400">
+      <div className="mt-4 flex items-center justify-between border-t border-cyan-500/20 pt-3 text-xs text-zinc-400">
         <span className="text-zinc-400">ApexFlow Control Plane · v0.1.0</span>
         <span className="text-cyan-400 font-semibold">Step Memoization Active</span>
       </div>
@@ -221,77 +246,80 @@ export const InboxThreadExtractionWidget: React.FC = () => {
   const [taskChecked, setTaskChecked] = useState<{ [key: number]: boolean }>({ 1: false, 2: false });
 
   return (
-    <div className="flex h-full flex-col justify-between bg-zinc-950 p-5 font-mono text-xs sm:text-sm">
+    <div className="flex h-full flex-col justify-between bg-transparent p-5 text-xs sm:text-sm">
       <div className="space-y-4">
-        {/* Thread Header */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-3">
+        {/* Thread Header (Clean Sans-Serif + Monospace Badges) */}
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-500/20 pb-3">
           <div className="flex-1 min-w-[200px]">
-            <h4 className="font-bold text-white text-sm sm:text-base truncate">
+            <h4 className="font-bold text-white text-sm sm:text-base truncate font-sans">
               Action Required: Confirm Security Compliance Assessment
             </h4>
-            <p className="mt-1 text-xs text-zinc-400">
+            <p className="mt-1 text-xs text-zinc-400 font-sans">
               From: <span className="text-zinc-200">Jariful Ovi</span> &lt;jarifulovi@gmail.com&gt;
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-xs font-bold uppercase text-amber-300">
+          <div className="flex items-center gap-2 font-mono">
+            <span className="rounded-full border border-amber-500/40 bg-amber-500/15 px-2.5 py-0.5 text-xs font-bold uppercase text-amber-300">
               Needs Action
             </span>
-            <span className="rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 text-xs font-bold uppercase text-rose-300">
+            <span className="rounded-full border border-rose-500/40 bg-rose-500/15 px-2.5 py-0.5 text-xs font-bold uppercase text-rose-300">
               HIGH
             </span>
           </div>
         </div>
 
-        {/* Email Body Excerpt */}
-        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3.5 text-xs sm:text-sm leading-relaxed text-zinc-300">
-          <p className="text-zinc-400 text-xs uppercase tracking-wider mb-1">Inbound Gmail Thread Body:</p>
+        {/* Inbound Email Excerpt with Left Accent Bar (Eliminates Heavy Boxed Borders) */}
+        <div className="border-l-2 border-emerald-500/40 pl-3.5 py-1 font-sans text-xs sm:text-sm leading-relaxed text-zinc-300">
+          <p className="text-zinc-400 text-[11px] font-mono uppercase tracking-wider mb-0.5">
+            Inbound Thread Excerpt
+          </p>
           <p className="italic text-zinc-200">
             &ldquo;This is a reminder that your annual SOC2 vendor compliance survey is overdue as of yesterday. Please follow up with your compliance manager to submit the completed audit form...&rdquo;
           </p>
         </div>
 
-        {/* Real NLP Extraction Block */}
-        <div className="space-y-2">
-          <div className="flex items-center justify-between text-xs text-zinc-400">
-            <span className="font-semibold text-emerald-400">
-              ⚡ EXTRACTED ACTION FACTS (spaCy + PyTorch)
+        {/* Real NLP Extraction Block (Open, Clean Rows) */}
+        <div className="space-y-2 pt-1">
+          <div className="flex items-center justify-between text-xs text-zinc-400 font-mono">
+            <span className="font-semibold text-emerald-400 flex items-center gap-1.5">
+              <span>⚡ Extracted Action Facts</span>
+              <span className="text-[10px] text-zinc-400 font-normal">(spaCy + PyTorch)</span>
             </span>
             <span className="text-zinc-400">MD5 Deduplication</span>
           </div>
 
-          <div className="space-y-2">
-            <div className="flex items-start gap-2.5 rounded-lg border border-emerald-500/25 bg-emerald-950/20 p-2.5 text-xs transition-colors hover:border-emerald-500/40">
-              <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 font-bold text-emerald-300 shrink-0">
+          <div className="space-y-2 font-sans">
+            <div className="flex items-start gap-2.5 text-xs text-zinc-200">
+              <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 font-mono text-[10px] font-bold text-emerald-300 shrink-0 border border-emerald-500/30">
                 TASK
               </span>
-              <span className="text-zinc-200 leading-snug">
+              <span className="leading-snug">
                 Please follow up with your compliance manager to submit completed audit form.
               </span>
             </div>
-            <div className="flex items-start gap-2.5 rounded-lg border border-cyan-500/25 bg-cyan-950/20 p-2.5 text-xs transition-colors hover:border-cyan-500/40">
-              <span className="rounded bg-cyan-500/20 px-1.5 py-0.5 font-bold text-cyan-300 shrink-0">
+            <div className="flex items-start gap-2.5 text-xs text-zinc-200">
+              <span className="rounded bg-teal-500/20 px-1.5 py-0.5 font-mono text-[10px] font-bold text-teal-300 shrink-0 border border-teal-500/30">
                 QUESTION
               </span>
-              <span className="text-zinc-200 leading-snug">
+              <span className="leading-snug">
                 What is the estimated completion date for your security audit report?
               </span>
             </div>
           </div>
         </div>
 
-        {/* Pending Structured Tasks */}
-        <div className="rounded-xl border border-white/10 bg-black/40 p-3.5 space-y-2.5">
-          <div className="flex items-center justify-between text-xs">
-            <span className="font-bold text-zinc-200">STRUCTURED WORKSPACE TASKS</span>
-            <span className="rounded bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 text-xs font-bold text-emerald-400">
+        {/* Structured Workspace Tasks (Open List with Subtle Hover Highlight) */}
+        <div className="space-y-2 border-t border-emerald-500/20 pt-3.5">
+          <div className="flex items-center justify-between text-xs font-mono">
+            <span className="font-bold text-zinc-200">Structured Workspace Tasks</span>
+            <span className="rounded bg-emerald-500/15 border border-emerald-500/40 px-2 py-0.5 text-xs font-bold text-emerald-400">
               2 Pending
             </span>
           </div>
 
-          <div className="space-y-2 text-xs">
-            <label className="flex items-center justify-between gap-2 p-2 rounded bg-white/[0.02] border border-white/5 hover:border-white/15 cursor-pointer transition-colors">
+          <div className="space-y-1 font-sans">
+            <label className="flex items-center justify-between gap-3 p-2 rounded-lg hover:bg-white/[0.04] cursor-pointer transition-colors">
               <div className="flex items-center gap-2.5">
                 <input
                   type="checkbox"
@@ -299,14 +327,14 @@ export const InboxThreadExtractionWidget: React.FC = () => {
                   onChange={() => setTaskChecked((prev) => ({ ...prev, 1: !prev[1] }))}
                   className="rounded border-zinc-600 bg-zinc-900 text-emerald-500 focus:ring-0 cursor-pointer h-4 w-4"
                 />
-                <span className={taskChecked[1] ? "line-through text-zinc-500" : "text-zinc-200"}>
+                <span className={`text-xs ${taskChecked[1] ? "line-through text-zinc-500" : "text-zinc-200 font-medium"}`}>
                   Follow up with compliance manager
                 </span>
               </div>
-              <span className="text-zinc-400 shrink-0">10/8/2026</span>
+              <span className="font-mono text-xs text-zinc-400 shrink-0">10/8/2026</span>
             </label>
 
-            <label className="flex items-center justify-between gap-2 p-2 rounded bg-white/[0.02] border border-white/5 hover:border-white/15 cursor-pointer transition-colors">
+            <label className="flex items-center justify-between gap-3 p-2 rounded-lg hover:bg-white/[0.04] cursor-pointer transition-colors">
               <div className="flex items-center gap-2.5">
                 <input
                   type="checkbox"
@@ -314,18 +342,18 @@ export const InboxThreadExtractionWidget: React.FC = () => {
                   onChange={() => setTaskChecked((prev) => ({ ...prev, 2: !prev[2] }))}
                   className="rounded border-zinc-600 bg-zinc-900 text-emerald-500 focus:ring-0 cursor-pointer h-4 w-4"
                 />
-                <span className={taskChecked[2] ? "line-through text-zinc-500" : "text-zinc-200"}>
+                <span className={`text-xs ${taskChecked[2] ? "line-through text-zinc-500" : "text-zinc-200 font-medium"}`}>
                   Provide estimated completion date
                 </span>
               </div>
-              <span className="text-zinc-400 shrink-0">10/9/2026</span>
+              <span className="font-mono text-xs text-zinc-400 shrink-0">10/9/2026</span>
             </label>
           </div>
         </div>
       </div>
 
       {/* Bottom Status Ribbon */}
-      <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-3 text-xs text-zinc-400">
+      <div className="mt-4 flex items-center justify-between border-t border-emerald-500/20 pt-3 text-xs text-zinc-400 font-mono">
         <span>Supabase pgvector: <strong className="text-zinc-200">384-d Cosine Match</strong></span>
         <span className="text-emerald-400 font-semibold">Google Calendar Synced</span>
       </div>
