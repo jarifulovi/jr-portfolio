@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Badge } from "../ui/Badge";
 
 interface ProjectData {
@@ -67,7 +68,13 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
       };
 
   return (
-    <article className="group relative border-t border-white/10 pt-12 pb-16 transition-colors duration-500">
+    <motion.article
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
+      className="group relative border-t border-white/10 pt-12 pb-16 transition-colors duration-500"
+    >
       {/* Top Header Row: Category, Index, Status & Direct CTAs */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6">
         <div className="flex flex-wrap items-center gap-3">
@@ -193,9 +200,16 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
           </div>
         </div>
 
-        {/* Right Column (7 Cols): Native UI Showcase & Developer Window */}
-        <div className="lg:col-span-7">
-          <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/15 bg-zinc-950/95 shadow-2xl backdrop-blur-2xl">
+        {/* Right Column (7 Cols): Native UI Showcase with Ambient Backlight Glow */}
+        <div className="relative lg:col-span-7">
+          {/* Soft Ambient Backlight Glow that intensifies smoothly on hover */}
+          <div
+            className={`pointer-events-none absolute -inset-4 rounded-3xl opacity-20 blur-3xl transition-all duration-700 group-hover:opacity-40 ${
+              isCyan ? "bg-cyan-500/25" : "bg-emerald-500/25"
+            }`}
+          />
+
+          <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/15 bg-zinc-950/95 shadow-2xl backdrop-blur-2xl transition-all duration-300 group-hover:border-white/25">
             {/* macOS Chrome Bar */}
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-3">
               <div className="flex items-center gap-2">
@@ -266,6 +280,6 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 };

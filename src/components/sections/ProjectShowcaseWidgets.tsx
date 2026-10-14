@@ -13,6 +13,8 @@ import React, { useState } from "react";
  */
 export const ApexFlowStepTimelineWidget: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(3);
+  const [isReplaying, setIsReplaying] = useState<boolean>(false);
+  const [completedStepIds, setCompletedStepIds] = useState<number[]>([1, 2, 3]);
 
   const steps = [
     {
@@ -44,6 +46,28 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
     },
   ];
 
+  const handleReplay = () => {
+    if (isReplaying) return;
+    setIsReplaying(true);
+    setCompletedStepIds([]);
+    setActiveStep(1);
+
+    setTimeout(() => {
+      setCompletedStepIds([1]);
+      setActiveStep(2);
+    }, 400);
+
+    setTimeout(() => {
+      setCompletedStepIds([1, 2]);
+      setActiveStep(3);
+    }, 800);
+
+    setTimeout(() => {
+      setCompletedStepIds([1, 2, 3]);
+      setIsReplaying(false);
+    }, 1200);
+  };
+
   return (
     <div className="flex h-full flex-col justify-between bg-zinc-950 p-5 font-mono text-xs sm:text-sm">
       <div className="space-y-4">
@@ -62,9 +86,19 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              Completed
+            <span
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all duration-300 ${
+                isReplaying
+                  ? "border-cyan-500/40 bg-cyan-500/20 text-cyan-300"
+                  : "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+              }`}
+            >
+              <span
+                className={`h-2 w-2 rounded-full ${
+                  isReplaying ? "bg-cyan-400 animate-ping" : "bg-emerald-400 animate-pulse"
+                }`}
+              />
+              {isReplaying ? "Executing..." : "Completed"}
             </span>
             <div className="text-right text-xs text-zinc-300 hidden sm:block">
               <span>⏱ 41.3s</span> • <span className="text-zinc-400">3 Steps</span>
@@ -72,7 +106,7 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
           </div>
         </div>
 
-        {/* Timeline Header */}
+        {/* Timeline Header with Interactive Replay Action */}
         <div className="flex items-center justify-between text-xs text-zinc-400">
           <span className="flex items-center gap-2 font-semibold text-zinc-200">
             <svg className="h-4 w-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -80,18 +114,36 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
             </svg>
             Execution Step Timeline
           </span>
-          <span className="text-xs text-zinc-400">FOR UPDATE SKIP LOCKED</span>
+
+          <button
+            type="button"
+            onClick={handleReplay}
+            disabled={isReplaying}
+            className="inline-flex items-center gap-1.5 rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-1 text-xs font-semibold text-cyan-300 transition-all hover:border-cyan-400/50 hover:bg-cyan-500/20 active:scale-95 disabled:opacity-50 cursor-pointer"
+          >
+            <svg
+              className={`h-3 w-3 ${isReplaying ? "animate-spin" : ""}`}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+            </svg>
+            <span>{isReplaying ? "Replaying..." : "Replay Steps"}</span>
+          </button>
         </div>
 
-        {/* Step Items */}
-        <div className="space-y-3">
+        {/* Step Items with Connected Visual Rail */}
+        <div className="relative space-y-3 pl-3 before:absolute before:bottom-4 before:left-0 before:top-4 before:w-0.5 before:bg-gradient-to-b before:from-cyan-500/40 before:via-sky-500/30 before:to-transparent">
           {steps.map((step) => {
             const isSelected = activeStep === step.id;
+            const isDone = completedStepIds.includes(step.id);
             return (
               <div
                 key={step.id}
                 onClick={() => setActiveStep(step.id)}
-                className={`cursor-pointer rounded-xl border p-3.5 transition-all duration-200 ${
+                className={`cursor-pointer rounded-xl border p-3.5 transition-all duration-300 ${
                   isSelected
                     ? "border-cyan-500/50 bg-cyan-950/25 shadow-[0_0_20px_-4px_rgba(6,182,212,0.2)]"
                     : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
@@ -99,7 +151,13 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2.5">
-                    <span className="rounded bg-white/5 border border-white/10 px-2 py-0.5 text-xs font-semibold text-cyan-300">
+                    <span
+                      className={`rounded px-2 py-0.5 text-xs font-semibold transition-colors duration-200 ${
+                        isDone
+                          ? "bg-cyan-500/15 border border-cyan-500/40 text-cyan-300"
+                          : "bg-white/5 border border-white/10 text-zinc-500"
+                      }`}
+                    >
                       Step #{step.id}
                     </span>
                     <span className="font-semibold text-white text-xs sm:text-sm">
@@ -109,8 +167,14 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
 
                   <div className="flex items-center gap-2">
                     <span className="text-xs text-zinc-400">⏱ {step.duration}</span>
-                    <span className="rounded border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-bold text-emerald-400">
-                      ✓ Success
+                    <span
+                      className={`rounded border px-2 py-0.5 text-[11px] font-bold transition-all duration-200 ${
+                        isDone
+                          ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                          : "border-white/10 bg-white/5 text-zinc-500"
+                      }`}
+                    >
+                      {isDone ? "✓ Success" : "Pending..."}
                     </span>
                     {step.payloadOffloaded && (
                       <span className="rounded border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-bold text-amber-300">
@@ -198,7 +262,7 @@ export const InboxThreadExtractionWidget: React.FC = () => {
           </div>
 
           <div className="space-y-2">
-            <div className="flex items-start gap-2.5 rounded-lg border border-emerald-500/25 bg-emerald-950/20 p-2.5 text-xs">
+            <div className="flex items-start gap-2.5 rounded-lg border border-emerald-500/25 bg-emerald-950/20 p-2.5 text-xs transition-colors hover:border-emerald-500/40">
               <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 font-bold text-emerald-300 shrink-0">
                 TASK
               </span>
@@ -206,7 +270,7 @@ export const InboxThreadExtractionWidget: React.FC = () => {
                 Please follow up with your compliance manager to submit completed audit form.
               </span>
             </div>
-            <div className="flex items-start gap-2.5 rounded-lg border border-cyan-500/25 bg-cyan-950/20 p-2.5 text-xs">
+            <div className="flex items-start gap-2.5 rounded-lg border border-cyan-500/25 bg-cyan-950/20 p-2.5 text-xs transition-colors hover:border-cyan-500/40">
               <span className="rounded bg-cyan-500/20 px-1.5 py-0.5 font-bold text-cyan-300 shrink-0">
                 QUESTION
               </span>
@@ -227,7 +291,7 @@ export const InboxThreadExtractionWidget: React.FC = () => {
           </div>
 
           <div className="space-y-2 text-xs">
-            <label className="flex items-center justify-between gap-2 p-2 rounded bg-white/[0.02] border border-white/5 hover:border-white/15 cursor-pointer">
+            <label className="flex items-center justify-between gap-2 p-2 rounded bg-white/[0.02] border border-white/5 hover:border-white/15 cursor-pointer transition-colors">
               <div className="flex items-center gap-2.5">
                 <input
                   type="checkbox"
@@ -242,7 +306,7 @@ export const InboxThreadExtractionWidget: React.FC = () => {
               <span className="text-zinc-400 shrink-0">10/8/2026</span>
             </label>
 
-            <label className="flex items-center justify-between gap-2 p-2 rounded bg-white/[0.02] border border-white/5 hover:border-white/15 cursor-pointer">
+            <label className="flex items-center justify-between gap-2 p-2 rounded bg-white/[0.02] border border-white/5 hover:border-white/15 cursor-pointer transition-colors">
               <div className="flex items-center gap-2.5">
                 <input
                   type="checkbox"
