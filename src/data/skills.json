@@ -27,22 +27,20 @@
       "id": "data-storage",
       "index": "02",
       "accent": "emerald",
-      "category": "DATA ARCHITECTURE & STORAGE",
-      "title": "Relational Modeling, Vector Search & Caching",
-      "description": "Normalized relational schemas, purpose-built B-Tree indexing, vector embeddings, and low-latency cache layers.",
+      "category": "DATA ARCHITECTURE & PERSISTENCE",
+      "title": "Relational Modeling, Indexing & Query Tuning",
+      "description": "Normalized relational schemas, purpose-built B-Tree indexing, raw SQL query optimization, and transaction safety.",
       "technologies": [
         { "name": "PostgreSQL", "featured": true },
-        { "name": "Supabase (pgvector)", "featured": true },
-        { "name": "Redis", "featured": true },
-        { "name": "MongoDB", "featured": false },
-        { "name": "Raw SQL", "featured": true }
+        { "name": "Raw SQL", "featured": true },
+        { "name": "MongoDB", "featured": false }
       ],
       "capabilities": [
         "Relational Normalization (1NF–3NF)",
         "B-Tree Indexing Strategies",
         "FOR UPDATE SKIP LOCKED",
-        "Vector Embeddings (all-MiniLM)",
-        "Sub-millisecond Session Caching",
+        "Raw SQL Query Optimization",
+        "Foreign Key Constraints & Integrity",
         "ACID Transaction Safety"
       ]
     },
@@ -102,7 +100,7 @@
     },
     {
       "title": "Databases & Storage",
-      "skills": ["PostgreSQL", "Supabase (pgvector)", "Redis", "MongoDB", "Raw SQL"]
+      "skills": ["PostgreSQL", "MongoDB", "Raw SQL"]
     },
     {
       "title": "Concepts & Architecture",
