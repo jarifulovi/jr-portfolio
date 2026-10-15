@@ -5,31 +5,34 @@
     "period": "Oct 2025 - Mar 2026",
     "duration": "6 Months",
     "location": "Dhaka, Bangladesh · On-site",
-    "summary": "Contributed across full-stack feature engineering, high-load API performance profiling, and automated end-to-end regression suites.",
+    "summary": "Contributed across full-stack feature engineering on an enterprise scholarship platform, alongside high-concurrency API load profiling and mobile client automation on a commercial restaurant management system.",
     "tasks": [
       {
         "index": "01",
         "title": "Full-Stack Feature Engineering",
-        "category": "Web Application Delivery",
-        "description": "Contributed to a production scholarship management system, engineering role-based access control (RBAC) dashboards, analytical reporting views, and critical defect resolutions.",
+        "category": "Scholarship Platform · Web",
+        "description": "Engineered core features for a production scholarship management platform, implementing role-based access control (RBAC) dashboards, analytical reporting views, and critical defect resolutions.",
         "icon": "/icons/backend_dev_purple.png",
-        "tag": "Scholarship Management System"
+        "tag": "Scholarship Management System",
+        "stack": ["Web Application", "RBAC", "Analytical Dashboards", "Defect Resolution"]
       },
       {
         "index": "02",
-        "title": "API Performance & Load Profiling",
-        "category": "Backend Latency Analysis",
-        "description": "Executed large-scale load and stress testing on a restaurant management system to isolate backend latency bottlenecks, profile throughput, and ensure concurrency stability.",
+        "title": "Backend API Performance & Load Profiling",
+        "category": "Restaurant System · Backend API",
+        "description": "Executed large-scale load and stress testing on the restaurant management backend to isolate API latency bottlenecks, profile throughput under peak traffic, and ensure concurrency stability.",
         "icon": "/icons/performance_purple.png",
-        "tag": "Restaurant Management System"
+        "tag": "Restaurant Management System",
+        "stack": ["REST APIs", "Load Profiling", "Stress Testing", "Concurrency"]
       },
       {
         "index": "03",
-        "title": "Automated Test Suites & API Verification",
-        "category": "Reliability & Quality Gates",
-        "description": "Engineered automated end-to-end regression suites using Appium and WebdriverIO to guarantee contract integrity and regression safety across critical user journeys.",
+        "title": "Mobile App Automated Regression Suites",
+        "category": "Restaurant System · Mobile App",
+        "description": "Engineered automated end-to-end regression test suites with Appium and WebdriverIO for the restaurant platform's mobile client, ensuring critical order flows and staff workflows remain regression-safe.",
         "icon": "/icons/automation_purple.png",
-        "tag": "Appium & WebdriverIO"
+        "tag": "Restaurant Management System",
+        "stack": ["Appium", "WebdriverIO", "Mobile Automation", "E2E Smoke Tests"]
       }
     ]
   }

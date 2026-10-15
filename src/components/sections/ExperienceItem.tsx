@@ -10,6 +10,7 @@ interface ExperienceTask {
   description: string;
   icon?: string;
   tag?: string;
+  stack?: string[];
 }
 
 interface ExperienceItemProps {
@@ -139,6 +140,20 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
             <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-300">
               {task.description}
             </p>
+
+            {/* Technical Scope Badges */}
+            {task.stack && task.stack.length > 0 && (
+              <div className="mt-3.5 flex flex-wrap gap-1.5 pt-1">
+                {task.stack.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-md border border-white/5 bg-white/[0.03] px-2 py-0.5 font-mono text-[10px] text-zinc-400"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
