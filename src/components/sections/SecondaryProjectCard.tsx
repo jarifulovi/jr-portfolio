@@ -7,7 +7,6 @@ interface SecondaryProjectProps {
   title: string;
   description: string;
   highlights?: string[];
-  metrics?: { label: string; value: string }[];
   stack: string[];
   repoUrl?: string;
   liveUrl?: string;
@@ -19,7 +18,6 @@ export const SecondaryProjectCard: React.FC<SecondaryProjectProps> = ({
   title,
   description,
   highlights = [],
-  metrics = [],
   stack,
   repoUrl,
   liveUrl,
@@ -47,7 +45,7 @@ export const SecondaryProjectCard: React.FC<SecondaryProjectProps> = ({
           {description}
         </p>
 
-        {/* Key Highlights / Metrics */}
+        {/* Key Highlights */}
         {highlights.length > 0 && (
           <ul className="mt-4 space-y-1.5 text-xs text-zinc-300">
             {highlights.slice(0, 2).map((item) => (
@@ -57,21 +55,6 @@ export const SecondaryProjectCard: React.FC<SecondaryProjectProps> = ({
               </li>
             ))}
           </ul>
-        )}
-
-        {/* Compact Metrics Chips */}
-        {metrics.length > 0 && (
-          <div className="mt-4 grid grid-cols-2 gap-2 font-mono text-[10px]">
-            {metrics.map((m) => (
-              <div
-                key={m.label}
-                className="rounded-lg border border-white/5 bg-white/[0.02] p-2"
-              >
-                <span className="text-zinc-400 uppercase tracking-wider block">{m.label}</span>
-                <span className="font-semibold text-zinc-200 block truncate mt-0.5">{m.value}</span>
-              </div>
-            ))}
-          </div>
         )}
       </div>
 

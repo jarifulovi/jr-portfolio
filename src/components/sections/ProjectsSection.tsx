@@ -124,7 +124,6 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
                   title={project.title}
                   description={project.description}
                   highlights={project.highlights}
-                  metrics={project.metrics}
                   stack={project.stack}
                   repoUrl={project.repoUrl}
                   liveUrl={project.liveUrl}
