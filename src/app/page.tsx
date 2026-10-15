@@ -7,6 +7,7 @@ import { ServicesSection } from "../components/sections/ServicesSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import { ExperienceItem } from "../components/sections/ExperienceItem";
 import SkillsSection from "../components/sections/SkillsSection";
+import { ContactSection } from "../components/sections/ContactSection";
 import profile from "../data/profile.json";
 import projects from "../data/projects.json";
 import links from "../data/links.json";
@@ -26,6 +27,7 @@ export default function Home() {
           { label: "Projects", href: "#projects" },
           { label: "Skills", href: "#skills" },
           { label: "Experience", href: "#experience" },
+          { label: "Contact", href: "#contact" },
         ]}
       />
 
@@ -73,9 +75,12 @@ export default function Home() {
             ))}
           </div>
         </Section>
+
+        {/* Contact CTA Section */}
+        <ContactSection links={links} />
       </div>
 
-      <Footer links={links} />
+      <Footer />
     </main>
   );
 }
