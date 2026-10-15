@@ -54,9 +54,9 @@ export default function Home() {
         {/* Experience Section */}
         <Section
           id="experience"
-          eyebrow="Work Experience"
-          title="Industry Experience & Internships"
-          description="Hands-on contributions focused on automated testing, load testing, and web application feature delivery."
+          eyebrow="PROFESSIONAL EXPERIENCE"
+          title="Industry Track Record & Internship"
+          description="Hands-on engineering contributions focused on full-stack web application delivery, high-volume API load profiling, and automated regression quality gates."
         >
           <div className="grid gap-6">
             {experience.map((item) => (
@@ -65,6 +65,8 @@ export default function Home() {
                 role={item.role}
                 company={item.company}
                 period={item.period}
+                duration={item.duration}
+                location={item.location}
                 summary={item.summary}
                 tasks={item.tasks}
               />
@@ -73,7 +75,7 @@ export default function Home() {
         </Section>
       </div>
 
-      <Footer />
+      <Footer links={links} />
     </main>
   );
 }

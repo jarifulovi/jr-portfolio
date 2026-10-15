@@ -3,22 +3,33 @@
     "role": "Software Developer Intern",
     "company": "Tekarsh Bangladesh Limited",
     "period": "Oct 2025 - Mar 2026",
-    "summary": "Contributed across automation testing, performance evaluation, and backend feature delivery.",
+    "duration": "6 Months",
+    "location": "Dhaka, Bangladesh · On-site",
+    "summary": "Contributed across full-stack feature engineering, high-load API performance profiling, and automated end-to-end regression suites.",
     "tasks": [
       {
-        "title": "Automation Testing",
-        "description": "Built automated smoke tests using Appium and WebdriverIO for critical user flows and backend APIs.",
-        "icon": "/icons/automation_purple.png"
+        "index": "01",
+        "title": "Full-Stack Feature Engineering",
+        "category": "Web Application Delivery",
+        "description": "Contributed to a production scholarship management system, engineering role-based access control (RBAC) dashboards, analytical reporting views, and critical defect resolutions.",
+        "icon": "/icons/backend_dev_purple.png",
+        "tag": "Scholarship Management System"
       },
       {
-        "title": "Load Testing",
-        "description": "Performed large-scale load testing for a restaurant management system to evaluate API performance.",
-        "icon": "/icons/performance_purple.png"
+        "index": "02",
+        "title": "API Performance & Load Profiling",
+        "category": "Backend Latency Analysis",
+        "description": "Executed large-scale load and stress testing on a restaurant management system to isolate backend latency bottlenecks, profile throughput, and ensure concurrency stability.",
+        "icon": "/icons/performance_purple.png",
+        "tag": "Restaurant Management System"
       },
       {
-        "title": "Web Development",
-        "description": "Contributed to a scholarship management system with role-based dashboards, bug fixes, and analytics features.",
-        "icon": "/icons/backend_dev_purple.png"
+        "index": "03",
+        "title": "Automated Test Suites & API Verification",
+        "category": "Reliability & Quality Gates",
+        "description": "Engineered automated end-to-end regression suites using Appium and WebdriverIO to guarantee contract integrity and regression safety across critical user journeys.",
+        "icon": "/icons/automation_purple.png",
+        "tag": "Appium & WebdriverIO"
       }
     ]
   }
