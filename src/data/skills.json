@@ -1,4 +1,102 @@
 {
+  "domains": [
+    {
+      "id": "backend-runtimes",
+      "index": "01",
+      "accent": "cyan",
+      "category": "BACKEND & WORKFLOW RUNTIMES",
+      "title": "Server Engines & Asynchronous Daemons",
+      "description": "Building type-safe REST APIs, distributed worker queues, and durable multi-step state persistence.",
+      "technologies": [
+        { "name": "Python", "featured": true },
+        { "name": "FastAPI", "featured": true },
+        { "name": "Node.js (Express)", "featured": true },
+        { "name": "Java (Spring Boot)", "featured": false },
+        { "name": "TypeScript", "featured": false },
+        { "name": "C", "featured": false }
+      ],
+      "capabilities": [
+        "Durable Step Checkpointing",
+        "Worker Heartbeat Telemetry",
+        "RESTful Contract Design",
+        "Clean Architecture & OOP",
+        "Pydantic Schema Validation",
+        "Async / Await Event Loops"
+      ]
+    },
+    {
+      "id": "data-storage",
+      "index": "02",
+      "accent": "emerald",
+      "category": "DATA ARCHITECTURE & STORAGE",
+      "title": "Relational Modeling, Vector Search & Caching",
+      "description": "Normalized relational schemas, purpose-built B-Tree indexing, vector embeddings, and low-latency cache layers.",
+      "technologies": [
+        { "name": "PostgreSQL", "featured": true },
+        { "name": "Supabase (pgvector)", "featured": true },
+        { "name": "Redis", "featured": true },
+        { "name": "MongoDB", "featured": false },
+        { "name": "Cloudflare R2 / S3", "featured": false },
+        { "name": "Raw SQL", "featured": true }
+      ],
+      "capabilities": [
+        "Relational Normalization (1NF–3NF)",
+        "B-Tree Indexing Strategies",
+        "FOR UPDATE SKIP LOCKED",
+        "Vector Embeddings (all-MiniLM)",
+        "Sub-millisecond Session Caching",
+        "ACID Transaction Safety"
+      ]
+    },
+    {
+      "id": "frontend-interfaces",
+      "index": "03",
+      "accent": "sky",
+      "category": "FRONTEND & OBSERVABILITY",
+      "title": "Interactive Dashboards & Reactive Clients",
+      "description": "Bridging robust backends with feature-sliced web applications, telemetry dashboards, and client-side security.",
+      "technologies": [
+        { "name": "Next.js 16 (App Router)", "featured": true },
+        { "name": "React 19", "featured": true },
+        { "name": "TypeScript", "featured": true },
+        { "name": "Tailwind CSS", "featured": false },
+        { "name": "Web Crypto API (AES-GCM)", "featured": false },
+        { "name": "Framer Motion", "featured": false }
+      ],
+      "capabilities": [
+        "Feature-Sliced Domain Design",
+        "Zero-Knowledge Client Decryption",
+        "Responsive Micro-SaaS UI",
+        "State Management & Telemetry",
+        "Retina Native Vector Widgets"
+      ]
+    },
+    {
+      "id": "devops-tooling",
+      "index": "04",
+      "accent": "amber",
+      "category": "DEVOPS, PLATFORM & ENVIRONMENT",
+      "title": "Containerization, Linux Systems & Quality Tooling",
+      "description": "Reproducible multi-container environments, Linux command-line workflows, and automated testing suites.",
+      "technologies": [
+        { "name": "Docker", "icon": "/icons/docker_blue.png", "featured": true },
+        { "name": "Linux (Bash)", "icon": "/icons/linux.png", "featured": true },
+        { "name": "Git", "icon": "/icons/git_blue.png", "featured": false },
+        { "name": "GitHub", "icon": "/icons/github_blue.png", "featured": false },
+        { "name": "Postman", "icon": "/icons/postman.png", "featured": false },
+        { "name": "Nginx", "icon": "/icons/nginx_green.png", "featured": false },
+        { "name": "VS Code", "icon": "/icons/code.png", "featured": false },
+        { "name": "IntelliJ", "icon": "/icons/intellij.png", "featured": false }
+      ],
+      "capabilities": [
+        "Multi-Container Docker Compose",
+        "Linux Daemon & Process Management",
+        "Jest Automated Test Suites",
+        "API Load & Stress Benchmarking",
+        "Reverse Proxy Configuration"
+      ]
+    }
+  ],
   "skillGroups": [
     {
       "title": "Languages",

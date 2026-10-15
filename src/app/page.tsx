@@ -44,8 +44,12 @@ export default function Home() {
       <ProjectsSection projects={projects} />
 
       <div className="mx-auto max-w-7xl px-6">
-        {/* Core Stack & Tooling */}
-        <SkillsSection skillGroups={skills.skillGroups} tools={skills.tools} />
+        {/* Core Stack & Tooling by Engineering Domain */}
+        <SkillsSection
+          domains={skills.domains}
+          skillGroups={skills.skillGroups}
+          tools={skills.tools}
+        />
 
         {/* Experience Section */}
         <Section
