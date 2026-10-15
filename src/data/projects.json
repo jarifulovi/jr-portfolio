@@ -153,6 +153,47 @@
     "image": ""
   },
   {
+    "title": "Study Sync",
+    "description": "Real-time collaborative study platform featuring low-latency group messaging, multi-user presence, and scalable cloud file delivery.",
+    "impact": "Architected low-latency event pipelines using Socket.io and integrated AWS S3 for secure, scalable academic material distribution.",
+    "summary": "Collaborative hub designed to synchronize multiple study groups simultaneously with real-time events and distributed media storage.",
+    "features": [
+      "Bidirectional Socket.io messaging with live typing and presence",
+      "Direct S3-backed file uploading and asset delivery",
+      "Automated event notification workflows across active rooms",
+      "Structured REST API endpoints for user profiles and course materials"
+    ],
+    "highlights": [
+      "Event-driven architecture maintaining active WebSocket connections",
+      "Decoupled media storage offloading server bandwidth to AWS S3"
+    ],
+    "metrics": [
+      {
+        "label": "Protocol",
+        "value": "WebSockets / Socket.io"
+      },
+      {
+        "label": "Storage",
+        "value": "AWS S3 + MongoDB"
+      }
+    ],
+    "stack": [
+      "Node.js",
+      "Express.js",
+      "Socket.io",
+      "AWS S3",
+      "MongoDB",
+      "React"
+    ],
+    "repoUrl": "https://github.com/jarifulovi/Study-Sync",
+    "liveUrl": "",
+    "status": "Real-Time System",
+    "year": "2025",
+    "period": "Jan 2025 - Mar 2025",
+    "featured": false,
+    "image": ""
+  },
+  {
     "title": "CodeBlog API",
     "description": "Modular RESTful blogging engine built with Spring Boot, featuring layered architecture, JWT authentication, and relational data persistence.",
     "impact": "Implemented clean package-by-feature structure with decoupled services, secure controllers, and transactional database integrity.",

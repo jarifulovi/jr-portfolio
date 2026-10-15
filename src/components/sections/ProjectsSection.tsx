@@ -106,7 +106,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
                   Other Notable Work
                 </h3>
                 <p className="mt-1.5 text-xs sm:text-sm text-zinc-400 max-w-xl leading-relaxed">
-                  Operational backend systems, Spring Boot layered architectures, and algorithmic game AI search engines.
+                  Operational backend systems, real-time collaboration engines, Spring Boot layered architectures, and algorithmic game AI.
                 </p>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5 }}
-              className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+              className="grid gap-6 md:grid-cols-2"
             >
               {otherProjects.map((project) => (
                 <SecondaryProjectCard
@@ -128,7 +128,6 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
                   repoUrl={project.repoUrl}
                   liveUrl={project.liveUrl}
                   status={project.status}
-                  period={project.period}
                 />
               ))}
             </motion.div>

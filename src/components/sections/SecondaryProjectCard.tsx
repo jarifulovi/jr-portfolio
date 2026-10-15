@@ -11,7 +11,6 @@ interface SecondaryProjectProps {
   repoUrl?: string;
   liveUrl?: string;
   status?: string;
-  period?: string;
 }
 
 export const SecondaryProjectCard: React.FC<SecondaryProjectProps> = ({
@@ -22,34 +21,32 @@ export const SecondaryProjectCard: React.FC<SecondaryProjectProps> = ({
   repoUrl,
   liveUrl,
   status,
-  period,
 }) => {
   return (
-    <article className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] via-zinc-950/60 to-black/80 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.5)]">
+    <article className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] via-zinc-950/60 to-black/80 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.5)]">
       <div>
-        {/* Top Header Row: Status and Period */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-3 font-mono text-[11px]">
-          <span className="rounded bg-white/5 border border-white/10 px-2 py-0.5 font-semibold uppercase tracking-wider text-zinc-300">
+        {/* Top Header Row: Status Badge */}
+        <div className="flex items-center justify-between border-b border-white/10 pb-3 font-mono text-xs">
+          <span className="rounded bg-white/5 border border-white/10 px-2.5 py-0.5 font-semibold uppercase tracking-wider text-zinc-300">
             {status || "Operational System"}
           </span>
-          {period && <span className="text-zinc-400">{period}</span>}
         </div>
 
         {/* Project Title */}
-        <h4 className="mt-4 text-lg sm:text-xl font-bold tracking-tight text-white transition-colors duration-200 group-hover:text-cyan-300">
+        <h4 className="mt-4 text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors duration-200 group-hover:text-cyan-300">
           {title}
         </h4>
 
         {/* Description */}
-        <p className="mt-2 text-xs leading-relaxed text-zinc-300">
+        <p className="mt-2.5 text-sm sm:text-[15px] leading-relaxed text-zinc-300">
           {description}
         </p>
 
         {/* Key Highlights */}
         {highlights.length > 0 && (
-          <ul className="mt-4 space-y-1.5 text-xs text-zinc-300">
+          <ul className="mt-4 space-y-2 text-xs sm:text-sm text-zinc-300">
             {highlights.slice(0, 2).map((item) => (
-              <li key={item} className="flex items-start gap-2">
+              <li key={item} className="flex items-start gap-2.5">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400/80" />
                 <span className="leading-snug">{item}</span>
               </li>
@@ -60,26 +57,26 @@ export const SecondaryProjectCard: React.FC<SecondaryProjectProps> = ({
 
       {/* Footer: Tech Stack & Action Links */}
       <div className="mt-6 border-t border-white/10 pt-4">
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-2 mb-4">
           {stack.map((item) => (
             <Badge
               key={item}
               label={item}
               variant="default"
-              className="bg-white/[0.03] border-white/10 text-[10px] text-zinc-300 hover:border-white/20"
+              className="bg-white/[0.03] border-white/10 text-xs text-zinc-300 hover:border-white/20 px-2.5 py-1"
             />
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {repoUrl && (
             <a
               href={repoUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-300 transition-colors hover:text-white group/link"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-300 transition-colors hover:text-white group/link"
             >
-              <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -97,7 +94,7 @@ export const SecondaryProjectCard: React.FC<SecondaryProjectProps> = ({
               href={liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
             >
               <span>Live</span>
               <span>↗</span>
