@@ -12,8 +12,7 @@
         { "name": "FastAPI", "featured": true },
         { "name": "Node.js (Express)", "featured": true },
         { "name": "Java (Spring Boot)", "featured": false },
-        { "name": "TypeScript", "featured": false },
-        { "name": "C", "featured": false }
+        { "name": "TypeScript", "featured": false }
       ],
       "capabilities": [
         "Durable Step Checkpointing",
@@ -36,7 +35,6 @@
         { "name": "Supabase (pgvector)", "featured": true },
         { "name": "Redis", "featured": true },
         { "name": "MongoDB", "featured": false },
-        { "name": "Cloudflare R2 / S3", "featured": false },
         { "name": "Raw SQL", "featured": true }
       ],
       "capabilities": [
@@ -54,18 +52,16 @@
       "accent": "sky",
       "category": "FRONTEND & OBSERVABILITY",
       "title": "Interactive Dashboards & Reactive Clients",
-      "description": "Bridging robust backends with feature-sliced web applications, telemetry dashboards, and client-side security.",
+      "description": "Bridging robust backends with feature-sliced web applications, telemetry dashboards, and responsive interfaces.",
       "technologies": [
         { "name": "Next.js 16 (App Router)", "featured": true },
         { "name": "React 19", "featured": true },
         { "name": "TypeScript", "featured": true },
-        { "name": "Tailwind CSS", "featured": false },
-        { "name": "Web Crypto API (AES-GCM)", "featured": false },
-        { "name": "Framer Motion", "featured": false }
+        { "name": "Tailwind CSS", "featured": false }
       ],
       "capabilities": [
         "Feature-Sliced Domain Design",
-        "Zero-Knowledge Client Decryption",
+        "Client-Server Data Contracts",
         "Responsive Micro-SaaS UI",
         "State Management & Telemetry",
         "Retina Native Vector Widgets"
@@ -80,13 +76,11 @@
       "description": "Reproducible multi-container environments, Linux command-line workflows, and automated testing suites.",
       "technologies": [
         { "name": "Docker", "icon": "/icons/docker_blue.png", "featured": true },
-        { "name": "Linux (Bash)", "icon": "/icons/linux.png", "featured": true },
+        { "name": "Linux", "icon": "/icons/linux.png", "featured": true },
         { "name": "Git", "icon": "/icons/git_blue.png", "featured": false },
         { "name": "GitHub", "icon": "/icons/github_blue.png", "featured": false },
         { "name": "Postman", "icon": "/icons/postman.png", "featured": false },
-        { "name": "Nginx", "icon": "/icons/nginx_green.png", "featured": false },
-        { "name": "VS Code", "icon": "/icons/code.png", "featured": false },
-        { "name": "IntelliJ", "icon": "/icons/intellij.png", "featured": false }
+        { "name": "Nginx", "icon": "/icons/nginx_green.png", "featured": false }
       ],
       "capabilities": [
         "Multi-Container Docker Compose",
@@ -100,7 +94,7 @@
   "skillGroups": [
     {
       "title": "Languages",
-      "skills": ["Python", "JavaScript", "Java", "C", "TypeScript"]
+      "skills": ["Python", "JavaScript", "Java", "TypeScript"]
     },
     {
       "title": "Backend & Frameworks",
@@ -108,7 +102,7 @@
     },
     {
       "title": "Databases & Storage",
-      "skills": ["PostgreSQL", "Supabase (pgvector)", "MongoDB", "Cloudflare R2", "Raw SQL"]
+      "skills": ["PostgreSQL", "Supabase (pgvector)", "Redis", "MongoDB", "Raw SQL"]
     },
     {
       "title": "Concepts & Architecture",
@@ -124,12 +118,10 @@
   ],
   "tools": [
     { "name": "Docker", "icon": "/icons/docker_blue.png" },
+    { "name": "Linux", "icon": "/icons/linux.png" },
     { "name": "Git", "icon": "/icons/git_blue.png" },
     { "name": "GitHub", "icon": "/icons/github_blue.png" },
-    { "name": "Linux", "icon": "/icons/linux.png" },
     { "name": "Postman", "icon": "/icons/postman.png" },
-    { "name": "Nginx", "icon": "/icons/nginx_green.png" },
-    { "name": "VS Code", "icon": "/icons/code.png" },
-    { "name": "IntelliJ", "icon": "/icons/intellij.png" }
+    { "name": "Nginx", "icon": "/icons/nginx_green.png" }
   ]
 }

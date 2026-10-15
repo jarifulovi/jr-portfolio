@@ -32,42 +32,35 @@ const ACCENT_STYLES: Record<
   {
     badge: string;
     dot: string;
-    borderHover: string;
-    glow: string;
+    titleHover: string;
   }
 > = {
   cyan: {
     badge: "border-cyan-500/30 bg-cyan-500/10 text-cyan-300",
     dot: "bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]",
-    borderHover: "group-hover/domain:border-cyan-500/30",
-    glow: "from-cyan-500/10 via-transparent to-transparent",
+    titleHover: "group-hover/domain:text-cyan-300",
   },
   emerald: {
     badge: "border-emerald-500/30 bg-emerald-500/10 text-emerald-300",
     dot: "bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)]",
-    borderHover: "group-hover/domain:border-emerald-500/30",
-    glow: "from-emerald-500/10 via-transparent to-transparent",
+    titleHover: "group-hover/domain:text-emerald-300",
   },
   sky: {
     badge: "border-sky-500/30 bg-sky-500/10 text-sky-300",
     dot: "bg-sky-400 shadow-[0_0_8px_rgba(14,165,233,0.8)]",
-    borderHover: "group-hover/domain:border-sky-500/30",
-    glow: "from-sky-500/10 via-transparent to-transparent",
+    titleHover: "group-hover/domain:text-sky-300",
   },
   amber: {
     badge: "border-amber-500/30 bg-amber-500/10 text-amber-300",
     dot: "bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.8)]",
-    borderHover: "group-hover/domain:border-amber-500/30",
-    glow: "from-amber-500/10 via-transparent to-transparent",
+    titleHover: "group-hover/domain:text-amber-300",
   },
 };
 
 export default function SkillsSection({
   domains = [],
   skillGroups = [],
-  tools = [],
 }: SkillsSectionProps) {
-  // Fallback if domains are not provided
   const hasDomains = domains && domains.length > 0;
 
   return (
@@ -78,25 +71,20 @@ export default function SkillsSection({
       description="Categorized breakdown of runtime frameworks, data persistence layers, client interfaces, and daily developer tooling."
     >
       {hasDomains ? (
-        <div className="space-y-6">
+        <div className="divide-y divide-white/10 border-y border-white/10">
           {domains.map((domain, idx) => {
             const accent = ACCENT_STYLES[domain.accent] || ACCENT_STYLES.cyan;
 
             return (
-              <motion.article
+              <motion.div
                 key={domain.id}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className={`group/domain relative rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.03] via-zinc-950/40 to-black/70 p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)] ${accent.borderHover}`}
+                className="group/domain py-10 transition-colors duration-300"
               >
-                {/* Subtle top ambient gradient line on hover */}
-                <div
-                  className={`pointer-events-none absolute -inset-px -z-10 rounded-2xl bg-gradient-to-b ${accent.glow} opacity-0 blur-lg transition-opacity duration-300 group-hover/domain:opacity-100`}
-                />
-
-                <div className="grid gap-8 lg:grid-cols-[340px_1fr] xl:grid-cols-[380px_1fr]">
+                <div className="grid gap-8 lg:grid-cols-[320px_1fr] xl:grid-cols-[360px_1fr]">
                   {/* Left Column: Domain Identity & Framing */}
                   <div className="flex flex-col justify-between">
                     <div>
@@ -113,21 +101,23 @@ export default function SkillsSection({
                         </span>
                       </div>
 
-                      {/* Domain Title */}
-                      <h3 className="mt-3 text-lg sm:text-xl font-bold tracking-tight text-white transition-colors duration-200 group-hover/domain:text-white">
+                      {/* Domain Title with Accent Hover */}
+                      <h3
+                        className={`mt-3 text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors duration-200 ${accent.titleHover}`}
+                      >
                         {domain.title}
                       </h3>
 
                       {/* 1-Line Architectural Context */}
-                      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-300">
+                      <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-zinc-400 max-w-sm">
                         {domain.description}
                       </p>
                     </div>
 
-                    <div className="hidden lg:block mt-4 border-t border-white/5 pt-3 font-mono text-[11px] text-zinc-400">
+                    <div className="hidden lg:block mt-6 font-mono text-[11px] text-zinc-500">
                       <span>Production Proven</span>
-                      <span className="mx-2 text-zinc-600">·</span>
-                      <span>{domain.technologies.length} Stack Items</span>
+                      <span className="mx-2 text-zinc-700">·</span>
+                      <span>{domain.technologies.length} Core Items</span>
                     </div>
                   </div>
 
@@ -181,7 +171,7 @@ export default function SkillsSection({
                         {domain.capabilities.map((cap) => (
                           <span
                             key={cap}
-                            className="rounded-lg border border-white/5 bg-black/40 px-2.5 py-1 font-mono text-[11px] text-zinc-300 transition-colors hover:border-white/15 hover:text-zinc-100"
+                            className="rounded-lg border border-white/5 bg-zinc-900/60 px-2.5 py-1 font-mono text-[11px] text-zinc-300 transition-colors hover:border-white/15 hover:text-zinc-100"
                           >
                             {cap}
                           </span>
@@ -190,18 +180,15 @@ export default function SkillsSection({
                     </div>
                   </div>
                 </div>
-              </motion.article>
+              </motion.div>
             );
           })}
         </div>
       ) : (
         /* Legacy fallback if domains are not loaded */
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="divide-y divide-white/10 border-y border-white/10">
           {skillGroups.map((group) => (
-            <div
-              key={group.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6"
-            >
+            <div key={group.title} className="py-6">
               <h3 className="font-bold text-white">{group.title}</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {group.skills.map((s) => (
