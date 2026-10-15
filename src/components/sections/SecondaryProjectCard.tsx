@@ -23,11 +23,14 @@ export const SecondaryProjectCard: React.FC<SecondaryProjectProps> = ({
   status,
 }) => {
   return (
-    <article className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] via-zinc-950/60 to-black/80 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.5)]">
+    <article className="group relative flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] via-zinc-950/70 to-black/90 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/35 hover:shadow-[0_20px_50px_-15px_rgba(6,182,212,0.18)]">
+      {/* Ambient Neon Backlight Aura */}
+      <div className="pointer-events-none absolute -inset-0.5 -z-10 rounded-2xl bg-gradient-to-b from-cyan-500/20 via-cyan-500/5 to-transparent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+
       <div>
         {/* Top Header Row: Status Badge */}
         <div className="flex items-center justify-between border-b border-white/10 pb-3 font-mono text-xs">
-          <span className="rounded bg-white/5 border border-white/10 px-2.5 py-0.5 font-semibold uppercase tracking-wider text-zinc-300">
+          <span className="rounded bg-white/5 border border-white/10 px-2.5 py-0.5 font-semibold uppercase tracking-wider text-zinc-300 transition-colors duration-200 group-hover:border-cyan-500/30 group-hover:text-cyan-200">
             {status || "Operational System"}
           </span>
         </div>
