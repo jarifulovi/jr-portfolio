@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { FeaturedProjectSpotlight } from "./FeaturedProjectSpotlight";
+import { SecondaryProjectCard } from "./SecondaryProjectCard";
 import { ApexFlowStepTimelineWidget, InboxThreadExtractionWidget } from "./ProjectShowcaseWidgets";
 
 interface Project {
@@ -51,6 +53,7 @@ async def fulfill_order(ctx: WorkflowContext, order_id: str):
 export default function ProjectsSection({ projects }: { projects: Project[] }) {
   const apexFlow = projects.find((p) => p.title.toLowerCase().includes("apexflow")) || projects[0];
   const inboxOrchestrator = projects.find((p) => p.title.toLowerCase().includes("inboxorchestrator")) || projects[1];
+  const otherProjects = projects.filter((p) => !p.featured);
 
   return (
     <div className="mx-auto max-w-7xl px-6">
@@ -90,6 +93,48 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
             />
           )}
         </div>
+
+        {/* Other Notable Work Section */}
+        {otherProjects.length > 0 && (
+          <div className="mt-16 border-t border-white/10 pt-14">
+            <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div>
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-cyan-400">
+                  ADDITIONAL CODEBASES & SYSTEMS
+                </span>
+                <h3 className="mt-1 text-2xl font-bold tracking-tight text-white">
+                  Other Notable Work
+                </h3>
+                <p className="mt-1.5 text-xs sm:text-sm text-zinc-400 max-w-xl leading-relaxed">
+                  Operational backend systems, Spring Boot layered architectures, and algorithmic game AI search engines.
+                </p>
+              </div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5 }}
+              className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+            >
+              {otherProjects.map((project) => (
+                <SecondaryProjectCard
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  highlights={project.highlights}
+                  metrics={project.metrics}
+                  stack={project.stack}
+                  repoUrl={project.repoUrl}
+                  liveUrl={project.liveUrl}
+                  status={project.status}
+                  period={project.period}
+                />
+              ))}
+            </motion.div>
+          </div>
+        )}
       </Section>
     </div>
   );
