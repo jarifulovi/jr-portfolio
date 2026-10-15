@@ -57,7 +57,7 @@ export default function Home() {
         <Section
           id="experience"
           eyebrow="PROFESSIONAL EXPERIENCE"
-          title="Industry Track Record & Internship"
+          title="Industry Track Record & Experience"
           description="Hands-on engineering contributions focused on full-stack web application delivery, high-volume API load profiling, and automated regression quality gates."
         >
           <div className="grid gap-6">
@@ -77,7 +77,11 @@ export default function Home() {
         </Section>
 
         {/* Contact CTA Section */}
-        <ContactSection links={links} />
+        <ContactSection
+          email={profile.email}
+          availability={profile.availability}
+          links={links}
+        />
       </div>
 
       <Footer />

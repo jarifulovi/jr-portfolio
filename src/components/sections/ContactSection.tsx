@@ -5,12 +5,17 @@ import { motion } from "framer-motion";
 import { Section } from "./Section";
 
 interface ContactSectionProps {
+  email?: string;
+  availability?: string;
   links?: { label: string; url: string }[];
 }
 
-export const ContactSection: React.FC<ContactSectionProps> = ({ links = [] }) => {
+export const ContactSection: React.FC<ContactSectionProps> = ({
+  email = "jarifulovi@gmail.com",
+  availability = "Available for Full-Time Software Developer Roles",
+  links = [],
+}) => {
   const [copied, setCopied] = useState(false);
-  const email = "bsse1419@iit.du.ac.bd";
 
   const handleCopyEmail = async () => {
     try {
@@ -23,9 +28,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ links = [] }) =>
     }
   };
 
-  const linkedinUrl =
-    links.find((l) => l.label.toLowerCase() === "linkedin")?.url ||
-    "https://www.linkedin.com/in/jarifulovi/";
   const githubUrl =
     links.find((l) => l.label.toLowerCase() === "github")?.url ||
     "https://github.com/jarifulovi";
@@ -55,7 +57,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ links = [] }) =>
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            <span>Available for Software Developer Roles & Technical Internships</span>
+            <span>{availability}</span>
           </div>
 
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -63,7 +65,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ links = [] }) =>
           </h3>
 
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300">
-            Currently completing my BSSE at the University of Dhaka (IIT). I am actively interviewing for backend and full-stack software engineering opportunities.
+            BSSE Graduate (Coursework Complete, Oct 2026) at University of Dhaka (IIT). I am actively interviewing for full-time backend and software engineering opportunities.
           </p>
 
           {/* Action Hub */}
@@ -109,16 +111,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ links = [] }) =>
           {/* Social Channels & Affiliation */}
           <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-400">
             <div className="flex items-center gap-4">
-              <a
-                href={linkedinUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="transition-colors hover:text-cyan-300 flex items-center gap-1.5"
-              >
-                <span>LinkedIn</span>
-                <span className="text-zinc-600">↗</span>
-              </a>
-              <span className="text-zinc-700">·</span>
               <a
                 href={githubUrl}
                 target="_blank"

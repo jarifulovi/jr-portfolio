@@ -70,7 +70,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, links }) => {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
         </span>
-        <span>{profile.availability || "Open to Backend Roles & Internships"}</span>
+        <span>{profile.availability || "Open to Full-Time Backend & Software Developer Roles"}</span>
       </div>
 
       {/* Main Role with Seamless Glyph-Clipped Shimmer */}
@@ -148,18 +148,20 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, links }) => {
 
       {/* Social / Contact Links */}
       <div className="mt-8 flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/10 text-xs font-semibold text-zinc-300">
-        {links.map((link) => (
-          <a
-            key={link.label}
-            href={link.url}
-            target={link.url.startsWith("http") ? "_blank" : undefined}
-            rel={link.url.startsWith("http") ? "noreferrer" : undefined}
-            className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2 transition-all hover:border-cyan-500/40 hover:bg-white/[0.08] hover:text-white"
-          >
-            {getSocialIcon(link.label)}
-            <span>{link.label}</span>
-          </a>
-        ))}
+        {links
+          .filter((link) => link.label.toLowerCase() !== "linkedin")
+          .map((link) => (
+            <a
+              key={link.label}
+              href={link.url}
+              target={link.url.startsWith("http") ? "_blank" : undefined}
+              rel={link.url.startsWith("http") ? "noreferrer" : undefined}
+              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2 transition-all hover:border-cyan-500/40 hover:bg-white/[0.08] hover:text-white"
+            >
+              {getSocialIcon(link.label)}
+              <span>{link.label}</span>
+            </a>
+          ))}
       </div>
     </motion.div>
   );

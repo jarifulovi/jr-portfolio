@@ -18,10 +18,10 @@ interface SnapshotCardProps {
 }
 
 export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
-  const graduationValueRaw = profile?.education?.[0]?.graduation ?? "Sep 2026";
+  const graduationValueRaw = profile?.education?.[0]?.graduation ?? "Oct 2026";
   const graduationValue = typeof graduationValueRaw === "string"
     ? graduationValueRaw.replace("Expected ", "")
-    : "Sep 2026";
+    : "Oct 2026";
 
   const focusAreas = [
     "Backend Systems",
@@ -50,12 +50,12 @@ export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
     },
     {
       label: "Graduation",
-      value: `${graduationValue} (Expected)`,
+      value: graduationValue,
       icon: <CalendarIcon />,
     },
     {
       label: "Direct Email",
-      value: profile?.email ?? "bsse1419@iit.du.ac.bd",
+      value: profile?.email ?? "jarifulovi@gmail.com",
       isEmail: true,
       icon: <EmailIcon />,
     },

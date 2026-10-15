@@ -3,10 +3,10 @@
   "role": "Software Developer (Backend Focus)",
   "headline": "Backend-focused Software Developer with full-stack capabilities. I build clean, reliable APIs and resilient background workflows—emphasizing disciplined architecture and pragmatic, end-to-end delivery.",
   "location": "Dhaka, Bangladesh",
-  "email": "bsse1419@iit.du.ac.bd",
+  "email": "jarifulovi@gmail.com",
   "phone": "+8801518613562",
-  "summary": "Early-career software engineer studying at University of Dhaka (IIT) with hands-on internship experience at Tekarsh Bangladesh Ltd. I specialize in building type-safe APIs, PostgreSQL data layers, and asynchronous worker systems, pairing disciplined engineering with end-to-end delivery.",
-  "availability": "Open to Backend Roles, Internships & Freelance",
+  "summary": "Software engineer graduating from University of Dhaka (IIT) with hands-on industry experience at Tekarsh Bangladesh Ltd. I specialize in building type-safe APIs, PostgreSQL data layers, and asynchronous worker systems, pairing disciplined engineering with end-to-end delivery.",
+  "availability": "Open to Full-Time Backend & Software Developer Roles",
   "resumeUrl": "files/resume.pdf",
   "heroStats": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "label": "Graduation",
-      "value": "Sep 2026"
+      "value": "Oct 2026"
     }
   ],
   "about": {
@@ -57,7 +57,7 @@
     {
       "institution": "University of Dhaka - Institute of Information Technology",
       "degree": "Bachelor of Science in Software Engineering",
-      "graduation": "Expected Sep 2026"
+      "graduation": "Oct 2026"
     }
   ]
 }

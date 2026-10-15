@@ -90,7 +90,7 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            <span>Completed 6-Month Engineering Internship</span>
+            <span>Completed 6-Month Industry Engineering Tenure</span>
           </div>
         </div>
       </div>
