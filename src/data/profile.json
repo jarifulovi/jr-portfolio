@@ -7,7 +7,7 @@
   "phone": "+8801518613562",
   "summary": "Software engineer graduating from University of Dhaka (IIT) with hands-on industry experience at Tekarsh Bangladesh Ltd. I specialize in building type-safe APIs, PostgreSQL data layers, and asynchronous worker systems, pairing disciplined engineering with end-to-end delivery.",
   "availability": "Open to Full-Time Backend & Software Developer Roles",
-  "resumeUrl": "files/resume.pdf",
+  "resumeUrl": "/resume.pdf",
   "heroStats": [
     {
       "label": "Education",
