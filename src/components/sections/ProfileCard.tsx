@@ -97,8 +97,8 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, links }) => {
             as="a"
             href={profile.resumeUrl}
             target="_blank"
-            rel="noreferrer"
-            download
+            rel="noopener noreferrer"
+            download="MD_Jariful_Rahman_Resume.pdf"
             variant="primary"
           >
             <svg
