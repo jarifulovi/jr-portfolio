@@ -50,7 +50,6 @@ export default function Home() {
         <SkillsSection
           domains={skills.domains}
           skillGroups={skills.skillGroups}
-          tools={skills.tools}
         />
 
         {/* Experience Section */}

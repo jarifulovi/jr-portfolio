@@ -24,7 +24,6 @@ interface DomainSkillGroup {
 interface SkillsSectionProps {
   domains?: DomainSkillGroup[];
   skillGroups?: { title: string; skills: string[] }[];
-  tools?: { name: string; icon: string }[];
 }
 
 const ACCENT_STYLES: Record<
