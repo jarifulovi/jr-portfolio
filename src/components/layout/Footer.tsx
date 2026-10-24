@@ -3,10 +3,18 @@
 import React from "react";
 
 interface FooterProps {
+  name: string;
+  role: string;
+  affiliation: string;
   className?: string;
 }
 
-export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
+export const Footer: React.FC<FooterProps> = ({
+  name,
+  role,
+  affiliation,
+  className = "",
+}) => {
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -18,10 +26,10 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="flex flex-col items-center gap-1 sm:items-start text-center sm:text-left">
           <span className="text-sm font-bold text-white tracking-tight">
-            MD Jariful Rahman
+            {name}
           </span>
           <span className="text-xs text-zinc-400">
-            Software Developer (Backend Focus) · University of Dhaka (IIT)
+            {role} · {affiliation}
           </span>
         </div>
 

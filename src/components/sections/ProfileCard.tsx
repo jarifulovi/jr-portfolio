@@ -10,8 +10,8 @@ interface ProfileCardProps {
     headline: string;
     summary: string;
     email: string;
-    availability?: string;
-    resumeUrl?: string;
+    availability: string;
+    resumeUrl: string;
   };
   links: { label: string; url: string }[];
 }
@@ -70,7 +70,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, links }) => {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
         </span>
-        <span>{profile.availability || "Open to Full-Time Backend & Software Developer Roles"}</span>
+        <span>{profile.availability}</span>
       </div>
 
       {/* Main Role with Seamless Glyph-Clipped Shimmer */}

@@ -47,10 +47,7 @@ export default function Home() {
 
       <div className="mx-auto max-w-7xl px-6">
         {/* Core Stack & Tooling by Engineering Domain */}
-        <SkillsSection
-          domains={skills.domains}
-          skillGroups={skills.skillGroups}
-        />
+        <SkillsSection domains={skills.domains} />
 
         {/* Experience Section */}
         <Section
@@ -79,11 +76,16 @@ export default function Home() {
         <ContactSection
           email={profile.email}
           availability={profile.availability}
+          affiliation={profile.education[0].institution}
           links={links}
         />
       </div>
 
-      <Footer />
+      <Footer
+        name={profile.name}
+        role={profile.role}
+        affiliation={profile.education[0].institution}
+      />
     </main>
   );
 }

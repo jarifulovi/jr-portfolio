@@ -23,36 +23,17 @@ interface Project {
   period?: string;
   featured?: boolean;
   image?: string;
+  codeSnippet?: {
+    filename: string;
+    code: string;
+    tabLabel?: string;
+  };
 }
 
-const APEX_FLOW_CODE = `# apexflow_worker.py — Durable Step Checkpointing
-from apex_flow_sdk import ApexFlowClient, WorkflowContext
-
-client = ApexFlowClient(project_key="af_live_production")
-
-@client.workflow(name="order_fulfillment")
-async def fulfill_order(ctx: WorkflowContext, order_id: str):
-    # Step 1: Charge customer (memoized on disk)
-    charge = await ctx.step(
-        "charge_card",
-        lambda: payment_gateway.charge(order_id)
-    )
-
-    # Step 2: Provision inventory with transactional safety
-    inventory = await ctx.step(
-        "reserve_inventory",
-        lambda: db.reserve_stock(order_id)
-    )
-
-    # Step 3: Trigger logistics dispatch
-    return await ctx.step(
-        "dispatch_order",
-        lambda: logistics.dispatch(order_id, charge.id)
-    )`;
-
 export default function ProjectsSection({ projects }: { projects: Project[] }) {
-  const apexFlow = projects.find((p) => p.title.toLowerCase().includes("apexflow")) || projects[0];
-  const inboxOrchestrator = projects.find((p) => p.title.toLowerCase().includes("inboxorchestrator")) || projects[1];
+  const featuredProjects = projects.filter((p) => p.featured);
+  const apexFlow = featuredProjects[0];
+  const inboxOrchestrator = featuredProjects[1];
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
@@ -73,11 +54,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
               accent="cyan"
               urlBarText="apexflow.cloud/runs/confidential_payroll_pipeline"
               customWidget={<ApexFlowStepTimelineWidget />}
-              codeSnippet={{
-                filename: "apexflow_workflow.py",
-                code: APEX_FLOW_CODE,
-                tabLabel: "Python SDK",
-              }}
+              codeSnippet={apexFlow.codeSnippet}
             />
           )}
 

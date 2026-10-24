@@ -22,8 +22,7 @@ interface DomainSkillGroup {
 }
 
 interface SkillsSectionProps {
-  domains?: DomainSkillGroup[];
-  skillGroups?: { title: string; skills: string[] }[];
+  domains: DomainSkillGroup[];
 }
 
 const ACCENT_STYLES: Record<
@@ -61,12 +60,7 @@ const ACCENT_STYLES: Record<
   },
 };
 
-export default function SkillsSection({
-  domains = [],
-  skillGroups = [],
-}: SkillsSectionProps) {
-  const hasDomains = domains && domains.length > 0;
-
+export default function SkillsSection({ domains }: SkillsSectionProps) {
   return (
     <Section
       id="skills"
@@ -74,8 +68,7 @@ export default function SkillsSection({
       title="Technical Taxonomy by Domain"
       description="Systematic crosshair matrix covering server engines, relational storage, web interfaces, and DevOps automation."
     >
-      {hasDomains ? (
-        <motion.div
+      <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
@@ -195,26 +188,6 @@ export default function SkillsSection({
             })}
           </div>
         </motion.div>
-      ) : (
-        /* Legacy fallback if domains are not loaded */
-        <div className="grid gap-6 md:grid-cols-2">
-          {skillGroups.map((group) => (
-            <div key={group.title} className="p-6 border border-white/10 rounded-xl">
-              <h3 className="font-bold text-white">{group.title}</h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {group.skills.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded border border-white/10 px-2.5 py-1 text-xs text-zinc-300"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
     </Section>
   );
 }

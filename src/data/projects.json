@@ -52,7 +52,12 @@
     "year": "2026",
     "period": "2026",
     "featured": true,
-    "image": "/screenshots/apex-flow-steps-page.png"
+    "image": "/screenshots/apex-flow-steps-page.png",
+    "codeSnippet": {
+      "filename": "apexflow_workflow.py",
+      "tabLabel": "Python SDK",
+      "code": "# apexflow_worker.py — Durable Step Checkpointing\nfrom apex_flow_sdk import ApexFlowClient, WorkflowContext\n\nclient = ApexFlowClient(project_key=\"af_live_production\")\n\n@client.workflow(name=\"order_fulfillment\")\nasync def fulfill_order(ctx: WorkflowContext, order_id: str):\n    # Step 1: Charge customer (memoized on disk)\n    charge = await ctx.step(\n        \"charge_card\",\n        lambda: payment_gateway.charge(order_id)\n    )\n\n    # Step 2: Provision inventory with transactional safety\n    inventory = await ctx.step(\n        \"reserve_inventory\",\n        lambda: db.reserve_stock(order_id)\n    )\n\n    # Step 3: Trigger logistics dispatch\n    return await ctx.step(\n        \"dispatch_order\",\n        lambda: logistics.dispatch(order_id, charge.id)\n    )"
+    }
   },
   {
     "title": "InboxOrchestrator AI",

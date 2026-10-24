@@ -5,57 +5,46 @@ import { Badge } from "../ui/Badge";
 
 interface SnapshotCardProps {
   profile: {
-    location?: string;
-    email?: string;
-    education?: {
-      graduation?: string;
-      institution?: string;
-      degree?: string;
-      cgpa?: string;
+    location: string;
+    email: string;
+    specialization: string;
+    focusAreas: string[];
+    education: {
+      graduation: string;
+      institution: string;
+      degree: string;
     }[];
-    heroStats?: { label: string; value: string }[];
   };
 }
 
 export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
-  const graduationValueRaw = profile?.education?.[0]?.graduation ?? "Oct 2026";
-  const graduationValue = typeof graduationValueRaw === "string"
-    ? graduationValueRaw.replace("Expected ", "")
-    : "Oct 2026";
-
-  const focusAreas = [
-    "Backend Systems",
-    "FastAPI & APIs",
-    "PostgreSQL",
-    "Durable Workflows",
-    "Full-Stack Delivery"
-  ];
+  const primaryEducation = profile.education[0];
 
   const snapshotItems = [
     {
       label: "Location",
-      value: profile?.location ?? "Dhaka, Bangladesh",
+      value: profile.location,
       icon: <LocationIcon />,
     },
     {
       label: "Specialization",
-      value: "Software Engineering (Backend)",
+      value: profile.specialization,
       icon: <FocusIcon />,
     },
     {
       label: "Education",
-      value: "University of Dhaka (IIT)",
-      subValue: "BSSE · Software Engineering",
+      value: primaryEducation.institution,
+      subValue: primaryEducation.degree,
       icon: <GraduationIcon />,
     },
     {
       label: "Graduation",
-      value: graduationValue,
+      value: primaryEducation.graduation,
       icon: <CalendarIcon />,
     },
     {
       label: "Direct Email",
-      value: profile?.email ?? "jarifulovi@gmail.com",
+      value: profile.email,
       isEmail: true,
       icon: <EmailIcon />,
     },
@@ -113,7 +102,7 @@ export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
           Core Domains
         </p>
         <div className="flex flex-wrap gap-1.5">
-          {focusAreas.map((area) => (
+          {profile.focusAreas.map((area) => (
             <Badge key={area} label={area} variant="default" className="text-[11px]" />
           ))}
         </div>

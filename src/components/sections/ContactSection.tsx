@@ -5,15 +5,17 @@ import { motion } from "framer-motion";
 import { Section } from "./Section";
 
 interface ContactSectionProps {
-  email?: string;
-  availability?: string;
-  links?: { label: string; url: string }[];
+  email: string;
+  availability: string;
+  affiliation?: string;
+  links: { label: string; url: string }[];
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
-  email = "jarifulovi@gmail.com",
-  availability = "Available for Full-Time Software Developer Roles",
-  links = [],
+  email,
+  availability,
+  affiliation = "University of Dhaka (IIT)",
+  links,
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -23,14 +25,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
       setCopied(true);
       setTimeout(() => setCopied(false), 2200);
     } catch {
-      // Fallback
       window.location.href = `mailto:${email}`;
     }
   };
-
-  const githubUrl =
-    links.find((l) => l.label.toLowerCase() === "github")?.url ||
-    "https://github.com/jarifulovi";
 
   return (
     <Section
@@ -110,20 +107,25 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
           {/* Social Channels & Affiliation */}
           <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-400">
-            <div className="flex items-center gap-4">
-              <a
-                href={githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="transition-colors hover:text-cyan-300 flex items-center gap-1.5"
-              >
-                <span>GitHub</span>
-                <span className="text-zinc-600">↗</span>
-              </a>
+            <div className="flex flex-wrap items-center gap-4">
+              {links
+                .filter((l) => l.url.startsWith("http"))
+                .map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition-colors hover:text-cyan-300 flex items-center gap-1.5"
+                  >
+                    <span>{link.label}</span>
+                    <span className="text-zinc-600">↗</span>
+                  </a>
+                ))}
             </div>
 
             <span className="text-zinc-500">
-              University of Dhaka · IIT (BSSE)
+              {affiliation}
             </span>
           </div>
         </div>

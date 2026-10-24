@@ -3,8 +3,26 @@ import React, { useState } from "react";
 import { ProfileCard } from "./ProfileCard";
 import { SnapshotCard } from "./SnapshotCard";
 
+interface HeroProfile {
+  name: string;
+  role: string;
+  headline: string;
+  summary: string;
+  email: string;
+  availability: string;
+  resumeUrl: string;
+  location: string;
+  specialization: string;
+  focusAreas: string[];
+  education: {
+    graduation: string;
+    institution: string;
+    degree: string;
+  }[];
+}
+
 interface HeroSectionProps {
-  profile: any;
+  profile: HeroProfile;
   links: { label: string; url: string }[];
 }
 

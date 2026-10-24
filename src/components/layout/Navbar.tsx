@@ -7,13 +7,13 @@ interface NavbarLink {
 }
 
 interface NavbarProps {
-  brand?: string;
+  brand: string;
   links: NavbarLink[];
   className?: string;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  brand = "MD Jariful Rahman",
+  brand,
   links,
   className = "",
 }) => {
