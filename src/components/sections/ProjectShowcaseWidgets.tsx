@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 /**
  * 100% Faithful Native Showcase Widget for ApexFlow
@@ -15,6 +15,13 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(3);
   const [isReplaying, setIsReplaying] = useState<boolean>(false);
   const [completedStepIds, setCompletedStepIds] = useState<number[]>([1, 2, 3]);
+  const timerRefs = useRef<NodeJS.Timeout[]>([]);
+
+  useEffect(() => {
+    return () => {
+      timerRefs.current.forEach(clearTimeout);
+    };
+  }, []);
 
   const steps = [
     {
@@ -48,24 +55,28 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
 
   const handleReplay = () => {
     if (isReplaying) return;
+    timerRefs.current.forEach(clearTimeout);
+    timerRefs.current = [];
     setIsReplaying(true);
     setCompletedStepIds([]);
     setActiveStep(1);
 
-    setTimeout(() => {
+    const t1 = setTimeout(() => {
       setCompletedStepIds([1]);
       setActiveStep(2);
     }, 400);
 
-    setTimeout(() => {
+    const t2 = setTimeout(() => {
       setCompletedStepIds([1, 2]);
       setActiveStep(3);
     }, 800);
 
-    setTimeout(() => {
+    const t3 = setTimeout(() => {
       setCompletedStepIds([1, 2, 3]);
       setIsReplaying(false);
     }, 1200);
+
+    timerRefs.current = [t1, t2, t3];
   };
 
   return (
