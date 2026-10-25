@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({
 
   return (
     <footer
-      className={`border-t border-white/10 bg-zinc-950/90 px-6 py-8 ${className}`}
+      className={`border-t border-white/10 bg-zinc-950/90 px-4 sm:px-6 py-8 ${className}`}
     >
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="flex flex-col items-center gap-1 sm:items-start text-center sm:text-left">
