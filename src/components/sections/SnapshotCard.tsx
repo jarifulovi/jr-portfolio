@@ -55,7 +55,7 @@ export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-      className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-7 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-300 hover:border-cyan-500/30 hover:shadow-cyan-500/10 hover:shadow-2xl"
+      className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-5 sm:p-7 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-300 hover:border-cyan-500/30 hover:shadow-cyan-500/10 hover:shadow-2xl w-full min-w-0"
     >
       <div>
         <div className="flex items-center justify-between border-b border-white/10 pb-4">

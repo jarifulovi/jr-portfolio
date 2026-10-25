@@ -64,7 +64,7 @@ const colorConfig: Record<string, { index: string; hoverTitle: string; dash: str
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
   return (
-    <div className="mx-auto max-w-7xl px-6">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 w-full min-w-0">
       <Section
         id="services"
         eyebrow="Services & Capabilities"

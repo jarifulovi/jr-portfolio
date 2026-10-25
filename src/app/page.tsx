@@ -17,7 +17,7 @@ import services from "../data/services.json";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,165,233,0.12),rgba(255,255,255,0))] text-zinc-100">
+    <main className="min-h-screen bg-zinc-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,165,233,0.12),rgba(255,255,255,0))] text-zinc-100 w-full min-w-0 overflow-x-clip">
       <Navbar
         brand={profile.name}
         links={[
@@ -35,7 +35,7 @@ export default function Home() {
       <HeroSection profile={profile} links={links} />
 
       {/* About Me Section (Replacing redundant education section) */}
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 w-full min-w-0">
         <AboutSection about={profile.about} />
       </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
       {/* Featured Projects with Top 2 Spotlight (ApexFlow & InboxOrchestrator AI) */}
       <ProjectsSection projects={projects} />
 
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 w-full min-w-0">
         {/* Core Stack & Tooling by Engineering Domain */}
         <SkillsSection domains={skills.domains} />
 

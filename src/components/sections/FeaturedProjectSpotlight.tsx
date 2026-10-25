@@ -83,10 +83,10 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
-      className="group relative border-t border-white/10 pt-12 pb-16 transition-colors duration-500"
+      className="group relative border-t border-white/10 pt-12 pb-16 transition-colors duration-500 w-full min-w-0 max-w-full overflow-hidden"
     >
       {/* Top Header Row: Category, Index, Status & Direct CTAs */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pb-6">
+      <div className="flex flex-wrap items-center justify-between gap-4 pb-6 w-full min-w-0">
         <div className="flex flex-wrap items-center gap-3">
           <span className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-400">
             {index} // {category}
@@ -138,9 +138,9 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
       </div>
 
       {/* Main Showcase Grid */}
-      <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-start">
+      <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-start w-full min-w-0 max-w-full">
         {/* Left Column (5 Cols): Scannable, Larger Text without clutter */}
-        <div className="flex flex-col space-y-6 lg:col-span-5">
+        <div className="flex flex-col space-y-6 lg:col-span-5 w-full min-w-0 max-w-full">
           {/* Title & Tagline */}
           <div>
             <h3
@@ -211,40 +211,40 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
         </div>
 
         {/* Right Column (7 Cols): Atmospheric Tinted Glass Showcase Window */}
-        <div className="relative lg:col-span-7">
+        <div className="relative lg:col-span-7 w-full min-w-0 max-w-full">
           {/* Luminous Atmospheric Backlight Glow */}
           <div
-            className={`pointer-events-none absolute -inset-6 rounded-3xl opacity-25 blur-3xl transition-all duration-700 group-hover:opacity-45 ${
+            className={`pointer-events-none absolute inset-0 sm:-inset-6 rounded-3xl opacity-25 blur-3xl transition-all duration-700 group-hover:opacity-45 ${
               isCyan ? "bg-cyan-500/30" : "bg-emerald-500/30"
             }`}
           />
 
           <div
-            className={`relative flex h-full flex-col overflow-hidden rounded-2xl border ${accentStyles.windowBorder} ${accentStyles.windowBg} backdrop-blur-2xl transition-all duration-500`}
+            className={`relative flex h-full flex-col overflow-hidden rounded-2xl border ${accentStyles.windowBorder} ${accentStyles.windowBg} backdrop-blur-2xl transition-all duration-500 w-full min-w-0 max-w-full`}
           >
             {/* Luminous Top-Edge Highlight Line */}
             <div className={`h-[1px] w-full bg-gradient-to-r ${accentStyles.topHighlight}`} />
 
             {/* macOS Tinted Chrome Bar */}
             <div
-              className={`flex flex-wrap items-center justify-between gap-2 border-b ${accentStyles.chromeBg} px-4 py-3`}
+              className={`flex flex-wrap items-center justify-between gap-2 border-b ${accentStyles.chromeBg} px-3 sm:px-4 py-2.5 sm:py-3 min-w-0`}
             >
-              <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-red-500/80 shadow-sm" />
-                <span className="h-3 w-3 rounded-full bg-amber-500/80 shadow-sm" />
-                <span className="h-3 w-3 rounded-full bg-emerald-500/80 shadow-sm" />
-                <span className="ml-2 font-mono text-xs text-zinc-300 truncate max-w-[200px] sm:max-w-xs">
+              <div className="flex items-center gap-2 min-w-0 flex-1">
+                <span className="h-3 w-3 rounded-full bg-red-500/80 shadow-sm shrink-0" />
+                <span className="h-3 w-3 rounded-full bg-amber-500/80 shadow-sm shrink-0" />
+                <span className="h-3 w-3 rounded-full bg-emerald-500/80 shadow-sm shrink-0" />
+                <span className="ml-2 font-mono text-[11px] sm:text-xs text-zinc-300 truncate max-w-[120px] xs:max-w-[160px] sm:max-w-xs">
                   {urlBarText}
                 </span>
               </div>
 
               {/* View Mode Tab Selector (Only if codeSnippet exists) */}
               {codeSnippet ? (
-                <div className="flex items-center gap-1 rounded-lg border border-white/15 bg-black/50 p-0.5">
+                <div className="flex items-center gap-1 rounded-lg border border-white/15 bg-black/50 p-0.5 shrink-0">
                   <button
                     type="button"
                     onClick={() => setActiveTab("ui")}
-                    className={`rounded-md px-3 py-1 font-mono text-xs font-semibold transition-all ${
+                    className={`rounded-md px-2.5 sm:px-3 py-1 font-mono text-xs font-semibold transition-all ${
                       activeTab === "ui" ? accentStyles.tabActive : "text-zinc-400 hover:text-white"
                     }`}
                   >
@@ -253,7 +253,7 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
                   <button
                     type="button"
                     onClick={() => setActiveTab("code")}
-                    className={`rounded-md px-3 py-1 font-mono text-xs font-semibold transition-all ${
+                    className={`rounded-md px-2.5 sm:px-3 py-1 font-mono text-xs font-semibold transition-all ${
                       activeTab === "code" ? accentStyles.tabActive : "text-zinc-400 hover:text-white"
                     }`}
                   >
@@ -261,22 +261,22 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
                   </button>
                 </div>
               ) : (
-                <span className={`rounded-md border px-2.5 py-0.5 font-mono text-xs font-medium ${accentStyles.badgeBg}`}>
+                <span className={`rounded-md border px-2.5 py-0.5 font-mono text-[11px] sm:text-xs font-medium shrink-0 ${accentStyles.badgeBg}`}>
                   Full-Stack Platform
                 </span>
               )}
             </div>
 
             {/* Window Content */}
-            <div className="relative flex-1 min-h-[380px]">
+            <div className="relative flex-1 min-h-[360px] sm:min-h-[380px] w-full min-w-0 max-w-full overflow-hidden">
               {codeSnippet && activeTab === "code" ? (
-                <div className="h-full overflow-x-auto p-5 text-zinc-300 bg-black/60">
+                <div className="h-full overflow-x-auto p-4 sm:p-5 text-zinc-300 bg-black/60">
                   <pre className="whitespace-pre font-mono text-xs leading-6">
                     <code>{codeSnippet.code}</code>
                   </pre>
                 </div>
               ) : (
-                <div className="h-full">
+                <div className="h-full w-full min-w-0 max-w-full overflow-hidden">
                   {customWidget}
                 </div>
               )}
@@ -284,17 +284,17 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
 
             {/* Window Bottom Status Bar */}
             <div
-              className={`flex items-center justify-between border-t ${accentStyles.bottomRibbon} px-4 py-2.5 font-mono text-xs text-zinc-400`}
+              className={`flex flex-wrap items-center justify-between gap-2 border-t ${accentStyles.bottomRibbon} px-3 sm:px-4 py-2 sm:py-2.5 font-mono text-[11px] sm:text-xs text-zinc-400 min-w-0`}
             >
-              <span className="flex items-center gap-1.5">
-                <span className={`h-2 w-2 rounded-full ${accentStyles.dotColor}`} />
-                <span>
+              <span className="flex items-center gap-1.5 min-w-0 truncate">
+                <span className={`h-2 w-2 rounded-full shrink-0 ${accentStyles.dotColor}`} />
+                <span className="truncate">
                   {codeSnippet && activeTab === "code"
                     ? codeSnippet.filename
                     : "Interactive System View"}
                 </span>
               </span>
-              <span className="text-zinc-300 font-medium">100% Operational</span>
+              <span className="text-zinc-300 font-medium shrink-0">100% Operational</span>
             </div>
           </div>
         </div>

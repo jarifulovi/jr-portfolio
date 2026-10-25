@@ -60,7 +60,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, links }) => {
       />
 
       {/* 2. Ambient Top Spotlight Beam (Full Width Centered) */}
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-72 w-[850px] -translate-x-1/2 rounded-full bg-gradient-to-b from-cyan-500/15 via-sky-500/5 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute -top-32 left-1/2 h-72 w-full max-w-[850px] -translate-x-1/2 rounded-full bg-gradient-to-b from-cyan-500/15 via-sky-500/5 to-transparent blur-3xl" />
 
       {/* 3. Interactive Mouse-Following Spotlight (Full Bleed Viewport) */}
       {mousePos && (
@@ -73,8 +73,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, links }) => {
       )}
 
       {/* 4. Centered Content Container */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 pt-16 pb-20 md:pt-24 md:pb-28 w-full min-w-0">
+        <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start w-full min-w-0">
           <ProfileCard profile={profile} links={links} />
           <SnapshotCard profile={profile} />
         </div>
