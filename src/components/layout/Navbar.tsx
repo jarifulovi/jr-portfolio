@@ -97,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 text-xs sm:text-sm font-medium text-zinc-400">
+        <nav className="hidden md:flex items-center gap-1 text-xs sm:text-sm font-medium">
           {links.map((link) => {
             const isActive = activeSection === link.href.replace("#", "");
             return (
@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className={`rounded-full px-3 py-1.5 transition-all duration-200 cursor-pointer ${
                   isActive
                     ? "bg-white/10 text-cyan-300 font-semibold border border-cyan-500/40 shadow-[0_0_12px_rgba(6,182,212,0.25)]"
-                    : "hover:bg-white/5 hover:text-white"
+                    : "text-zinc-300 border border-transparent hover:border-white/10 hover:bg-white/[0.06] hover:text-white"
                 }`}
               >
                 {link.label}
