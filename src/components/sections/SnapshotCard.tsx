@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
-import { Badge } from "../ui/Badge";
 
 interface SnapshotCardProps {
   profile: {
@@ -55,57 +54,43 @@ export const SnapshotCard: React.FC<SnapshotCardProps> = ({ profile }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-      className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-5 sm:p-7 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-300 hover:border-cyan-500/30 hover:shadow-cyan-500/10 hover:shadow-2xl w-full min-w-0"
+      className="group relative flex flex-col rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-5 sm:p-7 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-300 hover:border-cyan-500/30 hover:shadow-cyan-500/10 hover:shadow-2xl w-full min-w-0"
     >
-      <div>
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-zinc-300">
-            Quick Snapshot
-          </h2>
-          <span className="h-2 w-2 rounded-full bg-cyan-400" />
-        </div>
-
-        <div className="mt-5 space-y-4">
-          {snapshotItems.map((item) => (
-            <div key={item.label} className="flex items-start gap-3.5">
-              <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-300 group-hover:border-white/20 group-hover:text-cyan-300 transition-colors">
-                {item.icon}
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-                  {item.label}
-                </p>
-                {item.isEmail ? (
-                  <a
-                    href={`mailto:${item.value}`}
-                    className="truncate block text-sm font-semibold text-white transition-colors hover:text-cyan-300"
-                  >
-                    {item.value}
-                  </a>
-                ) : (
-                  <p className="text-sm font-semibold text-white truncate">
-                    {item.value}
-                  </p>
-                )}
-                {item.subValue && (
-                  <p className="text-xs text-zinc-400 mt-0.5">{item.subValue}</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-zinc-300">
+          Quick Snapshot
+        </h2>
+        <span className="h-2 w-2 rounded-full bg-cyan-400" />
       </div>
 
-      {/* Focus Areas Badges */}
-      <div className="mt-6 border-t border-white/10 pt-4">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400 mb-2">
-          Core Domains
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {profile.focusAreas.map((area) => (
-            <Badge key={area} label={area} variant="default" className="text-[11px]" />
-          ))}
-        </div>
+      <div className="mt-5 space-y-4">
+        {snapshotItems.map((item) => (
+          <div key={item.label} className="flex items-start gap-3.5">
+            <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-300 group-hover:border-white/20 group-hover:text-cyan-300 transition-colors">
+              {item.icon}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+                {item.label}
+              </p>
+              {item.isEmail ? (
+                <a
+                  href={`mailto:${item.value}`}
+                  className="truncate block text-sm font-semibold text-white transition-colors hover:text-cyan-300"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <p className="text-sm font-semibold text-white truncate">
+                  {item.value}
+                </p>
+              )}
+              {item.subValue && (
+                <p className="text-xs text-zinc-400 mt-0.5">{item.subValue}</p>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </motion.div>
   );
