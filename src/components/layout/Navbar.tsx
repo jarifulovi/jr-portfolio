@@ -19,15 +19,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [activeSection, setActiveSection] = useState<string>("home");
 
-  // Derive brand initials
+  // Derive brand initials (filter out title prefixes like "MD", "MD." to get core initials "JR")
+  const significantWords = brand
+    .split(" ")
+    .filter((word) => !/^(md\.?|mohammad|dr\.?|mr\.?)$/i.test(word));
+
   const initials =
-    brand
-      .split(" ")
-      .map((word) => word[0])
-      .filter(Boolean)
-      .slice(0, 2)
-      .join("")
-      .toUpperCase() || "JR";
+    (significantWords.length >= 2
+      ? `${significantWords[0][0]}${significantWords[significantWords.length - 1][0]}`
+      : significantWords[0]?.slice(0, 2) || "JR"
+    ).toUpperCase();
 
   // Scrollspy: update active link based on scroll position
   useEffect(() => {
@@ -87,10 +88,10 @@ export const Navbar: React.FC<NavbarProps> = ({
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "#home")}
-          className="group flex items-center gap-2 text-base font-bold tracking-tight text-white transition-colors hover:text-zinc-300 cursor-pointer"
+          className="group flex items-center gap-2.5 text-base font-bold tracking-tight text-white transition-colors hover:text-zinc-300 cursor-pointer"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-500/30 bg-cyan-500/10 text-xs font-mono font-bold text-cyan-400 group-hover:border-cyan-400/50">
-            {initials}
+          <span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-cyan-500/40 bg-gradient-to-br from-cyan-500/20 via-zinc-950 to-zinc-900 text-xs font-mono font-bold text-cyan-300 shadow-[0_0_12px_rgba(6,182,212,0.25)] transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-400 group-hover:shadow-[0_0_18px_rgba(6,182,212,0.45)]">
+            <span className="tracking-wider">{initials}</span>
           </span>
           <span className="inline-block font-semibold">{brand}</span>
         </a>
