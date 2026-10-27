@@ -70,16 +70,16 @@
     "accent": "emerald",
     "title": "Database Modeling & Performance Tuning",
     "pitch": "Thoughtful relational schema architecture with strict normalization, purposeful indexing strategies, and query performance tuning.",
-    "stack": ["PostgreSQL", "Supabase", "pgvector", "Raw SQL", "Schema Indexing"],
+    "stack": ["PostgreSQL", "Supabase", "pgvector", "Raw SQL", "Redis"],
     "useCases": [
       "Normalized relational schemas with strict data integrity",
       "Vector embedding similarity search for AI workflows",
-      "High-load query optimization eliminating full-table scans"
+      "Relational query optimization avoiding sequential table scans"
     ],
     "relatedWork": [
       {
-        "name": "FabricFlow",
-        "detail": "Raw SQL Performance & Redis Session Cache",
+        "name": "FabricFlow Backend",
+        "detail": "Optimized SQL Queries & Redis Session Cache",
         "url": "https://github.com/jarifulovi/FabricFlow"
       },
       {
@@ -89,9 +89,9 @@
       }
     ],
     "whatYouGet": [
-      "Normalized schema design (1NF/2NF/3NF) preventing redundancy",
+      "Normalized schema design eliminating data redundancy and anomalies",
       "Purposeful B-Tree indexes on foreign keys & filter columns",
-      "ACID compliance, transaction safety, and sub-millisecond lookups"
+      "ACID transaction safety, strict constraint enforcement, and fast index lookups"
     ]
   },
   {
@@ -100,28 +100,28 @@
     "accent": "sky",
     "title": "Full-Stack Implementation & Practical Deployment",
     "pitch": "Bridging backend logic with responsive frontends, reproducible container environments, and practical Linux deployments.",
-    "stack": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Docker", "Linux"],
+    "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Docker", "Linux"],
     "useCases": [
       "Complete end-to-end web applications & developer portals",
-      "Real-time dashboards for workflow observability",
+      "Interactive dashboards for workflow tracking & observability",
       "Multi-container local development & deployment workflows"
     ],
     "relatedWork": [
       {
         "name": "ApexFlow Dashboard",
-        "detail": "Next.js 14 Observability & Web Crypto E2EE",
+        "detail": "Next.js Observability UI & Web Crypto E2EE",
         "url": "https://github.com/jarifulovi/apex-flow"
       },
       {
-        "name": "InboxOrchestrator Frontend",
-        "detail": "Next.js 16 (React 19) Feature-Sliced Web Client",
+        "name": "InboxOrchestrator AI Frontend",
+        "detail": "Feature-Sliced Next.js Web Client",
         "url": "https://github.com/jarifulovi/inbox-orchestrator-ai"
       }
     ],
     "whatYouGet": [
-      "Feature-sliced modular components with clean domain boundaries",
-      "Repeatable Docker multi-service environments",
-      "Responsive, mobile-optimized UI with modern styling"
+      "Feature-sliced modular architecture organizing UI, state, and services by domain",
+      "Reproducible multi-service environments using Docker & Docker Compose",
+      "Responsive, clean frontend interfaces with semantic design and type safety"
     ]
   }
 ]
