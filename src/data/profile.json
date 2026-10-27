@@ -39,25 +39,25 @@
         "id": "background",
         "label": "Foundations & Experience",
         "title": "Software Engineering at DU (IIT) & Industry Track Record",
-        "description": "I completed my Bachelor of Science in Software Engineering (BSSE) coursework at the University of Dhaka (Institute of Information Technology). My focus has always been hands-on: understanding systems from first principles and building complete projects from database schemas to responsive interfaces. During my 6-month software engineering tenure at Tekarsh Bangladesh Ltd, I worked directly on automated testing (Appium, WebdriverIO), API performance load testing, and production web application delivery."
+        "description": "Completed BSSE coursework at the University of Dhaka (IIT), focusing on systems from first principles and end-to-end delivery. During my 6-month software engineering tenure at Tekarsh Bangladesh Ltd, I engineered automated test suites (Appium, WebdriverIO), executed API performance load testing, and shipped production features across web applications."
       },
       {
         "id": "approach",
         "label": "Engineering Mindset",
         "title": "Modular Architecture, Proper Data Modeling & Reliability",
-        "description": "I believe that code is read and maintained far more often than it is written. My approach emphasizes clean separation of concerns, thoughtful database normalization and indexing before writing queries, and designing for failure recovery from the start. Rather than applying quick patches that accumulate technical debt, I strive to write predictable, well-structured software with automated test coverage."
+        "description": "Guided by the principle that software is read and maintained far more often than written. I emphasize clean separation of concerns, thoughtful database normalization and indexing, and designing for failure recovery from day one—favoring predictable, well-tested architectures over brittle shortcuts."
       },
       {
         "id": "craft",
         "label": "Core Craft",
         "title": "Type-Safe APIs, Asynchronous Workflows & Full-Stack Execution",
-        "description": "My core sweet spot is backend engineering with Python (FastAPI) and Node.js (Express), paired with relational data stores like PostgreSQL. I enjoy building asynchronous worker daemons and resilient multi-step workflow systems that handle long-running operations outside the request-response cycle. In addition, I containerize multi-service applications using Docker and bridge backend services with clean frontends using Next.js and React."
+        "description": "Specialized in backend engineering with Python (FastAPI) and Node.js (Express) on PostgreSQL. I architect asynchronous worker daemons and resilient multi-step workflow systems to isolate heavy workloads, containerize multi-service applications with Docker, and build clean frontends with Next.js."
       },
       {
         "id": "future",
         "label": "Future Trajectory",
         "title": "Distributed Systems, Event-Driven Queues & Modern DevOps",
-        "description": "Looking ahead, I am actively expanding into distributed systems architectures, event-driven streaming, and deeper DevOps practices—including automated CI/CD pipelines, container orchestration, and resilient cloud deployments. I am eager to bring this disciplined, end-to-end mindset to ambitious engineering teams and impactful software products."
+        "description": "Actively expanding deeper into distributed systems, event-driven streaming, and modern DevOps—including automated CI/CD pipelines, container orchestration, and resilient cloud deployments. Driven to bring a disciplined, end-to-end engineering mindset to high-impact software products."
       }
     ]
   },

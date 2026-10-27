@@ -78,8 +78,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ about }) => {
       description={about.sectionDescription || "My journey, engineering principles, practical craft, and future technical trajectory."}
     >
       <div className="relative mt-8 max-w-5xl pl-2 sm:pl-4">
-        {/* Continuous Connecting Line */}
-        <div className="absolute left-[19px] sm:left-[27px] top-6 bottom-8 w-[2px] bg-gradient-to-b from-cyan-500 via-sky-500/50 to-transparent" />
+        {/* Continuous Connecting Line with Ambient Glow Track */}
+        <div className="pointer-events-none absolute left-[18px] sm:left-[26px] top-6 bottom-8 w-[4px] bg-cyan-500/20 blur-[2px]" />
+        <div className="pointer-events-none absolute left-[19px] sm:left-[27px] top-6 bottom-8 w-[2px] bg-gradient-to-b from-cyan-400 via-sky-500/50 to-transparent" />
 
         <motion.div
           variants={containerVariants}
@@ -92,29 +93,29 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ about }) => {
             <motion.div
               key={step.id}
               variants={itemVariants}
-              className="group relative flex items-start gap-5 sm:gap-7 rounded-2xl p-2 -ml-2 transition-all duration-300 hover:bg-white/[0.02]"
+              className="group relative flex items-start gap-5 sm:gap-7 p-2 -ml-2"
             >
               {/* Luminous Connecting Node */}
-              <div className="relative z-10 flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-500/30 bg-zinc-950 shadow-[0_0_15px_rgba(6,182,212,0.25)] transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-400 group-hover:shadow-[0_0_22px_rgba(6,182,212,0.5)]">
+              <div className="relative z-10 flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-500/30 bg-zinc-950 shadow-[0_0_15px_rgba(6,182,212,0.25)] transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-400 group-hover:shadow-[0_0_24px_rgba(6,182,212,0.55)]">
                 {getStepIcon(step.id)}
               </div>
 
-              {/* Editorial Text Content */}
-              <div className="min-w-0 flex-1 pt-0.5">
+              {/* Editorial Text Content with Smooth Right-Slide on Hover */}
+              <div className="min-w-0 flex-1 pt-0.5 transition-transform duration-300 ease-out group-hover:translate-x-2.5 sm:group-hover:translate-x-3.5">
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400 transition-colors duration-300 group-hover:text-cyan-300">
+                  <span className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">
                     {step.label}
                   </span>
-                  <span className="text-[10px] font-mono font-semibold text-zinc-500 transition-colors duration-300 group-hover:text-cyan-400/80">
+                  <span className="text-[10px] font-mono font-semibold text-zinc-400">
                     0{index + 1}
                   </span>
                 </div>
 
-                <h3 className="mt-2 text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors duration-300 ease-out group-hover:text-cyan-400">
+                <h3 className="mt-2 text-xl sm:text-2xl font-bold tracking-tight text-white">
                   {step.title}
                 </h3>
 
-                <p className="mt-3 text-base sm:text-lg leading-relaxed text-zinc-300 font-normal transition-colors duration-300 group-hover:text-zinc-200">
+                <p className="mt-3 max-w-4xl text-base sm:text-lg leading-relaxed text-zinc-200 font-normal">
                   {step.description}
                 </p>
               </div>
