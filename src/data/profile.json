@@ -44,20 +44,20 @@
       {
         "id": "approach",
         "label": "Engineering Mindset",
-        "title": "Modular Architecture, Proper Data Modeling & Reliability",
-        "description": "Guided by the principle that software is read and maintained far more often than written. I emphasize clean separation of concerns, thoughtful database normalization and indexing, and designing for failure recovery from day one—favoring predictable, well-tested architectures over brittle shortcuts."
+        "title": "Extensible Architecture, Intentional Data Modeling & Resilience",
+        "description": "I approach backend development as an interconnected engineering system rather than isolated tasks. I prioritize architecting clean, extensible modular boundaries, crafting thoughtful data models from schema design to optimization, and baking in proactive failure recovery and scalability from day one—ensuring end-to-end reliability as systems evolve."
       },
       {
         "id": "craft",
         "label": "Core Craft",
-        "title": "Type-Safe APIs, Asynchronous Workflows & Full-Stack Execution",
-        "description": "Specialized in backend engineering with Python (FastAPI) and Node.js (Express) on PostgreSQL. I architect asynchronous worker daemons and resilient multi-step workflow systems to isolate heavy workloads, containerize multi-service applications with Docker, and build clean frontends with Next.js."
+        "title": "Type-Safe API Design, Relational Data & Async Execution",
+        "description": "My core sweet spot is building type-safe, RESTful APIs with Python (FastAPI) and Node.js (Express) backed by structured PostgreSQL databases. I focus on clean request validation, efficient database queries, and offloading heavy tasks to asynchronous background workers to keep endpoints fast and responsive—packaged reliably with Docker."
       },
       {
         "id": "future",
         "label": "Future Trajectory",
-        "title": "Distributed Systems, Event-Driven Queues & Modern DevOps",
-        "description": "Actively expanding deeper into distributed systems, event-driven streaming, and modern DevOps—including automated CI/CD pipelines, container orchestration, and resilient cloud deployments. Driven to bring a disciplined, end-to-end engineering mindset to high-impact software products."
+        "title": "Distributed Architectures, Message Queues & Cloud DevOps",
+        "description": "Looking ahead, I am actively expanding into distributed system architectures, event-driven message queues, and decoupled worker daemons to handle asynchronous workflows at scale. Alongside this, I am deepening my DevOps practices—advancing automated CI/CD pipelines, container orchestration, and resilient cloud deployments."
       }
     ]
   },
