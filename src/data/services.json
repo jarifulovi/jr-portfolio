@@ -7,15 +7,20 @@
     "pitch": "Type-safe, maintainable server applications with structured data validation, strict contracts, and secure access boundaries.",
     "stack": ["Python", "FastAPI", "Node.js (Express)", "Java (Spring Boot)", "REST APIs"],
     "useCases": [
-      "High-throughput server-side REST APIs",
+      "Production-ready, type-safe RESTful APIs",
       "Secure multi-role authentication & authorization",
-      "Modular microservices with strict contract boundaries"
+      "Modular service architecture with clean API contracts"
     ],
     "relatedWork": [
       {
         "name": "ApexFlow Control Plane",
         "detail": "FastAPI REST Engine & API Key Auth",
         "url": "https://github.com/jarifulovi/apex-flow"
+      },
+      {
+        "name": "FabricFlow Backend",
+        "detail": "Express.js REST Architecture & Granular RBAC",
+        "url": "https://github.com/jarifulovi/FabricFlow"
       },
       {
         "name": "CodeBlog API",
@@ -34,29 +39,29 @@
     "index": "02",
     "accent": "amber",
     "title": "Background Workers & Resilient Workflows",
-    "pitch": "Asynchronous job orchestration, distributed worker pipelines, and multi-step state persistence decoupled from HTTP request cycles.",
-    "stack": ["Python Daemons", "PostgreSQL Queues", "State Machines", "Worker Daemons", "Async Queues"],
+    "pitch": "Offloading intensive tasks from HTTP request cycles through asynchronous background jobs, state persistence, and predictable failure recovery.",
+    "stack": ["Python (Asyncio)", "FastAPI", "PostgreSQL", "Task Queues", "Worker Services"],
     "useCases": [
-      "Long-running asynchronous background processing",
-      "Multi-step workflows requiring crash resilience",
-      "Continuous email ingestion & automated sync daemons"
+      "Offloading long-running tasks from synchronous API request cycles",
+      "Multi-step workflows requiring step-level crash resilience and resume capability",
+      "Periodic background tasks, scheduled polling & automated data synchronization"
     ],
     "relatedWork": [
       {
-        "name": "ApexFlow Runtime",
+        "name": "ApexFlow (SDK & Queue Runtime)",
         "detail": "Durable Step Memoization & Queue Engine",
         "url": "https://github.com/jarifulovi/apex-flow"
       },
       {
-        "name": "InboxOrchestrator AI",
-        "detail": "Autonomous Background Ingestion Daemons",
+        "name": "InboxOrchestrator AI Backend",
+        "detail": "Autonomous Background Daemons & Worker Engine",
         "url": "https://github.com/jarifulovi/inbox-orchestrator-ai"
       }
     ],
     "whatYouGet": [
-      "Step-level checkpointing for automatic failure recovery",
-      "High-throughput dequeuing via raw FOR UPDATE SKIP LOCKED",
-      "Automated retry policies, exponential backoff, and state machines"
+      "Step-level checkpointing for transparent failure recovery",
+      "Concurrency-safe task dequeuing using PostgreSQL transactional locking",
+      "Automated retry policies with exponential backoff and error tracking"
     ]
   },
   {
