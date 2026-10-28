@@ -115,7 +115,8 @@
     "image": "/screenshots/inbox-thread-page.png"
   },
   {
-    "title": "Garments Inventory System (FabricFlow)",
+    "title": "FabricFlow",
+    "tagline": "Enterprise Garments Inventory & RBAC Backend",
     "description": "Production-grade backend system for enterprise garments inventory, order management, and granular role-based access control.",
     "impact": "Engineered session-based authentication with Redis, raw SQL query optimizations, full Dockerization, and comprehensive Jest test coverage.",
     "summary": "Operational backend engineered for reliable inventory tracking, bulk order pipelines, and multi-tier user permissions.",
@@ -158,6 +159,7 @@
   },
   {
     "title": "Study Sync",
+    "tagline": "Real-Time Collaborative Study Platform",
     "description": "Real-time collaborative study platform featuring low-latency group messaging, multi-user presence, and scalable cloud file delivery.",
     "impact": "Architected low-latency event pipelines using Socket.io and integrated AWS S3 for secure, scalable academic material distribution.",
     "summary": "Collaborative hub designed to synchronize multiple study groups simultaneously with real-time events and distributed media storage.",
@@ -199,6 +201,7 @@
   },
   {
     "title": "CodeBlog API",
+    "tagline": "Spring Boot Layered REST Architecture",
     "description": "Modular RESTful blogging engine built with Spring Boot, featuring layered architecture, JWT authentication, and relational data persistence.",
     "impact": "Implemented clean package-by-feature structure with decoupled services, secure controllers, and transactional database integrity.",
     "summary": "Modular API with strict separation of authentication, publication workflows, and community comments.",
@@ -237,6 +240,7 @@
   },
   {
     "title": "MiniChess Engine",
+    "tagline": "Tactical Game AI & Heuristic Search",
     "description": "Optimized 5x6 MiniChess AI engine featuring alpha-beta pruning, dynamic move ordering heuristics, and quiescence tactical search.",
     "impact": "Implemented transposition table caching for rapid state evaluation and pruning suboptimal game tree branches.",
     "summary": "Tactical chess engine engineered with minimax optimizations and compact board state evaluations.",

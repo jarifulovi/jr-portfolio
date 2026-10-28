@@ -93,12 +93,14 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5 }}
-              className="grid gap-6 md:grid-cols-2"
+              className="divide-y divide-white/10 border-t border-b border-white/10"
             >
-              {otherProjects.map((project) => (
+              {otherProjects.map((project, idx) => (
                 <SecondaryProjectCard
                   key={project.title}
+                  index={String(idx + 3).padStart(2, "0")}
                   title={project.title}
+                  tagline={project.tagline}
                   description={project.description}
                   highlights={project.highlights}
                   stack={project.stack}
