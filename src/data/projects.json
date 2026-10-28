@@ -9,7 +9,7 @@
       "Durable Step Checkpointing: Memoizes steps (await ctx.step) to resume instantly from failed steps without restarting",
       "Zero-Knowledge Encryption: Client-side AES-256-GCM payload encryption with browser Web Crypto decryption",
       "PostgreSQL Queue Engine: Concurrency-safe task dequeuing using FOR UPDATE SKIP LOCKED without Redis/Kafka overhead",
-      "Transparent Payload Offload: Payloads >250KB offloaded to Cloudflare R2 / S3 via lightweight pointer references",
+      "Transparent Payload Offload: Large step payloads (>250KB) automatically offloaded via lightweight pointer references",
       "Loop-Safe Execution: Scoped to (step_name, step_order) guaranteeing safe step memoization inside loops",
       "Next.js Observability Dashboard: Full execution timelines, error tracebacks, and live worker status"
     ],
@@ -40,7 +40,6 @@
       "Python",
       "FastAPI",
       "PostgreSQL",
-      "Cloudflare R2",
       "Next.js",
       "Web Crypto API",
       "Docker",
@@ -109,7 +108,7 @@
     ],
     "repoUrl": "https://github.com/jarifulovi/inbox-orchestrator-ai",
     "liveUrl": "https://inbox-orchestrator-frontend.vercel.app/",
-    "status": "Deployed Platform",
+    "status": "Web Client Live",
     "year": "2026",
     "period": "2026",
     "featured": true,
@@ -122,7 +121,7 @@
     "summary": "Operational backend engineered for reliable inventory tracking, bulk order pipelines, and multi-tier user permissions.",
     "features": [
       "Granular role-based access control (RBAC)",
-      "High-throughput Redis-backed session management",
+      "Redis-backed session management & caching",
       "Raw SQL performance tuning for complex inventory aggregates",
       "Comprehensive Jest test suites covering critical API endpoints"
     ],

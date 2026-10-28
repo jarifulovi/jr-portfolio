@@ -106,7 +106,7 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-4 py-2 text-xs font-bold tracking-wide text-zinc-950 shadow-sm transition-all duration-200 hover:bg-zinc-200 active:scale-95"
             >
-              <span>Deployed Site</span>
+              <span>{project.status === "Web Client Live" ? "Live Web Client" : "Deployed Site"}</span>
               <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>

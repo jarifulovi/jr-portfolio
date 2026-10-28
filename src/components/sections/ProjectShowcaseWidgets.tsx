@@ -49,7 +49,7 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
       attempts: "1/3",
       status: "Success",
       payloadOffloaded: true,
-      detail: "Payload >250KB automatically offloaded to Cloudflare R2 reference pointer.",
+      detail: "Payload >250KB automatically offloaded via lightweight pointer reference.",
     },
   ];
 
@@ -209,7 +209,7 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
                       </span>
                       {step.payloadOffloaded && (
                         <span className="rounded border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-bold text-amber-300">
-                          📦 R2 Offload
+                          📦 Offloaded
                         </span>
                       )}
                     </div>
@@ -221,10 +221,13 @@ export const ApexFlowStepTimelineWidget: React.FC = () => {
                         {step.detail}
                       </p>
                       <div className="flex items-center gap-2 shrink-0 font-mono text-[11px]">
-                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-zinc-400">
+                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-zinc-300">
                           Input JSON
                         </span>
-                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-zinc-400">
+                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-zinc-300">
+                          Output JSON
+                        </span>
+                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-zinc-300">
                           Fork
                         </span>
                       </div>
