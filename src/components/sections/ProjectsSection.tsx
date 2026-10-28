@@ -83,7 +83,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
                   Other Notable Work
                 </h3>
                 <p className="mt-1.5 text-xs sm:text-sm text-zinc-400 max-w-xl leading-relaxed">
-                  Operational backend systems, real-time collaboration engines, Spring Boot layered architectures, and algorithmic game AI.
+                  Focused backend codebases, real-time event platforms, Spring Boot layered APIs, and algorithmic game AI.
                 </p>
               </div>
             </div>
