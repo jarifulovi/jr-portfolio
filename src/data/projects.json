@@ -8,7 +8,7 @@
     "features": [
       "Durable Step Checkpointing: Memoizes steps (await ctx.step) to resume instantly from failed steps without restarting",
       "Zero-Knowledge Encryption: Client-side AES-256-GCM payload encryption with browser Web Crypto decryption",
-      "PostgreSQL-Powered Queue Engine: High-throughput distributed dequeuing using FOR UPDATE SKIP LOCKED without Redis/Kafka",
+      "PostgreSQL Queue Engine: Concurrency-safe task dequeuing using FOR UPDATE SKIP LOCKED without Redis/Kafka overhead",
       "Transparent Payload Offload: Payloads >250KB offloaded to Cloudflare R2 / S3 via lightweight pointer references",
       "Loop-Safe Execution: Scoped to (step_name, step_order) guaranteeing safe step memoization inside loops",
       "Next.js Observability Dashboard: Full execution timelines, error tracebacks, and live worker status"
@@ -33,7 +33,7 @@
       },
       {
         "label": "Observability",
-        "value": "Next.js 14 Dashboard"
+        "value": "Next.js Observability UI"
       }
     ],
     "stack": [
@@ -41,7 +41,7 @@
       "FastAPI",
       "PostgreSQL",
       "Cloudflare R2",
-      "Next.js 14",
+      "Next.js",
       "Web Crypto API",
       "Docker",
       "Pydantic"
@@ -71,7 +71,7 @@
       "Deterministic Task Deduplication: MD5 action fingerprinting with PostgreSQL ON CONFLICT DO NOTHING",
       "SLA-Aware State Machine: 5-stage lifecycle (needs_action, awaiting_reply, follow_up, etc.) with automated escalation",
       "Dynamic Semantic Search: 3-tier similarity threshold schedule using local embeddings in Supabase pgvector",
-      "Feature-Sliced Next.js UI: Modular web client built with Next.js 16, React 19, and Radix UI"
+      "Feature-Sliced Next.js UI: Modular web client built with Next.js, React, and Radix UI"
     ],
     "highlights": [
       "Delta Prompt Strategy: Passes only summary delta + new message, avoiding full transcripts",
@@ -93,7 +93,7 @@
       },
       {
         "label": "Frontend",
-        "value": "Next.js 16 (React 19)"
+        "value": "Feature-Sliced Next.js"
       }
     ],
     "stack": [
@@ -104,7 +104,7 @@
       "PyTorch",
       "spaCy",
       "Gemini API",
-      "Next.js 16",
+      "Next.js",
       "Tailwind CSS"
     ],
     "repoUrl": "https://github.com/jarifulovi/inbox-orchestrator-ai",

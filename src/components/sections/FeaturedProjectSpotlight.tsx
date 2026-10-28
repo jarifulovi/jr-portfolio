@@ -49,32 +49,28 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
 
   const accentStyles = isCyan
     ? {
-        badgeBg: "bg-cyan-500/10 border-cyan-400/30 text-cyan-300",
-        titleHover: "group-hover:text-cyan-400",
-        tagline: "text-cyan-400",
-        metricBorder: "border-cyan-500/25 bg-cyan-950/20 hover:border-cyan-400/40",
+        badgeBg: "bg-cyan-500/10 border-cyan-500/20 text-cyan-300",
+        titleHover: "group-hover:text-cyan-300",
+        tagline: "text-cyan-400/90",
         dotColor: "bg-cyan-400",
-        liveBtn: "bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-zinc-950 shadow-cyan-500/25",
-        tabActive: "bg-cyan-500/25 text-cyan-200 border-cyan-500/50",
-        windowBorder: "border-cyan-500/30 group-hover:border-cyan-400/50 shadow-[0_20px_50px_-20px_rgba(6,182,212,0.25)]",
-        windowBg: "bg-gradient-to-b from-cyan-950/40 via-zinc-950/90 to-black",
-        topHighlight: "from-transparent via-cyan-400 to-transparent",
-        chromeBg: "bg-cyan-950/35 border-cyan-500/25",
-        bottomRibbon: "border-cyan-500/20 bg-cyan-950/20",
+        tabActive: "bg-white/10 text-white border-white/20 shadow-sm",
+        windowBorder: "border-white/10 group-hover:border-cyan-500/30 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]",
+        windowBg: "bg-zinc-950/90",
+        topHighlight: "from-transparent via-cyan-400/30 to-transparent",
+        chromeBg: "bg-zinc-900/60 border-white/10",
+        bottomRibbon: "border-white/10 bg-zinc-950/60",
       }
     : {
-        badgeBg: "bg-emerald-500/10 border-emerald-400/30 text-emerald-300",
-        titleHover: "group-hover:text-emerald-400",
-        tagline: "text-emerald-400",
-        metricBorder: "border-emerald-500/25 bg-emerald-950/20 hover:border-emerald-400/40",
+        badgeBg: "bg-emerald-500/10 border-emerald-500/20 text-emerald-300",
+        titleHover: "group-hover:text-emerald-300",
+        tagline: "text-emerald-400/90",
         dotColor: "bg-emerald-400",
-        liveBtn: "bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-zinc-950 shadow-emerald-500/25",
-        tabActive: "bg-emerald-500/25 text-emerald-200 border-emerald-500/50",
-        windowBorder: "border-emerald-500/30 group-hover:border-emerald-400/50 shadow-[0_20px_50px_-20px_rgba(16,185,129,0.25)]",
-        windowBg: "bg-gradient-to-b from-emerald-950/40 via-zinc-950/90 to-black",
-        topHighlight: "from-transparent via-emerald-400 to-transparent",
-        chromeBg: "bg-emerald-950/35 border-emerald-500/25",
-        bottomRibbon: "border-emerald-500/20 bg-emerald-950/20",
+        tabActive: "bg-white/10 text-white border-white/20 shadow-sm",
+        windowBorder: "border-white/10 group-hover:border-emerald-500/30 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]",
+        windowBg: "bg-zinc-950/90",
+        topHighlight: "from-transparent via-emerald-400/30 to-transparent",
+        chromeBg: "bg-zinc-900/60 border-white/10",
+        bottomRibbon: "border-white/10 bg-zinc-950/60",
       };
 
   return (
@@ -108,7 +104,7 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold tracking-wide shadow-lg transition-all duration-300 hover:scale-[1.03] active:scale-95 ${accentStyles.liveBtn}`}
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-4 py-2 text-xs font-bold tracking-wide text-zinc-950 shadow-sm transition-all duration-200 hover:bg-zinc-200 active:scale-95"
             >
               <span>Deployed Site</span>
               <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -121,7 +117,7 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
               href={project.repoUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-zinc-200 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white active:scale-95"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold text-zinc-200 backdrop-blur-md transition-all duration-200 hover:border-white/25 hover:bg-white/[0.08] hover:text-white active:scale-95"
             >
               <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
                 <path
@@ -139,7 +135,7 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
 
       {/* Main Showcase Grid */}
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-start w-full min-w-0 max-w-full">
-        {/* Left Column (5 Cols): Scannable, Larger Text without clutter */}
+        {/* Left Column (5 Cols): Scannable, High-Contrast Text without clutter */}
         <div className="flex flex-col space-y-6 lg:col-span-5 w-full min-w-0 max-w-full">
           {/* Title & Tagline */}
           <div>
@@ -149,12 +145,12 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
               {project.title}
             </h3>
             {project.tagline && (
-              <p className={`mt-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider ${accentStyles.tagline}`}>
+              <p className={`mt-1 text-xs sm:text-sm font-medium tracking-normal ${accentStyles.tagline}`}>
                 {project.tagline}
               </p>
             )}
             {/* Compressed Single Core Narrative */}
-            <p className="mt-4 text-base leading-relaxed text-zinc-300">
+            <p className="mt-4 text-base leading-relaxed text-zinc-200">
               {project.impact || project.description}
             </p>
           </div>
@@ -168,7 +164,7 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
               <ul className="space-y-2.5 text-sm text-zinc-200">
                 {project.features.slice(0, 3).map((feat, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${accentStyles.dotColor}`} />
+                    <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${accentStyles.dotColor}`} />
                     <span className="leading-snug">{feat}</span>
                   </li>
                 ))}
@@ -176,18 +172,18 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
             </div>
           )}
 
-          {/* Operational Metrics (2x2 Grid with larger labels & values) */}
+          {/* Operational Metrics (2x2 Grid with high-contrast text and clean borders) */}
           {project.metrics && project.metrics.length > 0 && (
-            <div className="grid grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-2 gap-2.5 pt-2">
               {project.metrics.map((metric) => (
                 <div
                   key={metric.label}
-                  className={`rounded-2xl border p-3.5 backdrop-blur-sm transition-all duration-300 ${accentStyles.metricBorder}`}
+                  className="rounded-xl border border-white/10 bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-200 hover:border-white/20"
                 >
-                  <p className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">
+                  <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-400">
                     {metric.label}
                   </p>
-                  <p className="mt-1 text-sm font-bold text-white">
+                  <p className="mt-1 text-xs sm:text-sm font-bold text-white tracking-tight">
                     {metric.value}
                   </p>
                 </div>
@@ -210,22 +206,22 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
           </div>
         </div>
 
-        {/* Right Column (7 Cols): Atmospheric Tinted Glass Showcase Window */}
+        {/* Right Column (7 Cols): Sleek Glass Showcase Window */}
         <div className="relative lg:col-span-7 w-full min-w-0 max-w-full">
-          {/* Luminous Atmospheric Backlight Glow */}
+          {/* Subtle Atmospheric Backlight Glow (Toned down from noisy neon to quiet aura) */}
           <div
-            className={`pointer-events-none absolute inset-0 sm:-inset-6 rounded-3xl opacity-25 blur-3xl transition-all duration-700 group-hover:opacity-45 ${
-              isCyan ? "bg-cyan-500/30" : "bg-emerald-500/30"
+            className={`pointer-events-none absolute -inset-4 rounded-3xl opacity-10 blur-2xl transition-opacity duration-700 group-hover:opacity-20 ${
+              isCyan ? "bg-cyan-500/20" : "bg-emerald-500/20"
             }`}
           />
 
           <div
             className={`relative flex h-full flex-col overflow-hidden rounded-2xl border ${accentStyles.windowBorder} ${accentStyles.windowBg} backdrop-blur-2xl transition-all duration-500 w-full min-w-0 max-w-full`}
           >
-            {/* Luminous Top-Edge Highlight Line */}
+            {/* Subtle Top-Edge Hairline Highlight */}
             <div className={`h-[1px] w-full bg-gradient-to-r ${accentStyles.topHighlight}`} />
 
-            {/* macOS Tinted Chrome Bar */}
+            {/* macOS Chrome Bar */}
             <div
               className={`flex flex-wrap items-center justify-between gap-2 border-b ${accentStyles.chromeBg} px-3 sm:px-4 py-2.5 sm:py-3 min-w-0`}
             >
@@ -233,7 +229,7 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
                 <span className="h-3 w-3 rounded-full bg-red-500/80 shadow-sm shrink-0" />
                 <span className="h-3 w-3 rounded-full bg-amber-500/80 shadow-sm shrink-0" />
                 <span className="h-3 w-3 rounded-full bg-emerald-500/80 shadow-sm shrink-0" />
-                <span className="ml-2 font-mono text-[11px] sm:text-xs text-zinc-300 truncate max-w-[120px] xs:max-w-[160px] sm:max-w-xs">
+                <span className="ml-2 font-mono text-[11px] sm:text-xs text-zinc-400 truncate max-w-[120px] xs:max-w-[160px] sm:max-w-xs">
                   {urlBarText}
                 </span>
               </div>
@@ -282,20 +278,18 @@ export const FeaturedProjectSpotlight: React.FC<FeaturedProjectSpotlightProps> =
               )}
             </div>
 
-            {/* Window Bottom Status Bar */}
-            <div
-              className={`flex flex-wrap items-center justify-between gap-2 border-t ${accentStyles.bottomRibbon} px-3 sm:px-4 py-2 sm:py-2.5 font-mono text-[11px] sm:text-xs text-zinc-400 min-w-0`}
-            >
-              <span className="flex items-center gap-1.5 min-w-0 truncate">
-                <span className={`h-2 w-2 rounded-full shrink-0 ${accentStyles.dotColor}`} />
-                <span className="truncate">
-                  {codeSnippet && activeTab === "code"
-                    ? codeSnippet.filename
-                    : "Interactive System View"}
+            {/* Window Bottom Status Bar (Only in Code Tab, since customWidget has its own native footer) */}
+            {codeSnippet && activeTab === "code" && (
+              <div
+                className={`flex flex-wrap items-center justify-between gap-2 border-t ${accentStyles.bottomRibbon} px-3 sm:px-4 py-2 sm:py-2.5 font-mono text-[11px] sm:text-xs text-zinc-400 min-w-0`}
+              >
+                <span className="flex items-center gap-1.5 min-w-0 truncate">
+                  <span className={`h-2 w-2 rounded-full shrink-0 ${accentStyles.dotColor}`} />
+                  <span className="truncate">{codeSnippet.filename}</span>
                 </span>
-              </span>
-              <span className="text-zinc-300 font-medium shrink-0">100% Operational</span>
-            </div>
+                <span className="text-zinc-300 font-medium shrink-0">Python 3.11</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
